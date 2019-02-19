@@ -38,6 +38,33 @@ module.exports = (env, argv) => {
 
   });
 
+
+  // babel で ES2018
+  return_modules = merge(return_modules,{
+    module: {
+      rules: [
+        {
+          // 拡張子 .js の場合
+          test: /\.js$/,
+          use: [
+            {
+              // Babel を利用する
+              loader: 'babel-loader',
+              // Babel のオプションを指定する
+              options: {
+                presets: [
+                  // プリセットを指定することで、ES2018 を ES5 に変換
+                  '@babel/preset-env',
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  });
+
+
   console.log(return_modules);
 
   return return_modules;
