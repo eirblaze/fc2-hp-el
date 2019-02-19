@@ -1,0 +1,73 @@
+
+* {
+	box-sizing: border-box;
+}
+
+body	{
+	font-family: "sans-serif";
+	line-height: 1.4;
+
+	scrollbar-3dlight-color : #6896FF;
+
+	scrollbar-arrow-color : #054A96;
+
+	scrollbar-base-color : #CEFFFF;
+
+	scrollbar-darkshadow-color : #6896FF;
+
+	scrollbar-face-color : #DDFFFF;
+
+	scrollbar-highlight-color : #FFFFFF;
+
+	scrollbar-shadow-color : #B0FFFF;
+
+	background-color: #D8FFFF;
+	color: #000060;
+
+}
+
+$a_color: #0000FF;
+$a_link_color: #0000FF;
+$a_visited_color: #0000B5;
+$a_active_color: #B5FFFF;
+$a_hover_color: #0000FF;
+
+a, button {
+	color: $a_color;
+	transition-duration: .45s;
+
+	&:link	{
+		color : $a_link_color;
+		text-decoration : none;
+	}
+
+	&:visited	{
+		color : $a_visited_color;
+		text-decoration : none;
+	}
+
+	&:active {
+		color : $a_active_color;
+		text-decoration : underline overline;
+		background-color : #0000FF;
+	}
+
+	&:hover	{
+		color : $a_hover_color;
+		text-decoration : underline overline;
+		background-color : #a4FFFF;
+	}
+}
+
+// font size
+small {
+	font-size: 0.75em;
+}
+
+.large-font {
+	font-size: 1.5em;
+}
+
+.middle-font {
+	font-size: 1.25em;
+}

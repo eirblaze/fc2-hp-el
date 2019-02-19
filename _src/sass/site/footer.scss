@@ -1,0 +1,15 @@
+.footer-wrap {
+  margin-bottom: 5em;
+
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  justify-content: space-between;
+
+  & > * {
+    flex: 0 0 auto;
+  }
+
+}

@@ -1,0 +1,58 @@
+// サイト縦分割
+$iframe_left : 178px;
+
+.site-separator {
+	display: flex;
+	flex-direction: row-reverse;
+
+	// main
+	& > *:nth-child(1) {
+		flex: 1 1 auto;
+	}
+
+	// nav
+	& > *:nth-child(2) {
+		flex: 0 0 $iframe_left;
+	}
+}
+
+#global-navigation {
+  height: 100%;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  width: $iframe_left;
+
+}
+
+.nav-body {
+
+  &::before {
+    content: "";
+    display: block;
+    height: 5em;
+  }
+
+  .nav-functions {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    button {
+      height: 4em;
+      padding: 0 0.2em;
+
+      margin-right: auto;
+      margin-left: auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > * {
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+}

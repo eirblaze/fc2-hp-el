@@ -1,0 +1,73 @@
+
+// トップページ
+
+// サイトタイトル
+.site-title {
+	margin-bottom: 1.2em;
+
+	&__main {
+		display: block;
+
+		font-size: 1.5em;
+		font-weight: normal;
+
+		&::before {
+			content: "-- ";
+		}
+		&::after {
+			content: " --";
+		}
+	}
+
+	&__sub {
+		display: block;
+		font-weight: normal;
+	}
+}
+
+// サイトコメント
+.site-description {
+	margin-bottom: 1.2em;
+}
+
+.site-attention {
+	margin-bottom: 1.2em;
+}
+
+
+// 世界観
+.view-of-the-world {
+	max-width: 100%;
+}
+
+.world-map {
+	margin-bottom: 1em;
+
+	&__img {
+		width: 512px;
+		max-width: 95%;
+		height: auto;
+	}
+}
+
+.world-time {
+	&__input {
+		width: 95%;
+		max-width: 512px;
+	}
+}
+
+
+
+// メニュー全般
+.menu-wrap {
+	margin-bottom: 1.8em;
+}
+
+
+// 目次
+.contents-index-menu {
+	dd {
+		margin-bottom: 1.5em;
+	}
+}
