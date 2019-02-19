@@ -1,18 +1,3 @@
-// サイト縦分割
-.site-separator {
-	display: flex;
-	flex-direction: row-reverse;
-
-	// main
-	& > *:nth-child(1) {
-		flex: 1 1 auto;
-	}
-
-	// nav
-	& > *:nth-child(2) {
-		flex: 0 0 160px;
-	}
-}
 
 // 全体センタリング
 .site-wraper {
