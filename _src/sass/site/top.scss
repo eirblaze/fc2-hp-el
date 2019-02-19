@@ -3,6 +3,8 @@
 
 // サイトタイトル
 .site-title {
+	margin-bottom: 1.2em;
+
 	&__main {
 		display: block;
 
@@ -24,9 +26,10 @@
 }
 
 // サイトコメント
-.site-descriptio {
+.site-description {
 	margin-bottom: 1.2em;
 }
 
 .site-attention {
+	margin-bottom: 1.2em;
 }
