@@ -11,8 +11,35 @@
 
 // 水平線
 HR {
+	box-sizing: content-box;
+	height: 0;
+
 	width: 95%;
+	margin: 1.5em auto;
+
 	border-style: solid;
 	border-color: #3300CC;
-	border-width: 2px;
+	border-width: 1px;
+}
+
+// ブロックリンク
+.block-link {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	border: solid 1px transparent;
+
+	&:hover {
+		text-decoration: none;
+		border-top: solid 1px #0000FF;
+		border-bottom: solid 1px #0000FF;
+	}
+
+	&:active {
+		text-decoration: none;
+		border-top: solid 1px #0000FF;
+		border-bottom: solid 1px #0000FF;
+	}
 }
