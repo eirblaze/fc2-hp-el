@@ -3,5 +3,35 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "eirblaze <eirblaze@live.jp>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "sass": "yarn build-css && yarn autoprefixer",
+    "sass-r": "yarn build-css-r && yarn autoprefixer-r",
+    "sass-w": "node-sass --include-path scss _src/sass/sv4.scss html/css/sv4.css --output-style expanded --source-map _src/map/style.css.map --indent-type tab --indent-width 1 --source-comments -w",
+    "sass-n": "yarn nodemon-sass & yarn nodemon-autoprefixer",
+    "build-css": "node-sass --include-path scss _src/sass/sv4.scss html/css/sv4.css --output-style expanded --source-map _src/map/style.css.map --indent-type tab --indent-width 1 --source-comments",
+    "build-css-r": "node-sass --include-path scss _src/sass/sv4.scss html/css/sv4.css --output-style compressed",
+    "autoprefixer": "postcss --use autoprefixer --map -o html/css/sv4.css html/css/sv4.css",
+    "autoprefixer-r": "postcss --use autoprefixer --no-map -o html/css/sv4.css html/css/sv4.css",
+    "nodemon-sass": "nodemon -e scss -x \"yarn build-css \"",
+    "nodemon-autoprefixer": "nodemon -e scss -x \"yarn autoprefixer \"",
+    "test2": "yarn --version",
+    "test": "node-sass --version"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not ie < 11",
+    "Android >= 4",
+    "iOS >= 9"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^7.2.6",
+    "clean-css-cli": "^4.2.1",
+    "node-sass": "^4.7.2",
+    "node-sass-import": "^1.1.1",
+    "nodemon": "^1.17.4",
+    "postcss": "^6.0.17",
+    "postcss-cli": "^5.0.0"
+  }
+
 }
