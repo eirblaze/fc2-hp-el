@@ -1,24 +1,10 @@
+// 全体センタリング
 .site-wraper {
 	text-align: center;
 }
 
-.site-title {
-	&__main {
-		display: block;
-
-		font-size: 1.5em;
-		font-weight: normal;
-
-		&::before {
-			content: "-- ";
-		}
-		&::after {
-			content: " --";
-		}
-	}
-
-	&__sub {
-		display: block;
-		font-weight: normal;
-	}
+// 注意
+.attention {
+	color: red;
+	margin-right: 0.8em;
 }
