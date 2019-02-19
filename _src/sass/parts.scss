@@ -1,12 +1,24 @@
+.site-wraper {
+	text-align: center;
+}
 
 .site-title {
-	font-size: 1.5em;
-	font-weight: normal;
+	&__main {
+		display: block;
 
-	*::before {
-		content: "-- ";
+		font-size: 1.5em;
+		font-weight: normal;
+
+		&::before {
+			content: "-- ";
+		}
+		&::after {
+			content: " --";
+		}
 	}
-	*::after {
-		content: " --"
+
+	&__sub {
+		display: block;
+		font-weight: normal;
 	}
 }
