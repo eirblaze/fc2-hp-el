@@ -1,0 +1,7 @@
+# BEGIN SYSTEM HTTPS SETTING
+RewriteEngine on
+RewriteOptions inherit
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+# END SYSTEM HTTPS SETTING
