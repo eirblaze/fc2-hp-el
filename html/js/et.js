@@ -98,3 +98,9 @@ function clock(sen) {
 		+ho+':'+mi+st);
 	window.setTimeout('clock('+sen+')', 500);
 }
+
+// イベント登録
+window.onload = function() {
+  clock();
+};
+

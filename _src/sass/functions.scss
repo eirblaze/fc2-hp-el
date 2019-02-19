@@ -1,0 +1,22 @@
+// ブレイクポイント
+
+
+$w-side: 782px;
+@mixin max-w-side($max-w : $w-side) {
+  @media screen and (max-width:$max-w) {
+    @content;
+  }
+}
+
+@mixin min-w-side($min-w : $w-side - 1px) {
+  @media screen and (min-width:$min-w) {
+    @content;
+  }
+}
+
+body {
+  font-size: 20px;
+  @include max-w-side {
+    font-size: 12px;
+  }
+}
