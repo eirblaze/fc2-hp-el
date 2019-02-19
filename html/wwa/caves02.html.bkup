@@ -1,14 +1,14 @@
-﻿<HTML>
-<HEAD><TITLE>ケーブダンジョン２</TITLE></HEAD>
+<HTML>
+<HEAD><TITLE>�P�[�u�_���W�����Q</TITLE></HEAD>
 <BODY BGCOLOR="#FFFFFF" LINK="#3399FF" ALINK="#00CC00" VLINK="#6600FF" LEFTMARGIN="5" TOPMARGIN="0"><DIV ALIGN=CENTER><!--#geoguide--></DIV>
 <hr>
 <APPLET CODE="WWA.class" WIDTH=560 HEIGHT=440>
 <PARAM NAME=paramMapName VALUE="caves02.dat.txt">
-このブラウザには、Java実行環境がインストールされていません。<BR>
-詳細は<A HREF="http://www.wwajp.com/wwafaq.html">ＷＷＡのよくある質問</A>をどうぞ。
+���̃u���E�U�ɂ́AJava���s�����C���X�g�[������Ă��܂���B<BR>
+�ڍׂ�<A HREF="http://www.wwajp.com/wwafaq.html">�v�v�`�̂悭���鎿��</A>���ǂ����B
 </APPLET><BR>
 Internet RPG "<A HREF="http://wwajp.com/">World Wide Adventure</A>" (C)1996-2000 NAO
 <hr>
-<A HREF="index.html">≪ 戻る</A>　　<A HREF="../index.html">∧ ＨＯＭＥ</a>
+<A HREF="index.html">�� �߂�</A>�@�@<A HREF="../index.html">�� �g�n�l�d</a>
 </BODY>
 </HTML>
