@@ -1,4 +1,4 @@
-function amaring(m,d) {
+ï»¿function amaring(m,d) {
 	while (m >= d) {
 		m = m - d;
 	}
@@ -26,21 +26,21 @@ function clock(sen) {
 	if (ye < 2000) { ye += 1900; }
 
 	md = new Array(13);
-	md[0]  = 0;/* —\”õ*/
-	md[1]  = 31;/* –rŒŽ */
-	md[2]  = 28;/* ”@ŒŽ */
+	md[0]  = 0;/* äºˆå‚™*/
+	md[1]  = 31;/* ç¦æœˆ */
+	md[2]  = 28;/* å¦‚æœˆ */
 	if (amaring(ye,4) == 0)
-		md[2]  = md[2] + 1;/* ‚¤‚é‚¤”NC³ */
-	md[3]  = 31;/* –í¶ */
-	md[4]  = 30;/* ‰KŒŽ */
-	md[5]  = 31;/* ŽHŒŽ */
-	md[6]  = 30;/* …–³ŒŽ */
-	md[7]  = 31;/* •¶ŒŽ */
-	md[8]  = 31;/* —tŒŽ */
-	md[9]  = 30;/* ’·ŒŽ */
-	md[10] = 31;/* _–³ŒŽ */
-	md[11] = 30;/* ‘šŒŽ */
-	md[12] = 31;/* Žt‘– */
+		md[2]  = md[2] + 1;/* ã†ã‚‹ã†å¹´ä¿®æ­£ */
+	md[3]  = 31;/* å¼¥ç”Ÿ */
+	md[4]  = 30;/* å¯æœˆ */
+	md[5]  = 31;/* çšæœˆ */
+	md[6]  = 30;/* æ°´ç„¡æœˆ */
+	md[7]  = 31;/* æ–‡æœˆ */
+	md[8]  = 31;/* è‘‰æœˆ */
+	md[9]  = 30;/* é•·æœˆ */
+	md[10] = 31;/* ç¥žç„¡æœˆ */
+	md[11] = 30;/* éœœæœˆ */
+	md[12] = 31;/* å¸«èµ° */
 
 	da = da - 1;
 	mo = mo - 1;
@@ -51,22 +51,22 @@ function clock(sen) {
 
 	ho = ho + (24 * da);
 
-	da = waring(ho,25) + 1;/* ‚Q‚TŽžŠÔ^“ú */
-	yo = amaring(da,8);/* —j“ú‚Ì‘f */
+	da = waring(ho,25) + 1;/* ï¼’ï¼•æ™‚é–“ï¼æ—¥ */
+	yo = amaring(da,8);/* æ›œæ—¥ã®ç´  */
 	ho = amaring(ho,25);
-	mo = waring(da,16) + 1;/* 16ŒŽ‚Ü‚Å‚ ‚é */
+	mo = waring(da,16) + 1;/* 16æœˆã¾ã§ã‚ã‚‹ */
 	da = amaring(da,16);
 
 	switch (yo) {
-	case 1  : youbi = "Œõ";break;
-	case 2  : youbi = "ŒŽ";break;
-	case 3  : youbi = "¯";break;
-	case 4  : youbi = "‰Š";break;
-	case 5  : youbi = "•X";break;
-	case 6  : youbi = "X";break;
-	case 7  : youbi = "—‹";break;
-	case 0  : youbi = "’n";break;
-	default : youbi = "–³";break;
+	case 1  : youbi = "å…‰";break;
+	case 2  : youbi = "æœˆ";break;
+	case 3  : youbi = "æ˜Ÿ";break;
+	case 4  : youbi = "ç‚Ž";break;
+	case 5  : youbi = "æ°·";break;
+	case 6  : youbi = "æ£®";break;
+	case 7  : youbi = "é›·";break;
+	case 0  : youbi = "åœ°";break;
+	default : youbi = "ç„¡";break;
 	}
 
 /*	if (ho > 12) {
@@ -94,7 +94,7 @@ function clock(sen) {
 		sen = 0;
 	}
 
-	document.top.wt.value = ('ƒGƒ‹ƒeƒ€ƒX—ï'+ye+'”N '+mo+'ŒŽ'+da+'“ú '+youbi+'—j“ú '
+	document.top.wt.value = ('ã‚¨ãƒ«ãƒ†ãƒ ã‚¹æš¦'+ye+'å¹´ '+mo+'æœˆ'+da+'æ—¥ '+youbi+'æ›œæ—¥ '
 		+ho+':'+mi+st);
 	window.setTimeout('clock('+sen+')', 500);
 }
