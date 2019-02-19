@@ -1,6 +1,7 @@
 const entry_js = `./_src/js/index.js`;
 const output_js = './html/js/script.min.js'
 
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 
 
@@ -64,6 +65,17 @@ module.exports = (env, argv) => {
     }
   });
 
+
+  return_modules = merge(return_modules,{
+    plugins: [
+      new webpack.ProvidePlugin(
+        {
+          jQuery: "jquery",
+          $: "jquery",
+        }
+      ),
+    ],
+  });
 
   console.log(return_modules);
 
