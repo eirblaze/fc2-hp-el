@@ -1,5 +1,3 @@
-﻿
-
 var colors = [
 		{
 			color : "#FFFFFF",
@@ -57,21 +55,12 @@ var colors = [
 
 
 var f_setbgcolor = function setbgcolor(color){
-	document.bgColor = color;
-	console.log(color);
+	$('body').css({'backgroundColor' : color});
 }
 
 
 var current_delay = 0;
-
-console.log(document.styleSheets);
-
-for (var fade_count = 0; fade_count < colors.length; fade_count++) {
-	current_delay += colors[fade_count].next_delay * 300;
-	window.setTimeout(
-		f_setbgcolor(colors[fade_count].color),
-		current_delay
-	);
-	console.log(current_delay);
-
-}
+colors.forEach(ele => {
+	current_delay += ele.next_delay;
+	window.setTimeout( f_setbgcolor(ele.color), current_delay);
+});		
