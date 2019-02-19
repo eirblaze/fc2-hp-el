@@ -39,11 +39,14 @@ HR {
 }
 
 // ブロックリンク
-.block-link-wrap {
+@mixin block-link() {
 	display: flex;
 	& > * {
 		flex: 0 1 auto;
 	}
+}
+.block-link-wrap {
+	@include block-link();
 }
 
 .block-link {
@@ -54,7 +57,7 @@ HR {
 
 	& > * {
 		width: 100%;
-		height: 100%;
+		height: auto;
 	}
 
 	border: solid 1px transparent;
@@ -101,7 +104,19 @@ HR {
 	bottom: 2%;
 	right: 2%;
 
-	padding: 1em 0.25em;
+	border-radius: 0.5em;
+
+	a {
+		border-radius: 0.5em;
+
+		@include block-link();
+		padding: 1em 0.25em;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+	}
 
 	background-color: rgba(0,0,0,0.5);
 }

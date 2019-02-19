@@ -7,3 +7,34 @@
   width: 160px;
 
 }
+
+.nav-body {
+
+  &::before {
+    content: "";
+    display: block;
+    height: 5em;
+  }
+
+  .nav-functions {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    button {
+      height: 4em;
+      padding: 0 0.2em;
+
+      margin-right: auto;
+      margin-left: auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > * {
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+}
