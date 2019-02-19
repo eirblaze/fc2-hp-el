@@ -5,6 +5,8 @@
   "author": "eirblaze <eirblaze@live.jp>",
   "license": "MIT",
   "scripts": {
+    "js": "yarn webpack --mode=development",
+    "js-r": "yarn webpack --mode=production",
     "sass": "yarn build-css && yarn autoprefixer",
     "sass-r": "yarn build-css-r && yarn autoprefixer-r",
     "sass-w": "node-sass --include-path scss _src/sass/sv4.scss html/css/sv4.css --output-style expanded --source-map _src/map/style.css.map --indent-type tab --indent-width 1 --source-comments -w",
@@ -26,6 +28,9 @@
   ],
   "devDependencies": {
     "autoprefixer": "^7.2.6",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-es2015": "^6.24.1",
     "clean-css-cli": "^4.2.1",
     "node-sass": "^4.7.2",
     "node-sass-import": "^1.1.1",
