@@ -1,74 +1,148 @@
-//////////////////////////////////////////////////////////////////////////////////////
-//fly2.java - ‚Ü‚³‚¨ƒRƒ“ƒXƒgƒ‰ƒNƒVƒ‡ƒ“‚É‚¨‚¯‚éƒXƒg[ƒŠ[•\¦‹y‚ÑˆÚ“®ƒVƒXƒeƒ€
-//ƒtƒ@ƒCƒ‹–¼‚ğ©“®”F¯‚µA‹““®‚ğ•Ï‰»‚³‚¹‚é‹@”\‚ğ‚ÂB
-//ƒtƒH[ƒ€‹y‚ÑƒtƒH[ƒ€ƒtƒB[ƒ‹ƒh–¼‚ÍA“ˆê‚µ‚È‚¯‚ê‚Î‚È‚ç‚È‚¢B
-//‚Ü‚½AHTMLã‚Å‚ÍA‚·‚×‚Ä‚ğƒtƒH[ƒ€‚ÅˆÍ‚Ü‚È‚¯‚ê‚ÎANetscape‚Å“®ì‚µ‚È‚Á‚Ä‚µ‚Ü‚¤B
-//“®ìŠm”Fƒuƒ‰ƒEƒUFInternetExplore6, Netscape7.1
-//
-//ŠÖ”
-//
-//legend(sel,ms2)
-//ƒCƒ“ƒfƒbƒNƒX‚ÅŠeƒ}ƒbƒv‚ÌƒXƒg[ƒŠ[‚ğ•\¦‚·‚éB
-//‘æˆêˆø”Fƒvƒ‹ƒ_ƒEƒ“ƒƒjƒ…[‚©‚ç‘—‚ç‚ê‚é’l
-//‘æ“ñˆø”FƒƒbƒZ[ƒW‚ğ•\¦‚³‚¹‚é–Ú•WƒtƒH[ƒ€ƒtƒB[ƒ‹ƒh
-//
-//daihiru(id,stage)
-//ƒXƒg[ƒŠ[•¶š—ñ‚»‚Ì‚à‚Ì‚ğ•Ô‚·B
-//‘æˆêˆø”F‰üs•û–@‚Ìw’è‚Å‚ ‚éB‚â‚Ş‚È‚­–‚‚Ì”š‚ğg—p‚µ‚½B
-//	id=1‚Åindex.htmlAid=2‚ÅstageXX.html‚Å‚Ì‰üs‚Æ‚È‚éB
-//‘æ“ñˆø”FƒXƒe[ƒW”Ô†B‚±‚Ì’l‚É‚æ‚Á‚ÄA•Ô‚é•¶š—ñ‚ª•Ï‚í‚éB
-//	•¶š—ñŒ^‚ÌƒXƒe[ƒW”Ô†‚ğ“n‚·•K—v‚ª‚ ‚éB
-//////////////////////////////////////////////////////////////////////////////////////
-
-string = document.URL;
-p = string.slice(-7);
-q = p.match(/[0-9][0-9]/);
-
-if (q != null) {
-	r = parseFloat(q);
-
-	document.open();
-	document.write(daihitu(2,r));
-	document.close();
-	}
-
-function legend(sel,ms2)
-{
-	n = sel.options[sel.selectedIndex].value;
-	r = parseFloat(n);
-document.go.ms2.value = (daihitu(1,r));	/*go:ƒtƒH[ƒ€–¼ ms2:ƒtƒH[ƒ€ƒtƒB[ƒ‹ƒh–¼*/
-}
-
-function daihitu(id,stage) {
-	if (id == 1) 
-		kai = "\n";
-	else
-		kai = "<BR>\n";
-
-	switch (stage) {
-	case 99 : writer=('ƒXƒe[ƒW‚ğ‘I‚Ô‚ÆA‚±‚±‚ÉƒXƒg[ƒŠ[‚ª•\¦‚³‚ê‚Ü‚·B'); break;
-	/* ˆÈ‰ºAŠg’£—Ìˆæ
-	case 0 : writer=('@A'+
-		''+
-		''+
-		'' + kai );
-		break;
-	case 1 : writer='1–Ê';break;
-	case 2 : writer='2–Ê';break;
-	case 3 : writer='3–Ê';break;
-	case 4 : writer=('4');break;
-	case 5 : writer=('5');break;
-	case 6 : writer='6–Ê';break;
-	case 7 : writer='7–Ê';break;
-	case 8 : writer='8–Ê';break;
-	case 9 : writer='9-1';break;
-	case 10 : writer='9-2';break;
-	case 11 : writer='9-3';break;
-	case 12 : writer='10-1';break;
-	case 13 : writer='10-2';break;
-	case 14 : writer='10-3';break;
-	*/
-	default : writer=('HHH' + kai );
-	}
-	return writer;
-}
+ï»¿//////////////////////////////////////////////////////////////////////////////////////
+
+//fly2.java - ã¾ã•ãŠã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚·ãƒ§ãƒ³ã«ãŠã‘ã‚‹ã‚¹ãƒˆãƒ¼ãƒªãƒ¼è¡¨ç¤ºåŠã³ç§»å‹•ã‚·ã‚¹ãƒ†ãƒ 
+
+//ãƒ•ã‚¡ã‚¤ãƒ«åã‚’è‡ªå‹•èªè­˜ã—ã€æŒ™å‹•ã‚’å¤‰åŒ–ã•ã›ã‚‹æ©Ÿèƒ½ã‚’æŒã¤ã€‚
+
+//ãƒ•ã‚©ãƒ¼ãƒ åŠã³ãƒ•ã‚©ãƒ¼ãƒ ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰åã¯ã€çµ±ä¸€ã—ãªã‘ã‚Œã°ãªã‚‰ãªã„ã€‚
+
+//ã¾ãŸã€HTMLä¸Šã§ã¯ã€ã™ã¹ã¦ã‚’ãƒ•ã‚©ãƒ¼ãƒ ã§å›²ã¾ãªã‘ã‚Œã°ã€Netscapeã§å‹•ä½œã—ãªã£ã¦ã—ã¾ã†ã€‚
+
+//å‹•ä½œç¢ºèªãƒ–ãƒ©ã‚¦ã‚¶ï¼šInternetExplore6, Netscape7.1
+
+//
+
+//ï¼ï¼é–¢æ•°ï¼ï¼
+
+//
+
+//legend(sel,ms2)
+
+//ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã§å„ãƒãƒƒãƒ—ã®ã‚¹ãƒˆãƒ¼ãƒªãƒ¼ã‚’è¡¨ç¤ºã™ã‚‹ã€‚
+
+//ç¬¬ä¸€å¼•æ•°ï¼šãƒ—ãƒ«ãƒ€ã‚¦ãƒ³ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‹ã‚‰é€ã‚‰ã‚Œã‚‹å€¤
+
+//ç¬¬äºŒå¼•æ•°ï¼šãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã•ã›ã‚‹ç›®æ¨™ãƒ•ã‚©ãƒ¼ãƒ ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰
+
+//
+
+//daihiru(id,stage)
+
+//ã‚¹ãƒˆãƒ¼ãƒªãƒ¼æ–‡å­—åˆ—ãã®ã‚‚ã®ã‚’è¿”ã™ã€‚
+
+//ç¬¬ä¸€å¼•æ•°ï¼šæ”¹è¡Œæ–¹æ³•ã®æŒ‡å®šã§ã‚ã‚‹ã€‚ã‚„ã‚€ãªãé­”ã®æ•°å­—ã‚’ä½¿ç”¨ã—ãŸã€‚
+
+//	id=1ã§index.htmlã€id=2ã§stageXX.htmlã§ã®æ”¹è¡Œã¨ãªã‚‹ã€‚
+
+//ç¬¬äºŒå¼•æ•°ï¼šã‚¹ãƒ†ãƒ¼ã‚¸ç•ªå·ã€‚ã“ã®å€¤ã«ã‚ˆã£ã¦ã€è¿”ã‚‹æ–‡å­—åˆ—ãŒå¤‰ã‚ã‚‹ã€‚
+
+//	æ–‡å­—åˆ—å‹ã®ã‚¹ãƒ†ãƒ¼ã‚¸ç•ªå·ã‚’æ¸¡ã™å¿…è¦ãŒã‚ã‚‹ã€‚
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+
+string = document.URL;
+
+p = string.slice(-7);
+
+q = p.match(/[0-9][0-9]/);
+
+
+
+if (q != null) {
+
+	r = parseFloat(q);
+
+
+
+	document.open();
+
+	document.write(daihitu(2,r));
+
+	document.close();
+
+	}
+
+
+
+function legend(sel,ms2)
+
+{
+
+	n = sel.options[sel.selectedIndex].value;
+
+	r = parseFloat(n);
+
+document.go.ms2.value = (daihitu(1,r));	/*go:ãƒ•ã‚©ãƒ¼ãƒ å ms2:ãƒ•ã‚©ãƒ¼ãƒ ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰å*/
+
+}
+
+
+
+function daihitu(id,stage) {
+
+	if (id == 1) 
+
+		kai = "\n";
+
+	else
+
+		kai = "<BR>\n";
+
+
+
+	switch (stage) {
+
+	case 99 : writer=('ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’é¸ã¶ã¨ã€ã“ã“ã«ã‚¹ãƒˆãƒ¼ãƒªãƒ¼ãŒè¡¨ç¤ºã•ã‚Œã¾ã™ã€‚'); break;
+
+	/* ä»¥ä¸‹ã€æ‹¡å¼µé ˜åŸŸ
+
+	case 0 : writer=('ã€€ã€'+
+
+		''+
+
+		''+
+
+		'' + kai );
+
+		break;
+
+	case 1 : writer='1é¢';break;
+
+	case 2 : writer='2é¢';break;
+
+	case 3 : writer='3é¢';break;
+
+	case 4 : writer=('4');break;
+
+	case 5 : writer=('5');break;
+
+	case 6 : writer='6é¢';break;
+
+	case 7 : writer='7é¢';break;
+
+	case 8 : writer='8é¢';break;
+
+	case 9 : writer='9-1';break;
+
+	case 10 : writer='9-2';break;
+
+	case 11 : writer='9-3';break;
+
+	case 12 : writer='10-1';break;
+
+	case 13 : writer='10-2';break;
+
+	case 14 : writer='10-3';break;
+
+	*/
+
+	default : writer=('ï¼Ÿï¼Ÿï¼Ÿ' + kai );
+
+	}
+
+	return writer;
+
+}
+

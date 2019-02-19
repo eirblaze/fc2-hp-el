@@ -1,246 +1,492 @@
-/* ƒXƒRƒA“o˜^ƒ‚ƒWƒ…[ƒ‹Aƒgƒbƒvƒy[ƒW‹y‚ÑƒXƒe[ƒW“à‚ÌˆÚ“®ƒƒjƒ…[ */
-
-/* “ïˆÕ“xƒ‰ƒWƒIƒ{ƒ^ƒ“‚ÌŒŸo */
-function nani() {
-	var i;
-	if (document.go.nani.length) {
-		for (i = 0; i < document.go.nani.length; i++) {
-			if (document.go.nani[i].checked) {
-//				alert(document.go.nani[i].value);
-				nan = document.go.nani[i].value;
-			}
-		}
-	} else {
-		if (document.go.nani.checked) {
-//			alert(document.go.nani.value);
-			nan = document.go.nani.value;
-		}
-	}
-	return nan;
-}
-
-function gotohell(m,ms2) {
-	if(m=='99')
-		document.go.ms2.value='ƒXƒe[ƒW‚Æ“ïˆÕ“x‚ğ‘I‚ñ‚Å‚©‚çiŒ‚ŠJnƒ{ƒ^ƒ“‚ğ‰Ÿ‚·‚ÆA‚»‚±‚ÖiŒ‚‚Å‚«‚Ü‚·B';
-	else {
-		nan = nani();
-		location.href=(nan+m+'.html');
-	}
-}
-
-function ran(m,ms2) {
-	if(m=='99')
-		document.go.ms2.value='ƒXƒe[ƒW‚Æ“ïˆÕ“x‚ğ‘I‚ñ‚Å‚©‚çRankingQÆƒ{ƒ^ƒ“‚ğ‰Ÿ‚·‚ÆA‚»‚±‚Ìƒ‰ƒ“ƒLƒ“ƒO‚ğŒ©‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B';
-	else {
-		nan = nani();
-		document.ranker.channel.value = (nan+m);
-		Lv = ranktitle(nan);
-		document.ranker.title.value = ('M.S.O.—ğ‘ã‚ÌŒ÷˜JÒ '+Lv+'ƒŒƒxƒ‹ ƒXƒe[ƒW'+m);
-//		alert(document.ranker.channel.value);
-//		alert(document.ranker.title.value);
-		document.ranker.mode.value = "read";
-		document.ranker.submit();
-	}
-}
-
-function ranktitle(r) {
-	switch(r) {
-	case 'easy-' :Lv = ('ŠÈ’P');break;
-	case 'nomal' :Lv = ('•’Ê');break;
-	case 'stage' :Lv = ('’n–');break;
-	default : Lv = ('H');break;
-	}
-	return Lv;
-}
-
-function gotohell2(m,r) {
-
-if(m=="99")
-	alert('ƒXƒe[ƒW‚ğ‘I‚ñ‚Å‚©‚çƒ{ƒ^ƒ“‚ğ‰Ÿ‚·‚ÆA\n‚»‚±‚ÖiŒ‚‚Å‚«‚Ü‚·B');
-else
-	location.href=(r+m+'.html');
-}
-
-function gotohell3(r) {
-
-	/* ©ŒÈ’Šo */
-	string = document.URL;
-	p = string.slice(-7);
-	q = p.match(/[0-9][0-9]/);
-
-	location.href=(r+q+'.html');
-}
-
-
-//  ƒOƒ[ƒoƒ‹•Ï”
-var highscore = 0;
-
-
-//  “¾“_‚ğ‘—M‚·‚é
-function soushin() {
-
-
-	if(document.F1.author.value == "") {
-		alert("–¼‘O‚ğ“ü—Í‚µ‚Ä‰º‚³‚¢B");
-	}
-	else if(document.F1.author.value.length > 40) {
-		alert("–¼‘O‚ª’·‰ß‚¬‚Ü‚·B");
-	}
-	else if(highscore < 10) {
-		//  10 “_–¢–‚¾‚Æ‘—M‚Å‚«‚È‚¢
-		document.F1.score.value = highscore;
-		alert("“¾“_‚ª’á‚¢‚Ì‚Å‘—M‚Å‚«‚Ü‚¹‚ñB");
-	}
-	else {
-		//  ‘—M‚·‚é
-		document.F1.score.value = highscore;
-		document.F1.mode.value = "write";
-		document.F1.submit();
-	}
-}
-
-
-//  ƒ‰ƒ“ƒLƒ“ƒO‚ğŒ©‚é
-function miru() {
-
-	document.F1.mode.value = "read";
-	document.F1.submit();
-}
-
-
-//  ƒnƒCƒXƒRƒA‚ğæ“¾‚·‚é
-function registerHiScore(score) {
-
-
-	//  ƒnƒCƒXƒRƒA‚ğæ“¾‚·‚é
-	highscore = score;
-
-	//  ƒnƒCƒXƒRƒA‚ğ•\¦‚·‚é
-	document.F1.score.value = highscore;
-}
-
-
-string = document.URL;
-p = string.slice(-7);
-q = p.match(/[0-9][0-9]/);
-r = string.slice(-12,-7)
-
-/* alert(q); ƒfƒoƒbƒOê—p*/
-
-document.open();
-
-if (q!=null) {
-	document.write('<FORM ACTION="#" NAME="msidou2">\n');
-	document.write('<SELECT name="menu">\n');
-}
-document.write('<OPTION value="99">ƒXƒe[ƒWƒZƒŒƒNƒg</OPTION>\n');
-/*
-document.write('<OPTION value="99"> </OPTION>');
-document.write('<OPTION value="99">‘æˆê•” –½‚Ì¯‚ğ‹‚ß‚Ä</OPTION>');
-document.write('<OPTION value="99"> </OPTION>');
-*/
-
-if (q != "00")
-document.write('<OPTION value="00">0. '+sname(0)+'</OPTION>');
-if (q != "01")
-document.write('<OPTION value="01">1. '+sname(1)+'</OPTION>');
-if (q != "02")
-document.write('<OPTION value="02">2. '+sname(2)+'</OPTION>');
-if (q != "03")
-document.write('<OPTION value="03">3. '+sname(3)+'</OPTION>');
-if (q != "04")
-document.write('<OPTION value="04">4. '+sname(4)+'</OPTION>');
-if (q != "05")
-document.write('<OPTION value="05">5. '+sname(5)+'</OPTION>');
-if (q != "06")
-document.write('<OPTION value="06">6. '+sname(6)+'</OPTION>');
-if (q != "07")
-document.write('<OPTION value="07">7. '+sname(7)+'</OPTION>');
-if (q != "08")
-document.write('<OPTION value="08">8. '+sname(8)+'</OPTION>');
-if (q != "09")
-document.write('<OPTION value="09">9-1.'+sname(9)+'</OPTION>');
-if (q != "10")
-document.write('<OPTION value="10">9-2.'+sname(10)+'</OPTION>');
-if (q != "11")
-document.write('<OPTION value="11">9-3.'+sname(11)+'</OPTION>');
-if (q != "12")
-document.write('<OPTION value="12">10-1.'+sname(12)+'</OPTION>');
-if (q != "13")
-document.write('<OPTION value="13">10-2.'+sname(13)+'</OPTION>');
-if (q != "14")
-document.write('<OPTION value="14">10-3.'+sname(14)+'</OPTION>');
-if (q != "15")
-document.write('<OPTION value="15">10-4.'+sname(15)+'</OPTION>');
-if (q != "16")
-document.write('<OPTION value="16">Last.'+sname(16)+'</OPTION>');
-/*
-document.write('<OPTION value="99"> </OPTION>');
-document.write('<OPTION value="99">‘æ“ñ•” ŒÃ‘ã—³‚Ì–ì–]</OPTION>');
-document.write('<OPTION value="99"> </OPTION>');
-if (q != "17")
-document.write('<OPTION value="17">‚OD'+sname(17)+'</OPTION>');
-if (q != "18")
-document.write('<OPTION value="18">‚PD'+sname(18)+'</OPTION>');
-if (q != "19")
-document.write('<OPTION value="19">‚QD'+sname(19)+'</OPTION>');
-if (q != "20")
-document.write('<OPTION value="20">‚RD'+sname(20)+'</OPTION>');
-if (q != "21")
-document.write('<OPTION value="21">‚SD'+sname(21)+'</OPTION>');
-if (q != "22")
-document.write('<OPTION value="22">‚TD'+sname(22)+'</OPTION>');
-if (q != "23")
-document.write('<OPTION value="23">‚UD'+sname(23)+'</OPTION>');
-if (q != "24")
-document.write('<OPTION value="24">‚VD'+sname(24)+'</OPTION>');
-if (q != "25")
-document.write('<OPTION value="25">‚WD'+sname(25)+'</OPTION>');
-if (q != "26")
-document.write('<OPTION value="26">‚XD'+sname(26)+'</OPTION>');
-if (q != "27")
-document.write('<OPTION value="27">10D'+sname(27)+'</OPTION>');
-*/
-document.write('</SELECT>');
-if (q!=null) {
-	document.write('<INPUT TYPE="BUTTON" NAME="go" VALUE="easy" onClick="gotohell2(menu.options[menu.selectedIndex].value,\'easy-\')">');
-	document.write('<INPUT TYPE="BUTTON" NAME="to" VALUE="nomal" onClick="gotohell2(menu.options[menu.selectedIndex].value,\'nomal\')">');
-	document.write('<INPUT TYPE="BUTTON" NAME="hell" VALUE="hell" onClick="gotohell2(menu.options[menu.selectedIndex].value,\'stage\')"><BR>');
-	document.write('‚±‚±‚Ì“ïˆÕ‚ğ“x•ÏX¨');
-	if (r != "easy-")
-		document.write('<INPUT TYPE="BUTTON" NAME="e" VALUE="ŠÈ’P‰»" onClick="gotohell3(\'easy-\')">');
-	if (r != "nomal")
-		document.write('<INPUT TYPE="BUTTON" NAME="n" VALUE="•’Ê‰»" onClick="gotohell3(\'nomal\')">');
-	if (r != "stage")
-		document.write('<INPUT TYPE="BUTTON" NAME="h" VALUE="’n–‰»" onClick="gotohell3(\'stage\')">');
-	document.write('</FORM>');
-
-	document.write('<APPLET CODE="GRSSendModule.class" CODEBASE="." NAME="GRSSM" WIDTH="0" HEIGHT="0" ARCHIVE="mc_c.zip" MAYSCRIPT>\n');
-	document.write('<PARAM NAME="SENDHIONLY" VALUE="false">\n');
-	document.write('</APPLET>\n');
-
-	document.write('<HR WIDTH="95%" ALIGN="CENTER" COLOR="#3300CC">\n');
-
-	document.write('<form action="./sr.cgi" name="F1" method="POST">\n');
-	document.write('–¼‘O <input type="text" name="author" size="45">\n');
-	document.write('“¾“_ <input type="text" name="score"  size="10" value="0"><br>\n');
-	document.write('ƒ[ƒ‹ <input type="text" name="email" size="30"><br>\n');
-	document.write('<input type="hidden" name="mode" value="write">\n');
-
-//  ƒ‰ƒ“ƒLƒ“ƒO‚É•\¦‚³‚ê‚éƒ^ƒCƒgƒ‹
-	Lv = ranktitle(r);
-
-//	alert(Lv+r+q);
-
-	document.write('<input type="hidden" name="title" value="M.S.O.—ğ‘ã‚ÌŒ÷˜JÒ '+Lv+'ƒŒƒxƒ‹ ƒXƒe[ƒW'+r+'">\n');
-
-//  ƒ‰ƒ“ƒLƒ“ƒO‚Ìƒ`ƒƒƒ“ƒlƒ‹
-	document.write('<input type="hidden" name="channel" value="'+r+q+'">\n');
-
-	document.write('<input type="button" value="“¾“_‚ğ‘—M‚·‚é" onClick="soushin()">\n');
-	document.write('<input type="button" value="ƒ‰ƒ“ƒLƒ“ƒO‚ğŒ©‚é" onClick="miru()">\n');
-	document.write('</form>\n');
-
-}
-
-document.close();
+ï»¿/* ã‚¹ã‚³ã‚¢ç™»éŒ²ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã€ãƒˆãƒƒãƒ—ãƒšãƒ¼ã‚¸åŠã³ã‚¹ãƒ†ãƒ¼ã‚¸å†…ã®ç§»å‹•ãƒ¡ãƒ‹ãƒ¥ãƒ¼ */
+
+
+
+/* é›£æ˜“åº¦ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®æ¤œå‡º */
+
+function nani() {
+
+	var i;
+
+	if (document.go.nani.length) {
+
+		for (i = 0; i < document.go.nani.length; i++) {
+
+			if (document.go.nani[i].checked) {
+
+//				alert(document.go.nani[i].value);
+
+				nan = document.go.nani[i].value;
+
+			}
+
+		}
+
+	} else {
+
+		if (document.go.nani.checked) {
+
+//			alert(document.go.nani.value);
+
+			nan = document.go.nani.value;
+
+		}
+
+	}
+
+	return nan;
+
+}
+
+
+
+function gotohell(m,ms2) {
+
+	if(m=='99')
+
+		document.go.ms2.value='ã‚¹ãƒ†ãƒ¼ã‚¸ã¨é›£æ˜“åº¦ã‚’é¸ã‚“ã§ã‹ã‚‰é€²æ’ƒé–‹å§‹ãƒœã‚¿ãƒ³ã‚’æŠ¼ã™ã¨ã€ãã“ã¸é€²æ’ƒã§ãã¾ã™ã€‚';
+
+	else {
+
+		nan = nani();
+
+		location.href=(nan+m+'.html');
+
+	}
+
+}
+
+
+
+function ran(m,ms2) {
+
+	if(m=='99')
+
+		document.go.ms2.value='ã‚¹ãƒ†ãƒ¼ã‚¸ã¨é›£æ˜“åº¦ã‚’é¸ã‚“ã§ã‹ã‚‰Rankingå‚ç…§ãƒœã‚¿ãƒ³ã‚’æŠ¼ã™ã¨ã€ãã“ã®ãƒ©ãƒ³ã‚­ãƒ³ã‚°ã‚’è¦‹ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚';
+
+	else {
+
+		nan = nani();
+
+		document.ranker.channel.value = (nan+m);
+
+		Lv = ranktitle(nan);
+
+		document.ranker.title.value = ('M.S.O.æ­´ä»£ã®åŠŸåŠ´è€… '+Lv+'ãƒ¬ãƒ™ãƒ« ã‚¹ãƒ†ãƒ¼ã‚¸'+m);
+
+//		alert(document.ranker.channel.value);
+
+//		alert(document.ranker.title.value);
+
+		document.ranker.mode.value = "read";
+
+		document.ranker.submit();
+
+	}
+
+}
+
+
+
+function ranktitle(r) {
+
+	switch(r) {
+
+	case 'easy-' :Lv = ('ç°¡å˜');break;
+
+	case 'nomal' :Lv = ('æ™®é€š');break;
+
+	case 'stage' :Lv = ('åœ°ç„');break;
+
+	default : Lv = ('ï¼Ÿ');break;
+
+	}
+
+	return Lv;
+
+}
+
+
+
+function gotohell2(m,r) {
+
+
+
+if(m=="99")
+
+	alert('ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’é¸ã‚“ã§ã‹ã‚‰ãƒœã‚¿ãƒ³ã‚’æŠ¼ã™ã¨ã€\nãã“ã¸é€²æ’ƒã§ãã¾ã™ã€‚');
+
+else
+
+	location.href=(r+m+'.html');
+
+}
+
+
+
+function gotohell3(r) {
+
+
+
+	/* è‡ªå·±æŠ½å‡º */
+
+	string = document.URL;
+
+	p = string.slice(-7);
+
+	q = p.match(/[0-9][0-9]/);
+
+
+
+	location.href=(r+q+'.html');
+
+}
+
+
+
+
+
+//  ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°
+
+var highscore = 0;
+
+
+
+
+
+//  å¾—ç‚¹ã‚’é€ä¿¡ã™ã‚‹
+
+function soushin() {
+
+
+
+
+
+	if(document.F1.author.value == "") {
+
+		alert("åå‰ã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„ã€‚");
+
+	}
+
+	else if(document.F1.author.value.length > 40) {
+
+		alert("åå‰ãŒé•·éãã¾ã™ã€‚");
+
+	}
+
+	else if(highscore < 10) {
+
+		//  10 ç‚¹æœªæº€ã ã¨é€ä¿¡ã§ããªã„
+
+		document.F1.score.value = highscore;
+
+		alert("å¾—ç‚¹ãŒä½ã„ã®ã§é€ä¿¡ã§ãã¾ã›ã‚“ã€‚");
+
+	}
+
+	else {
+
+		//  é€ä¿¡ã™ã‚‹
+
+		document.F1.score.value = highscore;
+
+		document.F1.mode.value = "write";
+
+		document.F1.submit();
+
+	}
+
+}
+
+
+
+
+
+//  ãƒ©ãƒ³ã‚­ãƒ³ã‚°ã‚’è¦‹ã‚‹
+
+function miru() {
+
+
+
+	document.F1.mode.value = "read";
+
+	document.F1.submit();
+
+}
+
+
+
+
+
+//  ãƒã‚¤ã‚¹ã‚³ã‚¢ã‚’å–å¾—ã™ã‚‹
+
+function registerHiScore(score) {
+
+
+
+
+
+	//  ãƒã‚¤ã‚¹ã‚³ã‚¢ã‚’å–å¾—ã™ã‚‹
+
+	highscore = score;
+
+
+
+	//  ãƒã‚¤ã‚¹ã‚³ã‚¢ã‚’è¡¨ç¤ºã™ã‚‹
+
+	document.F1.score.value = highscore;
+
+}
+
+
+
+
+
+string = document.URL;
+
+p = string.slice(-7);
+
+q = p.match(/[0-9][0-9]/);
+
+r = string.slice(-12,-7)
+
+
+
+/* alert(q); ãƒ‡ãƒãƒƒã‚°å°‚ç”¨*/
+
+
+
+document.open();
+
+
+
+if (q!=null) {
+
+	document.write('<FORM ACTION="#" NAME="msidou2">\n');
+
+	document.write('<SELECT name="menu">\n');
+
+}
+
+document.write('<OPTION value="99">ã‚¹ãƒ†ãƒ¼ã‚¸ã‚»ãƒ¬ã‚¯ãƒˆ</OPTION>\n');
+
+/*
+
+document.write('<OPTION value="99"> </OPTION>');
+
+document.write('<OPTION value="99">ç¬¬ä¸€éƒ¨ å‘½ã®æ˜Ÿã‚’æ±‚ã‚ã¦</OPTION>');
+
+document.write('<OPTION value="99"> </OPTION>');
+
+*/
+
+
+
+if (q != "00")
+
+document.write('<OPTION value="00">0. '+sname(0)+'</OPTION>');
+
+if (q != "01")
+
+document.write('<OPTION value="01">1. '+sname(1)+'</OPTION>');
+
+if (q != "02")
+
+document.write('<OPTION value="02">2. '+sname(2)+'</OPTION>');
+
+if (q != "03")
+
+document.write('<OPTION value="03">3. '+sname(3)+'</OPTION>');
+
+if (q != "04")
+
+document.write('<OPTION value="04">4. '+sname(4)+'</OPTION>');
+
+if (q != "05")
+
+document.write('<OPTION value="05">5. '+sname(5)+'</OPTION>');
+
+if (q != "06")
+
+document.write('<OPTION value="06">6. '+sname(6)+'</OPTION>');
+
+if (q != "07")
+
+document.write('<OPTION value="07">7. '+sname(7)+'</OPTION>');
+
+if (q != "08")
+
+document.write('<OPTION value="08">8. '+sname(8)+'</OPTION>');
+
+if (q != "09")
+
+document.write('<OPTION value="09">9-1.'+sname(9)+'</OPTION>');
+
+if (q != "10")
+
+document.write('<OPTION value="10">9-2.'+sname(10)+'</OPTION>');
+
+if (q != "11")
+
+document.write('<OPTION value="11">9-3.'+sname(11)+'</OPTION>');
+
+if (q != "12")
+
+document.write('<OPTION value="12">10-1.'+sname(12)+'</OPTION>');
+
+if (q != "13")
+
+document.write('<OPTION value="13">10-2.'+sname(13)+'</OPTION>');
+
+if (q != "14")
+
+document.write('<OPTION value="14">10-3.'+sname(14)+'</OPTION>');
+
+if (q != "15")
+
+document.write('<OPTION value="15">10-4.'+sname(15)+'</OPTION>');
+
+if (q != "16")
+
+document.write('<OPTION value="16">Last.'+sname(16)+'</OPTION>');
+
+/*
+
+document.write('<OPTION value="99"> </OPTION>');
+
+document.write('<OPTION value="99">ç¬¬äºŒéƒ¨ å¤ä»£ç«œã®é‡æœ›</OPTION>');
+
+document.write('<OPTION value="99"> </OPTION>');
+
+if (q != "17")
+
+document.write('<OPTION value="17">ï¼ï¼'+sname(17)+'</OPTION>');
+
+if (q != "18")
+
+document.write('<OPTION value="18">ï¼‘ï¼'+sname(18)+'</OPTION>');
+
+if (q != "19")
+
+document.write('<OPTION value="19">ï¼’ï¼'+sname(19)+'</OPTION>');
+
+if (q != "20")
+
+document.write('<OPTION value="20">ï¼“ï¼'+sname(20)+'</OPTION>');
+
+if (q != "21")
+
+document.write('<OPTION value="21">ï¼”ï¼'+sname(21)+'</OPTION>');
+
+if (q != "22")
+
+document.write('<OPTION value="22">ï¼•ï¼'+sname(22)+'</OPTION>');
+
+if (q != "23")
+
+document.write('<OPTION value="23">ï¼–ï¼'+sname(23)+'</OPTION>');
+
+if (q != "24")
+
+document.write('<OPTION value="24">ï¼—ï¼'+sname(24)+'</OPTION>');
+
+if (q != "25")
+
+document.write('<OPTION value="25">ï¼˜ï¼'+sname(25)+'</OPTION>');
+
+if (q != "26")
+
+document.write('<OPTION value="26">ï¼™ï¼'+sname(26)+'</OPTION>');
+
+if (q != "27")
+
+document.write('<OPTION value="27">10ï¼'+sname(27)+'</OPTION>');
+
+*/
+
+document.write('</SELECT>');
+
+if (q!=null) {
+
+	document.write('<INPUT TYPE="BUTTON" NAME="go" VALUE="easy" onClick="gotohell2(menu.options[menu.selectedIndex].value,\'easy-\')">');
+
+	document.write('<INPUT TYPE="BUTTON" NAME="to" VALUE="nomal" onClick="gotohell2(menu.options[menu.selectedIndex].value,\'nomal\')">');
+
+	document.write('<INPUT TYPE="BUTTON" NAME="hell" VALUE="hell" onClick="gotohell2(menu.options[menu.selectedIndex].value,\'stage\')"><BR>');
+
+	document.write('ã“ã“ã®é›£æ˜“ã‚’åº¦å¤‰æ›´â†’');
+
+	if (r != "easy-")
+
+		document.write('<INPUT TYPE="BUTTON" NAME="e" VALUE="ç°¡å˜åŒ–" onClick="gotohell3(\'easy-\')">');
+
+	if (r != "nomal")
+
+		document.write('<INPUT TYPE="BUTTON" NAME="n" VALUE="æ™®é€šåŒ–" onClick="gotohell3(\'nomal\')">');
+
+	if (r != "stage")
+
+		document.write('<INPUT TYPE="BUTTON" NAME="h" VALUE="åœ°ç„åŒ–" onClick="gotohell3(\'stage\')">');
+
+	document.write('</FORM>');
+
+
+
+	document.write('<APPLET CODE="GRSSendModule.class" CODEBASE="." NAME="GRSSM" WIDTH="0" HEIGHT="0" ARCHIVE="mc_c.zip" MAYSCRIPT>\n');
+
+	document.write('<PARAM NAME="SENDHIONLY" VALUE="false">\n');
+
+	document.write('</APPLET>\n');
+
+
+
+	document.write('<HR WIDTH="95%" ALIGN="CENTER" COLOR="#3300CC">\n');
+
+
+
+	document.write('<form action="./sr.cgi" name="F1" method="POST">\n');
+
+	document.write('åå‰ <input type="text" name="author" size="45">\n');
+
+	document.write('å¾—ç‚¹ <input type="text" name="score"  size="10" value="0"><br>\n');
+
+	document.write('ãƒ¡ãƒ¼ãƒ« <input type="text" name="email" size="30"><br>\n');
+
+	document.write('<input type="hidden" name="mode" value="write">\n');
+
+
+
+//  ãƒ©ãƒ³ã‚­ãƒ³ã‚°ã«è¡¨ç¤ºã•ã‚Œã‚‹ã‚¿ã‚¤ãƒˆãƒ«
+
+	Lv = ranktitle(r);
+
+
+
+//	alert(Lv+r+q);
+
+
+
+	document.write('<input type="hidden" name="title" value="M.S.O.æ­´ä»£ã®åŠŸåŠ´è€… '+Lv+'ãƒ¬ãƒ™ãƒ« ã‚¹ãƒ†ãƒ¼ã‚¸'+r+'">\n');
+
+
+
+//  ãƒ©ãƒ³ã‚­ãƒ³ã‚°ã®ãƒãƒ£ãƒ³ãƒãƒ«
+
+	document.write('<input type="hidden" name="channel" value="'+r+q+'">\n');
+
+
+
+	document.write('<input type="button" value="å¾—ç‚¹ã‚’é€ä¿¡ã™ã‚‹" onClick="soushin()">\n');
+
+	document.write('<input type="button" value="ãƒ©ãƒ³ã‚­ãƒ³ã‚°ã‚’è¦‹ã‚‹" onClick="miru()">\n');
+
+	document.write('</form>\n');
+
+
+
+}
+
+
+
+document.close();
+

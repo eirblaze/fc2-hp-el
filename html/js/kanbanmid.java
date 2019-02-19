@@ -1,54 +1,108 @@
-//ID“Ç‚İ‚İ
-var q = "";
-var nam = "";
-nagasa = document.embeds.length;
-
-for (i = 1; i <= nagasa ; i++) {
-	nam = ("kbnn"+i);
-	q = document.embeds[nam].src;
-}
-id = parseFloat(q);
-
-
-//‘‚«‚İ
-document.open();
-document.write(ka(id));
-document.close();
-
-//HTML‘€ì
-function ka(id) {
-kan = (
-	'<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="210" HEIGHT="31">\n'+
-	'<TR>\n'+
-	'<TD WIDTH="12" HEIGHT="31"><IMG SRC="../img/bl1.gif" WIDTH="12" HEIGHT="31" name="gmm'+
-	gmid(id)+'"></TD>\n'+
-	'<TD VALIGN="MIDDLE" WIDTH="200" HEIGHT="31" BACKGROUND="../img/b.gif"\n'+
-	'NOWRAP>@@'+title(id)+'</A></TD>\n'+
-	'<TD WIDTH="7" HEIGHT="31"><IMG SRC="../img/br.gif" WIDTH="7" HEIGHT="31"></TD>\n'+
-	'</TR>\n'+
-	'</table>\n');
-	return kan;
-}
-
-//ƒ^ƒCƒgƒ‹
-function title(id) {
-	switch(id) {
-	case 1 : t = ('ƒ[ƒ‹ƒ_‚Ì“`à');break;
-	case 2 : t = ('ƒtƒ@ƒCƒA[ƒGƒ€ƒuƒŒƒ€');break;
-	case 3 : t = ('•Ï‚È‰¹Šy');break;
-	default : t = ('???');
-	}
-	return t;
-}
-
-//“d‹C‚ÌƒXƒCƒbƒ`
-function gmid(id)
-{
-	switch(id) {
-	case 1 : doc = ("a");break;
-	case 2 : doc = ("b");break;
-	case 3 : doc = ("c");break;
-	default : doc = ("z");
-	}
-	return doc;
-}
+ï»¿//IDèª­ã¿è¾¼ã¿
+
+var q = "";
+
+var nam = "";
+
+nagasa = document.embeds.length;
+
+
+
+for (i = 1; i <= nagasa ; i++) {
+
+	nam = ("kbnn"+i);
+
+	q = document.embeds[nam].src;
+
+}
+
+id = parseFloat(q);
+
+
+
+
+
+//æ›¸ãè¾¼ã¿
+
+document.open();
+
+document.write(ka(id));
+
+document.close();
+
+
+
+//HTMLæ“ä½œ
+
+function ka(id) {
+
+kan = (
+
+	'<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="210" HEIGHT="31">\n'+
+
+	'<TR>\n'+
+
+	'<TD WIDTH="12" HEIGHT="31"><IMG SRC="../img/bl1.gif" WIDTH="12" HEIGHT="31" name="gmm'+
+
+	gmid(id)+'"></TD>\n'+
+
+	'<TD VALIGN="MIDDLE" WIDTH="200" HEIGHT="31" BACKGROUND="../img/b.gif"\n'+
+
+	'NOWRAP>ã€€ã€€'+title(id)+'</A></TD>\n'+
+
+	'<TD WIDTH="7" HEIGHT="31"><IMG SRC="../img/br.gif" WIDTH="7" HEIGHT="31"></TD>\n'+
+
+	'</TR>\n'+
+
+	'</table>\n');
+
+	return kan;
+
+}
+
+
+
+//ã‚¿ã‚¤ãƒˆãƒ«
+
+function title(id) {
+
+	switch(id) {
+
+	case 1 : t = ('ã‚¼ãƒ«ãƒ€ã®ä¼èª¬');break;
+
+	case 2 : t = ('ãƒ•ã‚¡ã‚¤ã‚¢ãƒ¼ã‚¨ãƒ ãƒ–ãƒ¬ãƒ ');break;
+
+	case 3 : t = ('å¤‰ãªéŸ³æ¥½');break;
+
+	default : t = ('???');
+
+	}
+
+	return t;
+
+}
+
+
+
+//é›»æ°—ã®ã‚¹ã‚¤ãƒƒãƒ
+
+function gmid(id)
+
+{
+
+	switch(id) {
+
+	case 1 : doc = ("a");break;
+
+	case 2 : doc = ("b");break;
+
+	case 3 : doc = ("c");break;
+
+	default : doc = ("z");
+
+	}
+
+	return doc;
+
+}
+

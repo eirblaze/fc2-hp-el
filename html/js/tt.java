@@ -1,17 +1,34 @@
-/* É^ÉCÉgÉãï\é¶ÉVÉXÉeÉÄ */
-string = document.URL;
-p = string.slice(-7);
-q = p.match(/[0-9][0-9]/);
-r = string.slice(-12,-7);
-
-document.open();
-
-if (q!=null) {
-	s = parseFloat(q);
-	document.write('M.S.O. stage'+s+' Å`'+sname(s)+'Å`');
-//} else {
-//	s = ???;
-//	document.write(sname(s));
-}
-
-document.close();
+Ôªø/* „Çø„Ç§„Éà„É´Ë°®Á§∫„Ç∑„Çπ„ÉÜ„É† */
+
+string = document.URL;
+
+p = string.slice(-7);
+
+q = p.match(/[0-9][0-9]/);
+
+r = string.slice(-12,-7);
+
+
+
+document.open();
+
+
+
+if (q!=null) {
+
+	s = parseFloat(q);
+
+	document.write('M.S.O. stage'+s+' ÔΩû'+sname(s)+'ÔΩû');
+
+//} else {
+
+//	s = ???;
+
+//	document.write(sname(s));
+
+}
+
+
+
+document.close();
+

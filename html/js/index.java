@@ -1,3 +1,6 @@
-function indexTo(url) {
-  opener.location.href = url;
-}
+﻿function indexTo(url) {
+
+  opener.location.href = url;
+
+}
+

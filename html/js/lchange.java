@@ -1,84 +1,168 @@
-/* ƒXƒe[ƒWƒ^ƒCƒgƒ‹‚ğ•Ô‚·ŠÖ” */
-function sname(no) {
-	switch(no) {
-	case 0 : nam  = ('í‚¢‚Ì˜‹È');break;
-	case 1 : nam  = ('”½—ŒR');break;
-	case 2 : nam  = ('–½‚Ì¯‚ğ‹‚ß‚Ä');break;
-	case 3 : nam  = ('’é‘ŒRP—ˆ');break;
-	case 4 : nam  = ('”ò‹ó’ø');break;
-	case 5 : nam  = ('¸‚í‚ê‚½“ss');break;
-	case 6 : nam  = ('“~‚Ì‹ó‚Ì‰º‚Å');break;
-	case 7 : nam  = ('rŒ´‚Ìí‚¢');break;
-	case 8 : nam  = ('’é‘ŒR‚ÌÅŠú');break;
-	case 9 : nam  = ('jãÅˆ«‚ÌsŠXí');break;
-	case 10 : nam = ('—vÇ‚Æ‚È‚Á‚½ŠX');break;
-	case 11 : nam = ('”ß‚µ‚İ‚Í‚ğ‰z‚¦‚Ä');break;
-	case 12 : nam = ('ŒÃ‘ã•¶–¾‚Ì—Í');break;
-	case 13 : nam = ('s‚­è‚ğ‘j‚ŞÒ‚½‚¿');break;
-	case 14 : nam = ('‘—Íí');break;
-	case 15 : nam = ('‰“‚¢ˆÅ‚ÌŒü‚±‚¤‚Ö');break;
-	case 16 : nam = ('—â‚½‚«—Í‚ÌŒ¹A”M‚«Šó–]‚ÌŒõ');break;
-	default : nam = ('HHH');break;
-	}
-	return nam;
-}
-
-/* ƒXƒe[ƒWˆÚ“®ƒ{ƒ^ƒ“‰æ‘œƒ`ƒFƒ“ƒWƒƒ[ */
-Image1 = new Image();
-Image1.src = "../img/clpba.gif";
-Image2 = new Image();
-Image2.src = "../img/clpea.gif";
-Image3 = new Image();
-Image3.src = "../img/clpna.gif";
-
-function SetImage(Img, Image) {
-	Img.src = Image;
-}
-
-
-/* ˆÚ“®ƒVƒXƒeƒ€ */
-function idou(n) {
-	NEXT = 2;
-	BACK = 1;
-
-	string = document.URL;
-	p = string.slice(-7);
-	q = p.match(/[0-9][0-9]/);
-	r = string.slice(-12,-7);
-
-/* ƒfƒoƒbƒOê—p 
-	alert(q);
-	alert(r);
-*/
-
-	noc = parseFloat(q);
-
-	if (n==BACK)
-		idousaki = noc - 1;
-	else
-		idousaki = noc + 1;
-	if (idousaki < 10)
-		idousaki = "0"+idousaki;
-	location.href = r+idousaki+".html";
-}
-
-/* ƒXƒe[ƒ^ƒXƒo[ */
-string = document.URL;
-p = string.slice(-7);
-q = p.match(/[0-9][0-9]/);
-
-if (q != null)
-	window.self.status = 'M.S.O. : Mission achievement Service agent Organization';
-else if (p = 'ai.html')
-	window.self.status = '‰¤—§ƒQ[ƒ€”•¨ŠÙ';
-
-function sber(a) {
-	switch(a) {
-		case 0 : window.self.status = 'M.S.O. : Mission achievement Service agent Organization';break;
-		case 1 : window.self.status = '‘O‚Ì–Ê‚É–ß‚é';break;
-		case 2 : window.self.status = 'Ÿ‚Ì–Ê‚Éi‚Ş';break;
-		case 3 : window.self.status = 'ƒQ[ƒ€‚ğ‚â‚ß‚Äƒgƒbƒv‚Ö';break;
-		default : window.self.status = '?';
-		}
-	return true;
-	}
+ï»¿/* ã‚¹ãƒ†ãƒ¼ã‚¸ã‚¿ã‚¤ãƒˆãƒ«ã‚’è¿”ã™é–¢æ•° */
+
+function sname(no) {
+
+	switch(no) {
+
+	case 0 : nam  = ('æˆ¦ã„ã®åºæ›²');break;
+
+	case 1 : nam  = ('åä¹±è»');break;
+
+	case 2 : nam  = ('å‘½ã®æ˜Ÿã‚’æ±‚ã‚ã¦');break;
+
+	case 3 : nam  = ('å¸å›½è»è¥²æ¥');break;
+
+	case 4 : nam  = ('é£›ç©ºè‰‡');break;
+
+	case 5 : nam  = ('å¤±ã‚ã‚ŒãŸéƒ½å¸‚');break;
+
+	case 6 : nam  = ('å†¬ã®ç©ºã®ä¸‹ã§');break;
+
+	case 7 : nam  = ('è’åŸã®æˆ¦ã„');break;
+
+	case 8 : nam  = ('å¸å›½è»ã®æœ€æœŸ');break;
+
+	case 9 : nam  = ('å²ä¸Šæœ€æ‚ªã®å¸‚è¡—æˆ¦');break;
+
+	case 10 : nam = ('è¦å¡ã¨ãªã£ãŸè¡—');break;
+
+	case 11 : nam = ('æ‚²ã—ã¿ã¯æ™‚ã‚’è¶Šãˆã¦');break;
+
+	case 12 : nam = ('å¤ä»£æ–‡æ˜ã®åŠ›');break;
+
+	case 13 : nam = ('è¡Œãæ‰‹ã‚’é˜»ã‚€è€…ãŸã¡');break;
+
+	case 14 : nam = ('ç·åŠ›æˆ¦');break;
+
+	case 15 : nam = ('é ã„é—‡ã®å‘ã“ã†ã¸');break;
+
+	case 16 : nam = ('å†·ãŸãåŠ›ã®æºã€ç†±ãå¸Œæœ›ã®å…‰');break;
+
+	default : nam = ('ï¼Ÿï¼Ÿï¼Ÿ');break;
+
+	}
+
+	return nam;
+
+}
+
+
+
+/* ã‚¹ãƒ†ãƒ¼ã‚¸ç§»å‹•ãƒœã‚¿ãƒ³ç”»åƒãƒã‚§ãƒ³ã‚¸ãƒ£ãƒ¼ */
+
+Image1 = new Image();
+
+Image1.src = "../img/clpba.gif";
+
+Image2 = new Image();
+
+Image2.src = "../img/clpea.gif";
+
+Image3 = new Image();
+
+Image3.src = "../img/clpna.gif";
+
+
+
+function SetImage(Img, Image) {
+
+	Img.src = Image;
+
+}
+
+
+
+
+
+/* ç§»å‹•ã‚·ã‚¹ãƒ†ãƒ  */
+
+function idou(n) {
+
+	NEXT = 2;
+
+	BACK = 1;
+
+
+
+	string = document.URL;
+
+	p = string.slice(-7);
+
+	q = p.match(/[0-9][0-9]/);
+
+	r = string.slice(-12,-7);
+
+
+
+/* ãƒ‡ãƒãƒƒã‚°å°‚ç”¨ 
+
+	alert(q);
+
+	alert(r);
+
+*/
+
+
+
+	noc = parseFloat(q);
+
+
+
+	if (n==BACK)
+
+		idousaki = noc - 1;
+
+	else
+
+		idousaki = noc + 1;
+
+	if (idousaki < 10)
+
+		idousaki = "0"+idousaki;
+
+	location.href = r+idousaki+".html";
+
+}
+
+
+
+/* ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒãƒ¼ */
+
+string = document.URL;
+
+p = string.slice(-7);
+
+q = p.match(/[0-9][0-9]/);
+
+
+
+if (q != null)
+
+	window.self.status = 'M.S.O. : Mission achievement Service agent Organization';
+
+else if (p = 'ai.html')
+
+	window.self.status = 'ç‹ç«‹ã‚²ãƒ¼ãƒ åšç‰©é¤¨';
+
+
+
+function sber(a) {
+
+	switch(a) {
+
+		case 0 : window.self.status = 'M.S.O. : Mission achievement Service agent Organization';break;
+
+		case 1 : window.self.status = 'å‰ã®é¢ã«æˆ»ã‚‹';break;
+
+		case 2 : window.self.status = 'æ¬¡ã®é¢ã«é€²ã‚€';break;
+
+		case 3 : window.self.status = 'ã‚²ãƒ¼ãƒ ã‚’ã‚„ã‚ã¦ãƒˆãƒƒãƒ—ã¸';break;
+
+		default : window.self.status = '?';
+
+		}
+
+	return true;
+
+	}
+
