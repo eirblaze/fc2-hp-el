@@ -94,3 +94,14 @@ HR {
 		}
 	}
 }
+
+// トップへ戻る
+.back-to-top {
+	position: fixed;
+	bottom: 2%;
+	right: 2%;
+
+	padding: 1em 0.25em;
+
+	background-color: rgba(0,0,0,0.5);
+}
