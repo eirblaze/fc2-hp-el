@@ -28,45 +28,31 @@ $a_visited_color: #0000B5;
 $a_active_color: #B5FFFF;
 $a_hover_color: #0000FF;
 
-a {
+a, button {
 	color: $a_color;
 	transition-duration: .45s;
-}
 
-a:link	{
+	&:link	{
+		color : $a_link_color;
+		text-decoration : none;
+	}
 
-	color : $a_link_color;
+	&:visited	{
+		color : $a_visited_color;
+		text-decoration : none;
+	}
 
-	text-decoration : none;
+	&:active {
+		color : $a_active_color;
+		text-decoration : underline overline;
+		background-color : #0000FF;
+	}
 
-}
-
-a:visited	{
-
-	color : $a_visited_color;
-
-	text-decoration : none;
-
-}
-
-a:active	{
-
-	color : $a_active_color;
-
-	text-decoration : underline overline;
-
-	background-color : #0000FF;
-
-}
-
-a:hover	{
-
-	color : $a_hover_color;
-
-	text-decoration : underline overline;
-
-	background-color : #a4FFFF;
-
+	&:hover	{
+		color : $a_hover_color;
+		text-decoration : underline overline;
+		background-color : #a4FFFF;
+	}
 }
 
 // font size

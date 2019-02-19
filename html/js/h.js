@@ -1,6 +1,18 @@
-﻿	function hist() {
+﻿var d_display = new Array();
 
-		document.FF.his.value=document.FF.hi2.value=
+window.onload = function () {
+	d_display = document.getElementsByClassName( "his" );
+
+	for (var ele_count = 0; ele_count < d_display.length; ele_count++ ) {
+		d_display[ele_count].onclick = function () {
+			hist();
+		};
+	}
+};
+
+function hist() {
+
+	output_value=
 
 		('　更新履歴\n'+
 
@@ -30,7 +42,12 @@
 
 		 '2004/01/03\n 営業開始\n\n'+
 
-		 '2003/09/07\n 着工')	}
+		 '2003/09/07\n 着工');
+
+	for (var ele_count = 0; ele_count < d_display.length; ele_count++ ) {
+		d_display[ele_count].value = output_value;
+	}
+}
 
 
 
@@ -96,10 +113,16 @@
 
 		}
 
-	document.FF.his.value=document.FF.hi2.value=(retu);
+		for (var ele_count = 0; ele_count < d_display.length; ele_count++ ) {
+			d_display[ele_count].value = retu;
+		}
 
 	}
 
-	
 
-	
+function change_h_display(i_text) {
+	for (var ele_count = 0; ele_count < d_display.length; ele_count++ ) {
+		d_display[ele_count].value = i_text;
+	}
+}
+

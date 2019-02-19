@@ -1,4 +1,6 @@
-﻿function amaring(m,d) {
+﻿var d_clock = new Array();
+
+function amaring(m,d) {
 	while (m >= d) {
 		m = m - d;
 	}
@@ -14,7 +16,7 @@ function waring(m,d) {
 	return re;
 }
 
-function clock(sen) {
+function clock(sen=0) {
 	wh = new Date();
 	ye = wh.getYear();
 	mo = wh.getMonth() + 1;
@@ -94,13 +96,21 @@ function clock(sen) {
 		sen = 0;
 	}
 
-	document.top.wt.value = ('エルテムス暦'+ye+'年 '+mo+'月'+da+'日 '+youbi+'曜日 '
-		+ho+':'+mi+st);
+	for (var ele_count = 0; ele_count < d_clock.length; ele_count++ ) {
+		d_clock[ele_count].value = ('エルテムス暦'+ye+'年 '+mo+'月'+da+'日 '+youbi+'曜日 '
+			+ho+':'+mi+st);
+	}
+
+	// イベントの連鎖登録
 	window.setTimeout('clock('+sen+')', 500);
 }
 
-// イベント登録
+// 最初のイベント登録
 window.onload = function() {
-  clock();
+	d_clock = document.getElementsByClassName( "et-clock" );
+	//console.log(d_clock[0]);
+	if (d_clock.length > 0) {
+		clock();
+	}
 };
 
