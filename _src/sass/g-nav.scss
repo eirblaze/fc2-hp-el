@@ -7,12 +7,26 @@ $iframe_left : 178px;
 
 	// main
 	& > *:nth-child(1) {
-		flex: 1 1 auto;
-	}
+		flex: 1 1 100vw;
+
+    /*
+    overflow: hidden;
+    &.sidebar-js-active {
+      overflow: scroll;
+      flex-basis: 100%;
+    }
+    */
+
+  }
 
 	// nav
 	& > *:nth-child(2) {
-		flex: 0 0 $iframe_left;
+    flex: 0 0 0;
+
+    transition-duration: .4s;
+    &.sidebar-js-active {
+      flex-basis: $iframe_left;
+    }
 	}
 }
 
@@ -22,7 +36,13 @@ $iframe_left : 178px;
 
   position: fixed;
   top: 0;
-  width: $iframe_left;
+  width: 0;
+
+  transition-duration: .4s;
+  &.sidebar-js-active {
+    width: $iframe_left;
+  }
+
 
 }
 
