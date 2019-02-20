@@ -63,34 +63,26 @@ module.exports = (env, argv) => {
                 ]
               }
             },
-            options: {
-              envName: argv.mode, // optionsのenvNameでBabelのモードを指定。省略するとBabelはdevelopmentモードで呼び出される
-              comments: is_dev,
-              presets: [
-                // プリセットを指定することで、ES2018 を ES5 に変換
-                '@babel/preset-env',
-              ]
-            }
           ]
         }
       ]
     }
   });
- 
+
 
   // jQuery CDN
   return_modules = merge(return_modules,{
- 
+
 
     // 毎回インポートしなくてもいいように
     plugins: [
-      new webpack.ProvidePlugin({    
+      new webpack.ProvidePlugin({
         jQuery: "jquery",
 	           $: "jquery",
 	    }),
     ],
 
-    
+
     // 外部にホスティングされているjQueryなどのパッケージを読み込んで使用する方法 http://elsur.xyz/webpack-jquery-ways-to-work#jQueryundefined
     externals: [
       {
