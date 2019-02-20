@@ -21,6 +21,25 @@
 
   $(document).ready( () => {
 
+    // display-counter と呼ばれる新しいコンポーネントを定義します @link https://jp.vuejs.org/v2/guide/components.html
+    Vue.component('display-counter', {
+      data: function () {
+        return {
+          count: 0
+        }
+      },
+      methods: {
+        reverseMessage: () => {
+          this.message = this.message.split('').reverse().join('')
+        }
+      },
+      template: '<textarea v-on:click="count++">You clicked me {{ count }} times.</textarea>'
+    });
+
+    new Vue({
+      el: 'app-g-nav'
+    });
+
     var $display = $(".his");
 
     $display.on("click", () => {
