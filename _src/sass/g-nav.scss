@@ -54,25 +54,29 @@ $iframe_left : 178px;
     height: 5em;
   }
 
-  .nav-functions {
-    position: fixed;
-    top: 0;
-    width: 100%;
+}
 
-    button {
-      height: 4em;
-      padding: 0 0.2em;
 
-      margin-right: auto;
-      margin-left: auto;
+.nav-functions {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      & > * {
-        flex: 1 1 auto;
-      }
+  button {
+    pointer-events: visible;
+    height: 4em;
+    padding: 0 0.2em;
+
+    margin-top: 0.5em;
+    margin-right: auto;
+    margin-left: 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > * {
+      flex: 1 1 auto;
     }
   }
-
 }
