@@ -1,5 +1,7 @@
+const path = require('path');
 const entry_js = `./_src/js/index.js`;
-const output_js = './html/js/script.min.js'
+const dist_path = './html/';
+const output_js = 'js/script.min.js'
 
 const webpack = require('webpack');
 const merge = require('webpack-merge');
@@ -31,8 +33,8 @@ module.exports = (env, argv) => {
     // ファイルの出力設定
     output: {
       // 出力ファイル名
-      path: __dirname,
-      filename: output_js
+      filename: output_js,
+      path: path.resolve(__dirname, dist_path),
     },
 
     mode: argv.mode
@@ -60,23 +62,43 @@ module.exports = (env, argv) => {
                   '@babel/preset-env',
                 ]
               }
+            },
+            options: {
+              envName: argv.mode, // optionsのenvNameでBabelのモードを指定。省略するとBabelはdevelopmentモードで呼び出される
+              comments: is_dev,
+              presets: [
+                // プリセットを指定することで、ES2018 を ES5 に変換
+                '@babel/preset-env',
+              ]
             }
           ]
         }
       ]
     }
   });
-
+ 
 
   return_modules = merge(return_modules,{
+ 
+
+    // 毎回インポートしなくてもいいように
     plugins: [
-      new webpack.ProvidePlugin(
-        {
-          jQuery: "jquery",
-          $: "jquery",
-        }
-      ),
+      new webpack.ProvidePlugin({    
+        jQuery: "jquery",
+	           $: "jquery",
+	    }),
     ],
+
+    
+    // 外部にホスティングされているjQueryなどのパッケージを読み込んで使用する方法 http://elsur.xyz/webpack-jquery-ways-to-work#jQueryundefined
+    externals: [
+      {
+        jquery: 'jQuery',
+        //vegas: 'vegas'
+      }
+    ],
+
+
   });
 
   console.log(return_modules);
