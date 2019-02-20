@@ -78,6 +78,7 @@ module.exports = (env, argv) => {
   });
  
 
+  // jQuery CDN
   return_modules = merge(return_modules,{
  
 
