@@ -37,7 +37,7 @@
   }
 
   $(document).ready(f_bg_fade_in__count);
-  $('button').on("click", f_bg_fade_in__count);
+  //$('button').on("click", f_bg_fade_in__count);
 
 
 
