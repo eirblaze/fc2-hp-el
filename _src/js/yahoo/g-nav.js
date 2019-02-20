@@ -33,11 +33,11 @@
           this.message = this.message.split('').reverse().join('')
         }
       },
-      template: '<textarea v-on:click="count++">You clicked me {{ count }} times.</textarea>'
+      template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
     });
 
     new Vue({
-      el: 'app-g-nav'
+      el: '#app-g-nav'
     });
 
     var $display = $(".his");
