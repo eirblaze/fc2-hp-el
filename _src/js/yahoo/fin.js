@@ -19,8 +19,8 @@
   var count = 0;
   var f_bg_fade_in__count = () => {
 
-    console.log(count);
-    console.log(colors[count].color);
+    //console.log(count);
+    //console.log(colors[count].color);
 
     $('body').css({
       'backgroundColor' : colors[count].color
