@@ -1,8 +1,5 @@
 ( $ => {
 
-  wh = new Date();
-	wh.getHours();
-
   // 時間帯によって色が変わる
   var time_zone = {
     morning: {
@@ -82,6 +79,29 @@
       ]
     },   // 19 20 21 22 23  0  1  2  3  4
   };
+
+  // 暫定値
+  var colors = time_zone.morning.bg_fade_colors;
+
+  // 時間帯検出
+  var date = new Date();
+  var hours = date.getHours();
+
+  // JSのObjectをforEachで処理する方法 @link https://qiita.com/nantekkotai/items/6c603b40ac2264e9f6f6
+  Object.keys(time_zone).forEach( key => {
+
+    if (time_zone[key].min < time_zone[key].max) {
+      if ( time_zone[key].min <= hours && hours <= time_zone[key].max ) {
+        colors = time_zone[key].bg_fade_colors;
+      }
+    } else {
+      if ( 0 <= hours && hours <= time_zone[key].max && time_zone[key].min <= hours && hours <= 23) {
+        colors = time_zone[key].bg_fade_colors;
+      }
+    }
+
+  });
+
 
   // タイマー処理 @link https://techacademy.jp/magazine/5541
   var count = 0;
