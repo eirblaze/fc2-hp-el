@@ -118,7 +118,7 @@ module.exports = (env, argv) => {
   });
 
 
-  console.log(return_modules);
+  //console.log(return_modules);
 
   return return_modules;
 };
