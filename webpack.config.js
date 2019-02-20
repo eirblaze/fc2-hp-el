@@ -53,6 +53,8 @@ module.exports = (env, argv) => {
               loader: 'babel-loader',
               // Babel のオプションを指定する
               options: {
+                envName: argv.mode, // optionsのenvNameでBabelのモードを指定。省略するとBabelはdevelopmentモードで呼び出される
+                comments: is_dev,
                 presets: [
                   // プリセットを指定することで、ES2018 を ES5 に変換
                   '@babel/preset-env',
