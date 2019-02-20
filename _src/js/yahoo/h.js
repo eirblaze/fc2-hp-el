@@ -1,128 +1,113 @@
-﻿var d_display = new Array();
+﻿
+( $ => {
 
-window.onload = function () {
-	d_display = document.getElementsByClassName( "his" );
+  var change_log = (
+    '　更新履歴\n'+
+    '2012/07/24\n リニューアル開始\n\n'+
+    '2007/10/18\n M.S.O. Free Mission 完成\n\n'+
+    '2007/05/23\n Pet Monster 完成\n\n'+
+    '2006/06/05\n スーパーまさお難易度変更機能を一部稼動\n同時にバグフィックス\n\n'+
+    '2006/01/31\n レイアウト変更、リンク切れの修正\n\n'+
+    '2005/04/30\n MaxAction導入\n\n'+
+    '2004/08/12\n 雑談掲示板完成\n\n'+
+    '2004/08/11\n M.S.O.公開\n\n'+
+    '2004/08/02\n フレームが完成\n\n'+
+    '2004/08/02\n リンク集が完成\n\n'+
+    '2004/06/20\n MIDI Dounload Center 開店\n\n'+
+    '2004/03/30\n CaveBillリリース\n\n'+
+    '2004/01/03\n 営業開始\n\n'+
+    '2003/09/07\n 着工'
+  );
 
-	for (var ele_count = 0; ele_count < d_display.length; ele_count++ ) {
-		d_display[ele_count].onclick = function () {
-			hist();
-		};
-	}
-};
+  $(document).ready( () => {
 
-function hist() {
+    var $display = $(".his");
 
-	output_value=
+    $display.on("click", () => {
+      $(this).value = change_log;
+    });
 
-		('　更新履歴\n'+
+    function change_h_display(i_text) {
+      $display.value = i_text;
+    }
 
-		 '2012/07/24\n リニューアル開始\n\n'+
+    function k(n){
 
-		 '2007/10/18\n M.S.O. Free Mission 完成\n\n'+
+        switch(n){
 
-		 '2007/05/23\n Pet Monster 完成\n\n'+
+        case 0 : retu =
 
-		 '2006/06/05\n スーパーまさお難易度変更機能を一部稼動\n同時にバグフィックス\n\n'+
+          ('　！？\n');
 
-		 '2006/01/31\n レイアウト変更、リンク切れの修正\n\n'+
+          break;
 
-		 '2005/04/30\n MaxAction導入\n\n'+
+        case 1 : retu =
 
-		 '2004/08/12\n 雑談掲示板完成\n\n'+
+          ('　ＪＡＶＡを用いて作られた、キャラバンサークルのＲＰＧです。\n'+
 
-		 '2004/08/11\n M.S.O.公開\n\n'+
+          '　迷路や短編ＲＰＧが設置されています。\n');
 
-		 '2004/08/02\n フレームが完成\n\n'+
+          break;
 
-		 '2004/08/02\n リンク集が完成\n\n'+
+        case 2 : retu =
 
-		 '2004/06/20\n MIDI Dounload Center 開店\n\n'+
+          ('　興味本位で作ったゲーム音楽が集められています\n');
 
-		 '2004/03/30\n CaveBillリリース\n\n'+
+          break;
 
-		 '2004/01/03\n 営業開始\n\n'+
+        case 3 : retu =
 
-		 '2003/09/07\n 着工');
+          ('　マリオのパクリです。\n');
 
-	for (var ele_count = 0; ele_count < d_display.length; ele_count++ ) {
-		d_display[ele_count].value = output_value;
-	}
-}
+          break;
 
+        case 4 : retu =
 
+          ('　迷走郵便局製の、シンプルなアクションゲームです。\n'+
 
-	function k(n){
+          '　ダウンロードしてお楽しみください。');
 
-		switch(n){
+          break;
 
-		case 0 : retu =
+        case 5 : retu =
 
-			('　！？\n');
+          ('　現在調整中です。またの機会にどうぞ。');
 
-			break;
+          break;
 
-		case 1 : retu =
+        case 6 : retu =
 
-			('　ＪＡＶＡを用いて作られた、キャラバンサークルのＲＰＧです。\n'+
+          ('　リンク集です。相互リンク大歓迎です。\n');
 
-			 '　迷路や短編ＲＰＧが設置されています。\n');
+          break;
 
-			break;
+        case 7 : retu =
 
-		case 2 : retu =
+          ('　M.S.O.外伝　～ペットモンスター～\n'+
 
-			('　興味本位で作ったゲーム音楽が集められています\n');
+          '　早い話がポケモンのパクりです。');
 
-			break;
+          break;
 
-		case 3 : retu =
+        default : retu = ('error!?');
 
-			('　マリオのパクリです。\n');
+        }
 
-			break;
+        for (var ele_count = 0; ele_count < d_display.length; ele_count++ ) {
+          d_display[ele_count].value = retu;
+        }
 
-		case 4 : retu =
-
-			('　迷走郵便局製の、シンプルなアクションゲームです。\n'+
-
-			 '　ダウンロードしてお楽しみください。');
-
-			break;
-
-		case 5 : retu =
-
-			('　現在調整中です。またの機会にどうぞ。');
-
-			break;
-
-		case 6 : retu =
-
-			('　リンク集です。相互リンク大歓迎です。\n');
-
-			break;
-
-		case 7 : retu =
-
-			('　M.S.O.外伝　～ペットモンスター～\n'+
-
-			 '　早い話がポケモンのパクりです。');
-
-			break;
-
-		default : retu = ('error!?');
-
-		}
-
-		for (var ele_count = 0; ele_count < d_display.length; ele_count++ ) {
-			d_display[ele_count].value = retu;
-		}
-
-	}
+      }
 
 
-function change_h_display(i_text) {
-	for (var ele_count = 0; ele_count < d_display.length; ele_count++ ) {
-		d_display[ele_count].value = i_text;
-	}
-}
+    function change_h_display(i_text) {
+      for (var ele_count = 0; ele_count < d_display.length; ele_count++ ) {
+        d_display[ele_count].value = i_text;
+      }
+    }
+
+  });
+
+
+})(jQuery);
 
