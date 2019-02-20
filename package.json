@@ -5,7 +5,7 @@
   "author": "eirblaze <eirblaze@live.jp>",
   "license": "MIT",
   "scripts": {
-    "all": "yarn sass && yanr js",
+    "all": "yarn sass && yarn js",
     "all-r": "yarn sass-r && yanr js-r",
     "js": "yarn webpack --mode=development",
     "js-r": "yarn webpack --mode=production",
