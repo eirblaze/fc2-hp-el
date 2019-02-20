@@ -74,9 +74,20 @@ module.exports = (env, argv) => {
       ]
     }
   });
-
+ 
 
   return_modules = merge(return_modules,{
+ 
+
+    // 毎回インポートしなくてもいいように
+    plugins: [
+      new webpack.ProvidePlugin({    
+        jQuery: "jquery",
+	           $: "jquery",
+	    }),
+    ],
+
+    
     // 外部にホスティングされているjQueryなどのパッケージを読み込んで使用する方法 http://elsur.xyz/webpack-jquery-ways-to-work#jQueryundefined
     externals: [
       {
@@ -84,6 +95,8 @@ module.exports = (env, argv) => {
         //vegas: 'vegas'
       }
     ],
+
+
   });
 
   console.log(return_modules);
