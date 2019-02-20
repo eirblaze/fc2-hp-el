@@ -6,7 +6,6 @@ const output_js = 'js/script.min.js'
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 
-
 module.exports = (env, argv) => {
 
   //console.log(env);
@@ -93,6 +92,31 @@ module.exports = (env, argv) => {
 
 
   });
+
+  // Vue.js
+  const { VueLoaderPlugin } = require('vue-loader');
+  return_modules = merge(return_modules,{
+
+    module: {
+      rules: [
+        {
+          test: /\.vue$/,
+          loader: 'vue-loader'
+        },
+      ]
+    },
+
+    resolve: {
+      alias: {
+          'vue$': 'vue/dist/vue.esm.js'
+      },
+      extensions: ['*', '.js', '.vue', '.json']
+    },
+
+    plugins: [new VueLoaderPlugin()],
+
+  });
+
 
   console.log(return_modules);
 
