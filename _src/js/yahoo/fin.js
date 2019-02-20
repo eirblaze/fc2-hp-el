@@ -95,7 +95,8 @@
         colors = time_zone[key].bg_fade_colors;
       }
     } else {
-      if ( 0 <= hours && hours <= time_zone[key].max && time_zone[key].min <= hours && hours <= 23) {
+      if ( 0 <= hours && hours <= time_zone[key].max &&
+         time_zone[key].min <= hours && hours <= 23) {
         colors = time_zone[key].bg_fade_colors;
       }
     }
