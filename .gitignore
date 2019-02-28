@@ -1,8 +1,8 @@
 
 # ビルド済みファイル
-html/css/sv4.css
+docs/css/sv4.css
 *.map
-html/js/script.min.js
+docs/js/script.min.js
 
 sandbox/
 

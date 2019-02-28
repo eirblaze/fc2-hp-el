@@ -1,6 +1,6 @@
 const path = require('path');
 const entry_js = `./_src/js/index.js`;
-const dist_path = './html/';
+const dist_path = './docs/';
 const output_js = 'js/script.min.js'
 
 const webpack = require('webpack');
