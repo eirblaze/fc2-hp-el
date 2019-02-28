@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "all": "yarn sass && yarn js",
-    "all-r": "yarn sass-r && yanr js-r",
+    "all-r": "yarn sass-r && yarn js-r",
     "js": "yarn webpack --mode=development",
     "js-r": "yarn webpack --mode=production",
     "js-w": "yarn webpack --mode=production -w",
