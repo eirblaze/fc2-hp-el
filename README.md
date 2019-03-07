@@ -2,6 +2,6 @@
 王立ゲーム博物館
 
 ## todo
-[ ] fade in js
-[ ] ES2018
-[ ] vue.js
+- [v] fade in js
+- [v] ES2018
+- [v] vue.js
