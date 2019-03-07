@@ -127,6 +127,7 @@
 
         }
 
+        change_h_display(retu);
         /*
         for (var ele_count = 0; ele_count < d_display.length; ele_count++ ) {
           d_display[ele_count].value = retu;
