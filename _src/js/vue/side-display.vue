@@ -1,5 +1,8 @@
 <template>
-  <div class="example">{{ msg }}</div>
+  <div id="app-g-nav">
+    <p>{{ msg }}</p>
+    <textarea>aaa</textarea>
+  </div>
 </template>
 
 <script>
@@ -14,7 +17,7 @@ export default {
 
 <style lang="scss">
 body {
-  .example {
+  .side-display {
     color: red;
   }
 }
