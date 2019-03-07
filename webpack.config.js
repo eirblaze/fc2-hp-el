@@ -107,6 +107,21 @@ module.exports = (env, argv) => {
   });
 
 
+  // SASS/SCSS
+  return_modules = merge(return_modules,{
+    module: {
+      rules: [{
+        test: /\.scss$/,
+        use: [
+          "style-loader", // creates style nodes from JS strings
+          "css-loader", // translates CSS into CommonJS
+          "sass-loader" // compiles Sass to CSS, using Node Sass by default
+        ]
+      }]
+    }
+  });
+
+
   // Vue.js
   const { VueLoaderPlugin } = require('vue-loader');
   return_modules = merge(return_modules,{
