@@ -2,18 +2,6 @@
 
 ( $ => {
 
-
-  Vue.config.productionTip = false;
-
-  /* eslint-disable no-new */
-  new Vue({
-    el: '#app-g-nav',
-    template: '<SideDisplay/>',
-    components: { SideDisplay }
-  });
-
-
-
   var change_log = (
     '　更新履歴\n'+
     '2012/07/24\n リニューアル開始\n\n'+
@@ -33,6 +21,17 @@
   );
 
   $(document).ready( () => {
+
+
+    //Vue.config.productionTip = false;
+
+    /* eslint-disable no-new */
+    new Vue({
+      el: '#app-g-nav',
+      template: '<side-display/>',
+      components: { SideDisplay }
+    });
+
 
     // display-counter と呼ばれる新しいコンポーネントを定義します @link https://jp.vuejs.org/v2/guide/components.html
     Vue.component('display-counter', {
