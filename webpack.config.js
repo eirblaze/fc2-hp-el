@@ -93,6 +93,35 @@ module.exports = (env, argv) => {
 
   });
 
+
+  // CSS
+  return_modules = merge(return_modules,{
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
+      ],
+    },
+  });
+
+
+  // SASS/SCSS
+  return_modules = merge(return_modules,{
+    module: {
+      rules: [{
+        test: /\.scss$/,
+        use: [
+          "style-loader", // creates style nodes from JS strings
+          "css-loader", // translates CSS into CommonJS
+          "sass-loader" // compiles Sass to CSS, using Node Sass by default
+        ]
+      }]
+    }
+  });
+
+
   // Vue.js
   const { VueLoaderPlugin } = require('vue-loader');
   return_modules = merge(return_modules,{
@@ -101,7 +130,13 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.vue$/,
-          loader: 'vue-loader'
+          loader: 'vue-loader',
+          options: {
+            loaders: {
+              scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+              sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+            }
+          }
         },
       ]
     },
@@ -113,7 +148,9 @@ module.exports = (env, argv) => {
       extensions: ['*', '.js', '.vue', '.json']
     },
 
-    plugins: [new VueLoaderPlugin()],
+    plugins: [
+      new VueLoaderPlugin(),
+    ],
 
   });
 
