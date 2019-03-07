@@ -85,8 +85,7 @@ module.exports = (env, argv) => {
     // 外部にホスティングされているjQueryなどのパッケージを読み込んで使用する方法 http://elsur.xyz/webpack-jquery-ways-to-work#jQueryundefined
     externals: [
       {
-        jquery: 'jQuery',
-        //vegas: 'vegas'
+        jquery: 'jQuery'
       }
     ],
 
