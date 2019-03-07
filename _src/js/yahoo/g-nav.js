@@ -11,6 +11,7 @@
 
     //Vue.config.productionTip = false;
 
+    /*
     // display-counter と呼ばれる新しいコンポーネントを定義します @link https://jp.vuejs.org/v2/guide/components.html
     Vue.component('display-counter', {
       data: function () {
@@ -29,7 +30,7 @@
     new Vue({
       el: '#display-counter-test',
     });
-
+    */
 
     new Vue({
       el: '#app-g-nav',
