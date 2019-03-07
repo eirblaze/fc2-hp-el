@@ -153,7 +153,7 @@ module.exports = (env, argv) => {
 
       // 毎回インポートしなくてもいいように
       new webpack.ProvidePlugin({
-        Vue: "vue",
+        Vue: 'vue/dist/vue.esm.js' //ES Modulesを指定 @see https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
 	    }),
 
     ],
