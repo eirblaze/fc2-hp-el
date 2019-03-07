@@ -13,8 +13,10 @@ export default {
 </script>
 
 <style lang="scss">
-.example {
-  color: red;
+body {
+  .example {
+    color: red;
+  }
 }
 </style>
 
