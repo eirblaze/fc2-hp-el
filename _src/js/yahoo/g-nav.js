@@ -1,5 +1,18 @@
-﻿
+﻿import SideDisplay from '../vue/side-display';
+
 ( $ => {
+
+
+  Vue.config.productionTip = false;
+
+  /* eslint-disable no-new */
+  new Vue({
+    el: '#app-g-nav',
+    template: '<SideDisplay/>',
+    components: { SideDisplay }
+  });
+
+
 
   var change_log = (
     '　更新履歴\n'+
@@ -36,9 +49,11 @@
       template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
     });
 
+    /*
     new Vue({
       el: '#app-g-nav'
     });
+    */
 
     var $display = $(".his");
 
