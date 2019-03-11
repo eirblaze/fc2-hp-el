@@ -29,14 +29,15 @@ export default {
       //let ChangeLog = JSON.parse(j_ChangeLog) // https://www.sejuku.net/blog/20257#forEachJSON
       let message = ""
 
-      console.log(this.ChangeLog)
+      message += this.ChangeLog.ChangeLog.title
+
       /*
       this.ChangeLog.forEach(key => {
         console.log(ChangeLog[key]);
       })
       */
 
-      this.message = this.ChangeLog
+      this.message = message
     }
   }
 }
