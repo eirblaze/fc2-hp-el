@@ -151,11 +151,16 @@ module.exports = (env, argv) => {
 
       // 毎回インポートしなくてもいいように
       new webpack.ProvidePlugin({
-        Vue: "vue",
+        Vue: ['vue', 'default'] //ES Modulesを指定 https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
       }),
 
       new VueLoaderPlugin(),
     ],
+
+    // 外部にホスティングされているjQueryなどのパッケージを読み込んで使用する方法 http://elsur.xyz/webpack-jquery-ways-to-work#jQueryundefined
+    externals: [{
+      vue: 'Vue'
+    }],
 
   });
 

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import ChangeLog from '../../data/change-log.json'
+import ChangeLog from './../../data/change-log.json'
 
 export default {
   data: () => {
