@@ -1,5 +1,6 @@
 <template>
-  <div class="example">{{ ChangeLog }}</div>
+
+
 </template>
 
 <script>
@@ -10,8 +11,13 @@ export default {
     return {
       ChangeLog: ChangeLog
     }
-  }
+  },
+	components: {
+		TodoList
+	}
 }
+
+
 </script>
 
 <style lang="scss">
