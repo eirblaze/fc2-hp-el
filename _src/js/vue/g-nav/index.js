@@ -1,4 +1,5 @@
 import ContentSelector from './content-selector.vue'
+import Vue from 'vue'
 
 ( $ => {
 
