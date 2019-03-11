@@ -142,7 +142,7 @@ module.exports = (env, argv) => {
 
     resolve: {
       /*
-      aliasの設定をすることで `import Vue from 'vue/dist/vue';` を `import Vue from 'vue';` とかけるようになる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
+      // aliasの設定をすることで `import Vue from 'vue/dist/vue';` を `import Vue from 'vue';` とかけるようになる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
       alias: {
           'vue$': 'vue/dist/vue.esm.js'
       },
