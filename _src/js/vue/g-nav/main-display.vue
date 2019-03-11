@@ -38,24 +38,7 @@ export default {
 
       message += this.ChangeLog.ChangeLog.title + "\n"
 
-      //console.log(this.ChangeLog.ChangeLog.contents[0].date)
-      //console.log(this.ChangeLog.ChangeLog.contents[0].text)
-      //console.log(this.ChangeLog.ChangeLog.contents.length)
-
-      /*
-      for (let key = 0; key < this.ChangeLog.ChangeLog.contents.length; key++) {
-        //console.log(this.ChangeLog.ChangeLog.contents[key].date);
-        //console.log(this.ChangeLog.ChangeLog.contents[key].text);
-        message += this.ChangeLog.ChangeLog.contents[key].date
-        message += "\t"
-        message += this.ChangeLog.ChangeLog.contents[key].text
-        message += "\n"
-      }
-      */
-
       this.ChangeLog.ChangeLog.contents.forEach((value,key) => {
-        //console.log(key)
-        //console.log(value.date)
         message += "\n\n" + value.date + " " + value.text
       })
 
