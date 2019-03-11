@@ -41,6 +41,10 @@
 
     <HR />
 
+    <p>
+      <A HREF="index.html" target="_parent" class="hover-to-disp" title="エリフィア王立ゲーム博物館トップに戻る">フレームを解除してトップへ</a>
+    </p>
+
 	</nav>
 </template>
 
