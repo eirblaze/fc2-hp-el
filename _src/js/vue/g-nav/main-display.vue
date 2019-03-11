@@ -1,6 +1,13 @@
 <template>
   <div class="main-display">
-    <textarea v-on:click="displayChangeLog" v-model="message" placeholder="クリックすると、更新履歴を表示します。"></textarea>
+    <textarea
+      v-on:click="displayChangeLog"
+      v-model="message"
+      placeholder="クリックすると、更新履歴を表示します。"
+      class="main-display"
+      cols="14"
+      rows="4"
+    ></textarea>
   </div>
 </template>
 
@@ -29,13 +36,28 @@ export default {
       //let ChangeLog = JSON.parse(j_ChangeLog) // https://www.sejuku.net/blog/20257#forEachJSON
       let message = ""
 
-      message += this.ChangeLog.ChangeLog.title
+      message += this.ChangeLog.ChangeLog.title + "\n"
+
+      //console.log(this.ChangeLog.ChangeLog.contents[0].date)
+      //console.log(this.ChangeLog.ChangeLog.contents[0].text)
+      //console.log(this.ChangeLog.ChangeLog.contents.length)
 
       /*
-      this.ChangeLog.forEach(key => {
-        console.log(ChangeLog[key]);
-      })
+      for (let key = 0; key < this.ChangeLog.ChangeLog.contents.length; key++) {
+        //console.log(this.ChangeLog.ChangeLog.contents[key].date);
+        //console.log(this.ChangeLog.ChangeLog.contents[key].text);
+        message += this.ChangeLog.ChangeLog.contents[key].date
+        message += "\t"
+        message += this.ChangeLog.ChangeLog.contents[key].text
+        message += "\n"
+      }
       */
+
+      this.ChangeLog.ChangeLog.contents.forEach((value,key) => {
+        //console.log(key)
+        //console.log(value.date)
+        message += "\n\n" + value.date + " " + value.text
+      })
 
       this.message = message
     }
