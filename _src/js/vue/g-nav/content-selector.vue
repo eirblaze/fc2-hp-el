@@ -1,12 +1,14 @@
 <template>
-  <div class="example">{{ msg }}</div>
+  <div class="example">{{ ChangeLog }}</div>
 </template>
 
 <script>
+import ChangeLog from '../../data/change-log.json'
+
 export default {
-  data () {
+  data: () => {
     return {
-      msg: 'Hello world!'
+      ChangeLog: ChangeLog
     }
   }
 }
@@ -19,8 +21,3 @@ body {
   }
 }
 </style>
-
-<custom1>
-  例えばコンポーネントのドキュメントを書くことが出来ます
-  https://vue-loader-v14.vuejs.org/ja/start/spec.html
-</custom1>

@@ -2,8 +2,6 @@
 
 require('./yahoo/fin.js');
 require('./yahoo/et.js');
-require('./yahoo/g-nav.js');
 require('./yahoo/responsive_menu.js');
 
-// require('./vue/test.vue');
-require('./vue/g-nav/content-selector.vue');
+require('./vue/g-nav/index.js');

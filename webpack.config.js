@@ -148,6 +148,12 @@ module.exports = (env, argv) => {
     },
 
     plugins: [
+
+      // 毎回インポートしなくてもいいように
+      new webpack.ProvidePlugin({
+        Vue: "vue",
+      }),
+
       new VueLoaderPlugin(),
     ],
 
