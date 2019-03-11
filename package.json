@@ -9,7 +9,7 @@
     "all-r": "yarn sass-r && yarn js-r",
     "js": "yarn webpack --mode=development",
     "js-r": "yarn webpack --mode=production",
-    "js-w": "yarn webpack --mode=production -w",
+    "js-w": "yarn webpack --mode=development -w",
     "sass": "yarn build-css && yarn autoprefixer",
     "sass-r": "yarn build-css-r && yarn autoprefixer-r",
     "sass-w": "node-sass --include-path scss _src/sass/sv4.scss docs/css/sv4.css --output-style expanded --source-map _src/map/style.css.map --indent-type tab --indent-width 1 --source-comments -w",

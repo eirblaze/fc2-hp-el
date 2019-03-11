@@ -141,9 +141,15 @@ module.exports = (env, argv) => {
     },
 
     resolve: {
+      /*
+      // aliasの設定をすることで `import Vue from 'vue/dist/vue';` を `import Vue from 'vue';` とかけるようになる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
       alias: {
           'vue$': 'vue/dist/vue.esm.js'
       },
+      */
+
+      // extentionsに「.vue」を追加することでimportの際に拡張子を省略して記述できるようにる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
+      // in webpack 2.2 default resolve .js .json - https://github.com/vuejs/vue-loader/issues/685
       extensions: ['*', '.js', '.vue', '.json']
     },
 
@@ -154,12 +160,18 @@ module.exports = (env, argv) => {
       // 毎回インポートしなくてもいいように
       new webpack.ProvidePlugin({
         Vue: [
-          'vue/dist/vue.esm.js', //ES Modulesを指定  @see https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
+          //'vue/dist/vue.esm.js', //ES Modulesを指定  @see https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
+          'vue', // CDN
           'default' // 読み込むプロパティ
         ]
 	    }),
 
     ],
+
+    // 外部にホスティングされているjQueryなどのパッケージを読み込んで使用する方法 http://elsur.xyz/webpack-jquery-ways-to-work#jQueryundefined
+    externals: [{
+      vue: 'Vue'
+    }],
 
   });
 
