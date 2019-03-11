@@ -15,7 +15,7 @@ import ContentSelector from './content-selector.vue'
 
 
     // eslint-disable no-new -- ESLint は JavaScript のための静的検証ツールです。 https://qiita.com/mysticatea/items/f523dab04a25f617c87d
-    new Vue({
+    var app = new Vue({
       el: app_g_nav,
       template: '<ContentSelector/>',
       components: { ContentSelector }
