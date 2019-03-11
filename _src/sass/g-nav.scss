@@ -51,7 +51,7 @@ $iframe_left : 178px;
   &::before {
     content: "";
     display: block;
-    height: 5em;
+    height: 80px;
   }
 
 }
@@ -65,18 +65,26 @@ $iframe_left : 178px;
 
   button {
     pointer-events: visible;
-    height: 4em;
-    padding: 0 0.2em;
 
-    margin-top: 0.5em;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    font-size: 15px;
+    height: 50px;
+
+    margin-top: 25px;
     margin-right: auto;
-    margin-left: 1em;
+    margin-left: 25px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     & > * {
       flex: 1 1 auto;
+    }
+
+    &:hover, &:active {
+      background-color: transparent;
     }
   }
 }
