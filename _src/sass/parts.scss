@@ -86,18 +86,28 @@ HR {
 // トップへ戻る
 .back-to-top {
 	position: fixed;
-	bottom: 2%;
-	right: 2%;
+	bottom: 25px;
+	right: 25px;
 
-	border-radius: 0.5em;
+	border-radius: 3px;
 
 	a {
-		border-radius: 0.5em;
+		border-radius: 3px;
 
 		@include block-link();
-		padding: 1em 0.25em;
 
-		&:hover {
+    font-size: 15px;
+    height: 50px;
+    width: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > * {
+      flex: 1 1 auto;
+    }
+
+    &:hover {
 			text-decoration: none;
 		}
 
