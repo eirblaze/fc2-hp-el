@@ -10,7 +10,7 @@ import ContentSelector from './content-selector.vue'
 
     // 存在しなければ終了
     if ( $app_g_nav.length <= 0 ) return
-    console.log($app_g_nav);
+    //console.log($app_g_nav);
 
 
     // eslint-disable no-new -- ESLint は JavaScript のための静的検証ツールです。 https://qiita.com/mysticatea/items/f523dab04a25f617c87d
