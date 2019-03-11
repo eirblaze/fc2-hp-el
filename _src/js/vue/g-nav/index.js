@@ -6,7 +6,8 @@ import ContentSelector from './content-selector.vue'
   $(document).ready( () => {
 
     // Vue対象を取得
-    var $app_g_nav = $('#app-g-nav')
+    var app_g_nav = '#app-g-nav'
+    var $app_g_nav = $(app_g_nav)
 
     // 存在しなければ終了
     if ( $app_g_nav.length <= 0 ) return
@@ -15,7 +16,7 @@ import ContentSelector from './content-selector.vue'
 
     // eslint-disable no-new -- ESLint は JavaScript のための静的検証ツールです。 https://qiita.com/mysticatea/items/f523dab04a25f617c87d
     new Vue({
-      el: $app_g_nav,
+      el: app_g_nav,
       template: '<ContentSelector/>',
       components: { ContentSelector }
     })
