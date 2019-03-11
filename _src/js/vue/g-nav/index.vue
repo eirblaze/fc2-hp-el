@@ -1,20 +1,21 @@
 <template>
-
-
+	<div id="app-g-nav" class="vue-active">
+		<h1>Main Navi</h1>
+		<MainDisplay/>
+		<ContentSelector/>
+		<MainDisplay/>
+	</div>
 </template>
 
 <script>
-import ChangeLog from './../../data/change-log.json'
+import MainDisplay from './main-display.vue'
+import ContentSelector from './content-selector.vue'
 
 export default {
-  data: () => {
-    return {
-      ChangeLog: ChangeLog
-    }
-  },
 	components: {
-		TodoList
-	}
+    MainDisplay,
+    ContentSelector,
+  }
 }
 
 
