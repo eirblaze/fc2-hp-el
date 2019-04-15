@@ -1,26 +1,17 @@
 import ContentSelector from './index.vue'
+import * as VueReady from "../vue_ready";
 
 ( $ => {
 
   // DOM読み込み後
   $(document).ready( () => {
 
-    // Vue対象を取得
-    var app_g_nav = '#app-g-nav'
-    var $app_g_nav = $(app_g_nav)
-
-    // 存在しなければ終了
-    if ( $app_g_nav.length <= 0 ) return
-    //console.log($app_g_nav);
-
-
-    // eslint-disable no-new -- ESLint は JavaScript のための静的検証ツールです。 https://qiita.com/mysticatea/items/f523dab04a25f617c87d
-    var app = new Vue({
-      el: app_g_nav,
+    // Vueを安全に起動
+    VueReady.vue_ready({
+      el: '#app-g-nav',
       template: '<ContentSelector/>',
       components: { ContentSelector }
     })
-
 
   });
 
