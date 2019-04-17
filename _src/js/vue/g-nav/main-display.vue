@@ -12,6 +12,7 @@
 
 <script>
 import ChangeLog from './../../data/change-log.json'
+import SiteContents from './../../data/site-contents.json'
 
 export default {
   model: {
@@ -29,20 +30,6 @@ export default {
       change_log: ChangeLog
     }
   },
-  methods: {
-    displayChangeLog: function (event) {
-
-      let new_message = ""
-
-      //new_message += this.change_log.ChangeLog.title + "\n"
-
-      this.change_log.ChangeLog.contents.forEach((value,key) => {
-        new_message += "\n\n" + value.date + " " + value.text
-      })
-
-      this.$emit('click', new_message)
-    }
-  },
   computed: {
     listeners () {
       return {
@@ -50,22 +37,24 @@ export default {
         // Pass all component listeners directly to input
         ...this.$listeners,
         // Override input listener to work with v-model
-        //input: event => this.$emit('input', event.target.value),
-        click: event => this.$emit('click', display_changeLog(this)),
-        //click: event => this.$emit('click', "aaaaaa"),
+        click: event => this.$emit('click', display_changeLog()),
       }
     }
   }
 }
 
-function display_changeLog(vm) {
+
+/**
+ * 更新履歴
+ */
+function display_changeLog() {
 
   let new_message = ""
 
-  //new_message += this.change_log.ChangeLog.title + "\n"
+  new_message += ChangeLog.title + "\n|\n"
 
-  vm.change_log.ChangeLog.contents.forEach((value,key) => {
-    new_message += "\n\n" + value.date + " " + value.text
+  ChangeLog.contents.forEach((value,key) => {
+    new_message += value.date + " " + value.text + "\n|\n"
   })
 
   return new_message
