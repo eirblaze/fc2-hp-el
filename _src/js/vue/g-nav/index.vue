@@ -9,7 +9,7 @@
 
     <HR />
 
-		<MainDisplay/>
+    <MainDisplay v-model="display_text" class="his" COLS="14" ROWS="4"/>
 
 
     <HR />
@@ -37,7 +37,7 @@
 
     <HR />
 
-		<MainDisplay/>
+    <MainDisplay v-model="display_text" class="his" COLS="14" ROWS="4"/>
 
     <HR />
 
@@ -54,6 +54,11 @@ import MainDisplay from './main-display.vue'
 export default {
 	components: {
     MainDisplay,
+  },
+  data () {
+    return {
+      display_text: ""
+    }
   }
 }
 

@@ -29,8 +29,8 @@
 	<meta http-equiv="default-style" content="css/sv4.css">
 	<LINK REL="STYLESHEET" TYPE="text/css" HREF="css/sv4.css">
 
-  <script SRC="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script SRC="js/_dev/jquery-3.3.1.min.js"></script>
+  <script src="js/_dev/vue.js"></script>
   <!-- script src="https://cdn.jsdelivr.net/npm/vue"></script -->
 	<SCRIPT SRC="js/script.min.js"></script>
 
@@ -51,16 +51,8 @@
 
 
 
-<font SIZE="2">
 
-
-
-
-
-<TEXTAREA class="his" COLS="14" ROWS="4">
-
-</TEXTAREA><br>
-
+  <MainDisplay v-model="display_text" class="his" COLS="14" ROWS="4"/>
 
 
 <HR>
@@ -246,10 +238,7 @@
 <HR>
 
 
-
-<TEXTAREA class="his" COLS="14" ROWS="4">
-
-</TEXTAREA><br>
+  <MainDisplay v-model="display_text" class="his" COLS="14" ROWS="4"/>
 
 
 
