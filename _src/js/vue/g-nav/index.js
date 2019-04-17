@@ -1,5 +1,5 @@
-import ContentSelector from './index.vue'
 import * as VueReady from "../vue_ready";
+import VueNavIndex from './index.vue'
 
 ( $ => {
 
@@ -9,8 +9,8 @@ import * as VueReady from "../vue_ready";
     // Vueを安全に起動
     VueReady.vue_ready({
       el: '#app-g-nav',
-      template: '<ContentSelector/>',
-      components: { ContentSelector }
+      template: '<VueNavIndex/>',
+      components: { VueNavIndex }
     })
 
   });
