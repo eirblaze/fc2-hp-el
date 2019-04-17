@@ -1,5 +1,7 @@
 //console.log('hello webpack');
 
+require('./common');
+
 require('./yahoo/fin.js');
 require('./yahoo/et.js');
 require('./yahoo/responsive_menu.js');
