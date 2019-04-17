@@ -16,7 +16,7 @@ import ChangeLog from './../../data/change-log.json'
 export default {
   model: {
     prop: 'message',
-    event: 'input'
+    event: 'click'
   },
   props: {
     message: {
@@ -51,8 +51,8 @@ export default {
         ...this.$listeners,
         // Override input listener to work with v-model
         //input: event => this.$emit('input', event.target.value),
-        //click: event => this.$emit('click', display_changeLog(this)),
-        click: event => this.$emit('click', "aaaaaa"),
+        click: event => this.$emit('click', display_changeLog(this)),
+        //click: event => this.$emit('click', "aaaaaa"),
       }
     }
   }
