@@ -1,5 +1,5 @@
 # fc2-hp-el
-王立ゲーム博物館
+[王立ゲーム博物館](https://eirblaze.github.io/elifia-game-museum/)
 
 ## エイリアス
 
@@ -7,6 +7,5 @@
 - `$ yarn js`
 
 ## todo
-- [v] fade in js
-- [v] ES2018
-- [v] vue.js
+- [ ] 下層ページ
+  - [ ] 看板
