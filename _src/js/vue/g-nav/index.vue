@@ -37,9 +37,11 @@
 
     <HR />
 
+    <!--
     <p>
       <button type="button">フレームを解除</button>
     </p>
+    -->
 
 	</nav>
 </template>
