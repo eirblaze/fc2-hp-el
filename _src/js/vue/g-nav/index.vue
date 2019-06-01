@@ -13,17 +13,16 @@
 
     <HR />
 
-    <section :key="contents_key" v-for="(site_content, contents_key) in site_contents">
+    <section class="nav-contents" :key="contents_key" v-for="(site_content, contents_key) in site_contents">
 
-      <h2>
-        <a target="_parent" :href="site_content.href"
-        @mouseover="display_text = site_content.titleJp + '\n\n' + site_content.description">
+      <h2 class="nav-contents__title">
         <a target="_parent" :href="site_content.href" :title="site_content.titleJp"
+        @mouseover="display_text = site_content.titleJp + '\n|\n' + site_content.description">
           <strong>{{site_content.titleEn}}</strong>
         </a>
       </h2>
 
-      <ul>
+      <ul  class="nav-contents__stages">
         <li :key="stage_key" v-for="(stage, stage_key) in site_content.stages">
           <a target="_parent" :href="stage.url" :title="stage.title"
           @mouseover="display_text = stage.title">■</a>
