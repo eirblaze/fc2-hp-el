@@ -12,8 +12,8 @@ import SiteData from './../data/site-data.json';
     if ( !Common.jq_alive($lampGroups) ) return;
 
     for (var index in $lampGroups) {
-      $lampGroups[index].$lamp = $('.hover-lamp__lamp');
-      $lampGroups[index].$senser = $('.hover-lamp__senser');
+      $lampGroups[index].$lamp = $($lampGroups[index]).find('.hover-lamp__lamp');
+      $lampGroups[index].$senser = $($lampGroups[index]).find('.hover-lamp__senser');
     }
 
     // 画像オブジェクト設定
