@@ -48,6 +48,10 @@ $iframe_left : 178px;
 
 .nav-body {
 
+  font-size: 15px;
+  box-sizing: border-box;
+  margin-left: 0.75em;
+
   &::before {
     content: "";
     display: block;
@@ -85,6 +89,20 @@ $iframe_left : 178px;
 
     &:hover, &:active {
       background-color: transparent;
+    }
+  }
+}
+
+.nav-contents {
+
+  margin-bottom: 1.5em;
+  &__title {
+    border-bottom: solid 1px #3300cc;
+  }
+
+  &__stages {
+    & > * {
+      display: inline-block;
     }
   }
 }

@@ -4,7 +4,10 @@
     <HR />
 
     <h1>
-      <A HREF="index.html" target="_parent" title="エリフィア王立ゲーム博物館トップに戻る">エリフィア王立ゲーム博物館</a>
+      <A HREF="index.html" target="_parent" :title="title__back_to_top"
+      @mouseover="display_text = title__back_to_top">
+        {{ site_data.titleJp }}
+      </a>
     </h1>
 
     <HR />
@@ -13,19 +16,19 @@
 
     <HR />
 
-    <section :key="contents_key" v-for="(site_content, contents_key) in site_contents">
+    <section class="nav-contents" :key="contents_key" v-for="(site_content, contents_key) in site_contents">
 
-      <h2>
-        <a target="_parent" :href="site_content.href"
-        @mouseover="display_text = site_content.titleJp + '\n\n' + site_content.description">
+      <h2 class="nav-contents__title">
+        <a target="_parent" :href="site_content.href" :title="site_content.titleJp"
+        @mouseover="display_text = site_content.titleJp + '\n|\n' + site_content.description">
           <strong>{{site_content.titleEn}}</strong>
         </a>
       </h2>
 
-      <ul>
+      <ul  class="nav-contents__stages">
         <li :key="stage_key" v-for="(stage, stage_key) in site_content.stages">
           <a target="_parent" :href="stage.url" :title="stage.title"
-          @mouseover="display_text = stage.title">■</a>
+          @mouseover="display_text = stage.title + '\n|\n' + stage.description">■</a>
         </li>
       </ul>
 
@@ -37,16 +40,19 @@
 
     <HR />
 
+    <!--
     <p>
       <button type="button">フレームを解除</button>
     </p>
+    -->
 
 	</nav>
 </template>
 
 <script>
-import MainDisplay from './main-display.vue'
-import SiteContents from './../../data/site-contents.json'
+import MainDisplay from './main-display.vue';
+import SiteData from './../../data/site-data.json';
+import SiteContents from './../../data/site-contents.json';
 
 export default {
 	components: {
@@ -56,6 +62,8 @@ export default {
     return {
       display_text: "",
       site_contents: SiteContents,
+      site_data: SiteData,
+      title__back_to_top: SiteData.titleJp + ' トップに戻る',
     }
   }
 }
