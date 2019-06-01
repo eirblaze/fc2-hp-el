@@ -18,6 +18,7 @@
       <h2>
         <a target="_parent" :href="site_content.href"
         @mouseover="display_text = site_content.titleJp + '\n\n' + site_content.description">
+        <a target="_parent" :href="site_content.href" :title="site_content.titleJp"
           <strong>{{site_content.titleEn}}</strong>
         </a>
       </h2>
