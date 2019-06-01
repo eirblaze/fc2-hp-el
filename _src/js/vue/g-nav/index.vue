@@ -4,7 +4,7 @@
     <HR />
 
     <h1>
-      <A HREF="index.html" target="_parent" :title="title__back_to_top"
+      <A :href="site_data.baseUrl + '/'" target="_parent" :title="title__back_to_top"
       @mouseover="display_text = title__back_to_top">
         {{ site_data.titleJp }}
       </a>
@@ -19,7 +19,7 @@
     <section class="nav-contents" :key="contents_key" v-for="(site_content, contents_key) in site_contents">
 
       <h2 class="nav-contents__title">
-        <a target="_parent" :href="site_content.href" :title="site_content.titleJp"
+        <a target="_parent" :href="site_data.baseUrl + site_content.href" :title="site_content.titleJp"
         @mouseover="display_text = site_content.titleJp + '\n|\n' + site_content.description">
           <strong>{{site_content.titleEn}}</strong>
         </a>
@@ -27,7 +27,7 @@
 
       <ul  class="nav-contents__stages">
         <li :key="stage_key" v-for="(stage, stage_key) in site_content.stages">
-          <a target="_parent" :href="stage.url" :title="stage.title"
+          <a target="_parent" :href="site_data.baseUrl + stage.url" :title="stage.title"
           @mouseover="display_text = stage.title + '\n|\n' + stage.description">■</a>
         </li>
       </ul>
