@@ -1,13 +1,19 @@
+import * as Common from "../common";
+
 ( $ => {
 
   $(document).ready( () => {
 
-    // 着脱するクラス名
-    var toggle_class_name = 'sidebar-js-active';
-
     // DOM
-    var $sidebar = $('.g-nav-wrap, #global-navigation, site-wraper');
-    var $switch = $('.sidebar-toggle-switch');
+    const $sidebar = $('.g-nav-wrap, #global-navigation, site-wraper');
+    if ( !Common.jq_alive($sidebar) ) return;
+
+    const $switch = $('.sidebar-toggle-switch');
+    if ( !Common.jq_alive($switch) ) return;
+
+    // 着脱するクラス名
+    const toggle_class_name = 'sidebar-js-active';
+
 
     // 初期の動作
     /*
@@ -28,6 +34,6 @@
       $sidebar.toggleClass(toggle_class_name);
     });
 
-});
+  });
 
 })(jQuery);

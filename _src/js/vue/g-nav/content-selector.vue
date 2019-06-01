@@ -1,26 +1,15 @@
 <template>
-  <div class="example">{{ msg }}</div>
+	<div class="content-selector">
+		<h2>{{title}}</h2>
+	</div>
 </template>
 
 <script>
 export default {
-  data () {
+  data: () => {
     return {
-      msg: 'Hello world!'
+      title: "hello"
     }
   }
 }
 </script>
-
-<style lang="scss">
-body {
-  .example {
-    color: red;
-  }
-}
-</style>
-
-<custom1>
-  例えばコンポーネントのドキュメントを書くことが出来ます
-  https://vue-loader-v14.vuejs.org/ja/start/spec.html
-</custom1>
