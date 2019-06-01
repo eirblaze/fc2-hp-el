@@ -7,7 +7,7 @@ import * as Common from "../common";
  * 失敗時は何もせず、空オブジェクトを返す
  *
  * @param {Vue arg} i__vue_args
- * @return Vueのハンドル
+ * @return Vueのハンドル。失敗時は何もせず、空オブジェクトを返す
  */
 export function vue_ready(i__vue_args) {
 
@@ -15,7 +15,7 @@ export function vue_ready(i__vue_args) {
   ( $ => {
 
     // Vue対象を取得
-    // 存在しなければ終了
+    // 存在しなければ終了、空オブジェクトを返す
     if ( ! Common.jq_alive( $(i__vue_args.el) ) ) return {}
 
     // eslint-disable no-new -- ESLint は JavaScript のための静的検証ツールです。 https://qiita.com/mysticatea/items/f523dab04a25f617c87d
