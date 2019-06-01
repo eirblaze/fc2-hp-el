@@ -4,7 +4,10 @@
     <HR />
 
     <h1>
-      <A HREF="index.html" target="_parent" title="エリフィア王立ゲーム博物館トップに戻る">エリフィア王立ゲーム博物館</a>
+      <A HREF="index.html" target="_parent" :title="title__back_to_top"
+      @mouseover="display_text = title__back_to_top">
+        {{ site_data.titleJp }}
+      </a>
     </h1>
 
     <HR />
@@ -47,8 +50,9 @@
 </template>
 
 <script>
-import MainDisplay from './main-display.vue'
-import SiteContents from './../../data/site-contents.json'
+import MainDisplay from './main-display.vue';
+import SiteData from './../../data/site-data.json';
+import SiteContents from './../../data/site-contents.json';
 
 export default {
 	components: {
@@ -58,6 +62,8 @@ export default {
     return {
       display_text: "",
       site_contents: SiteContents,
+      site_data: SiteData,
+      title__back_to_top: SiteData.titleJp + ' トップに戻る',
     }
   }
 }
