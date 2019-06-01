@@ -29,14 +29,14 @@
     ]
   },
   "mso": {
-    "href": "/mso/",
+    "href": "/MSO/",
     "titleEn": "M.S.O.",
     "titleJp": "M.S.O.",
     "description":
       "福田直人氏による、どこかで見たようなアクションゲーム、スーパー正男のカスタムマップです。特殊部隊「M.S.O.」の一員となって、各地を転戦します。"
   },
   "petm": {
-    "href": "/petm/",
+    "href": "/PetM/",
     "titleEn": "Pet Monster",
     "titleJp": "ペットモンスター ～M.S.O.外伝～",
     "description":
