@@ -1,6 +1,6 @@
 
 // 全体センタリング
-.site-wraper {
+.page-top .site-wraper {
 	text-align: center;
 }
 
@@ -114,4 +114,29 @@ HR {
 	}
 
 	background-color: rgba(0,0,0,0.5);
+}
+
+.hover-lamp {
+  &__plate {
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    text-align: center;
+
+    & > * {
+      display: block;
+      height: 100%;
+    }
+
+    & > *:nth-child(2) {
+      background-image: url('../img/b.gif');
+      background-repeat: repeat no-repeat;
+      background-size: contain;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-top: 10px;
+    }
+  }
+
 }

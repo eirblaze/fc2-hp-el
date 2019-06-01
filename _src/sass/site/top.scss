@@ -2,27 +2,31 @@
 // トップページ
 
 // サイトタイトル
-.site-title {
-	margin-bottom: 1.2em;
+header {
+  text-align: center;
 
-	&__main {
-		display: block;
+  .site-title {
+    margin-bottom: 1.2em;
 
-		font-size: 1.5em;
-		font-weight: normal;
+    &__main {
+      display: block;
 
-		&::before {
-			content: "-- ";
-		}
-		&::after {
-			content: " --";
-		}
-	}
+      font-size: 1.5em;
+      font-weight: normal;
 
-	&__sub {
-		display: block;
-		font-weight: normal;
-	}
+      &::before {
+        content: "-- ";
+      }
+      &::after {
+        content: " --";
+      }
+    }
+
+    &__sub {
+      display: block;
+      font-weight: normal;
+    }
+  }
 }
 
 // サイトコメント
