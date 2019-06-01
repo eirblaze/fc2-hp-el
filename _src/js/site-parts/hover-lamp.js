@@ -11,7 +11,8 @@ import SiteData from './../data/site-data.json';
     let $lampGroups = $('.hover-lamp');
     if ( !Common.jq_alive($lampGroups) ) return;
 
-    for (var index in $lampGroups) {
+
+    for (let index = 0; $lampGroups.length > index; index++) {
       $lampGroups[index].$lamp = $($lampGroups[index]).find('.hover-lamp__lamp');
       $lampGroups[index].$senser = $($lampGroups[index]).find('.hover-lamp__senser');
     }
@@ -22,24 +23,29 @@ import SiteData from './../data/site-data.json';
       unhover: SiteData.baseUrl + '/img/bl1.gif'
     };
 
-    function toHoverImg($jq){
-      $jq.css({
-        backgroundImage: lampImgs.hover,
+    function toHoverImg($jQ){
+      $jQ.attr("src",lampImgs.hover);
+    }
+
+    function toUnHoverImg($jQ){
+      $jQ.attr("src",lampImgs.unhover);
+    }
+
+    for (let index = 0; $lampGroups.length > index; index++) {
+      // ホバーイベント
+      let $senser = $lampGroups[index].$senser
+      let $lamp = $lampGroups[index].$lamp
+
+      $senser.on('mouseover', () => {
+        toHoverImg($lamp);
+      });
+
+      // ホバー解除イベント
+      $senser.on('mouseout', () => {
+        toUnHoverImg($lamp);
       });
     }
 
-    function toUnHoverImg($jq){
-      $jq.css({
-        backgroundImage: lampImgs.unhover,
-      });
-    }
-
-    // ホバーイベント
-    $senser.on('mouseover');
-
-
-    // ホバー解除イベント
-    $senser.on('mouseout');
 
   });
 })(jQuery);
