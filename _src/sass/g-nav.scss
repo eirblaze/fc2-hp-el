@@ -1,13 +1,18 @@
 // サイト縦分割
-$iframe_left : 178px;
+$iframe_left : 180px;
 
 .site-separator {
 	display: flex;
 	flex-direction: row-reverse;
 
-	// main
+	// main相当
 	& > *:nth-child(1) {
-		flex: 1 1 100vw;
+    flex: 1 1 auto;
+    overflow: hidden;
+
+    & > * {
+      min-width: 320px;
+    }
 
     /*
     overflow: hidden;
