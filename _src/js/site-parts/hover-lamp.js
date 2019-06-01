@@ -1,10 +1,4 @@
-﻿/*	b..js
-
- * 画像切り替え用スクリプト
-
- * 関数は看板ごとに、個別に必要となる
-
- */
+﻿import SiteData from './../data/site-data.json';
 
 
 

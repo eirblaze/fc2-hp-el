@@ -2,9 +2,9 @@
 
 require('./common');
 
-require('./yahoo/fin.js');
-require('./yahoo/et.js');
-require('./yahoo/responsive_menu.js');
-//require('./yahoo/g-nav.js');
+require('./site-parts/bg-fade.js');
+require('./site-parts/e-clock.js');
+require('./site-parts/hover-lamp.js');
+require('./site-parts/menu-switch.js');
 
 require('./vue/g-nav/index.js');
