@@ -1,11 +1,11 @@
 {
   "wwa": {
     "href": "/wwa/",
-    "title-en": "World Wide Adventure",
-    "title-jp": "ワールドワイドアドベンチャー",
+    "titleEn": "World Wide Adventure",
+    "titleJp": "ワールドワイドアドベンチャー",
     "description":
       "キャラバンサークルによるＲＰＧです。短編ＲＰＧも掲載予定です。",
-    "stage": [
+    "stages": [
       {
         "url": "/wwa/caves01.html",
         "title":"ケーブダンジョン",
@@ -30,36 +30,36 @@
   },
   "midi": {
     "href": "/midi/",
-    "title-en": "MIDI Download Center",
-    "title-jp": "MIDI ダウンロード",
+    "titleEn": "MIDI Download Center",
+    "titleJp": "MIDI ダウンロード",
     "description":
       "ゲーム音楽の耳コピー集です。Windwos10で再生するには特殊な方法が必要です。"
   },
   "mso": {
     "href": "/mso/",
-    "title-en": "M.S.O.",
-    "title-jp": "M.S.O.",
+    "titleEn": "M.S.O.",
+    "titleJp": "M.S.O.",
     "description":
       "福田直人氏による、どこかで見たようなアクションゲーム、スーパー正男のカスタムマップです。特殊部隊「M.S.O.」の一員となって、各地を転戦します。"
   },
   "max": {
     "href": "/max/",
-    "title-en": "Max Action",
-    "title-jp": "マックスアクション",
+    "titleEn": "Max Action",
+    "titleJp": "マックスアクション",
     "description":
       "迷走郵便局の、シンプルなアクションゲームです。Windows環境にて、ダウンロードしてお楽しみいただけます。"
     },
   "link": {
     "href": "/link.html",
-    "title-en": "Air Port",
-    "title-jp": "Air Port",
+    "titleEn": "Air Port",
+    "titleJp": "Air Port",
     "description":
       "展示されているフリーゲームのエンジン開発元や、個人的にリスペクトしているサイトへのリンク集です。相互リンク大歓迎です。"
   },
   "petm": {
     "href": "/petm/",
-    "title-en": "Pet Monster",
-    "title-jp": "ペットモンスター ～M.S.O.外伝～",
+    "titleEn": "Pet Monster",
+    "titleJp": "ペットモンスター ～M.S.O.外伝～",
     "description":
       "福田直人氏による、どこか懐かしさを感じるペットモンスターたちとともに戦うアクションゲームです。核兵器開発の陰謀と闘うひとりの少女と、ペットモンスターたちの物語です。"
   }

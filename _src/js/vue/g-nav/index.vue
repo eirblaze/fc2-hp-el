@@ -4,36 +4,30 @@
     <HR />
 
     <h1>
-      <A HREF="index.html" target="_parent" class="hover-to-disp" title="エリフィア王立ゲーム博物館トップに戻る">エリフィア王立ゲーム博物館</a>
+      <A HREF="index.html" target="_parent" title="エリフィア王立ゲーム博物館トップに戻る">エリフィア王立ゲーム博物館</a>
     </h1>
 
     <HR />
 
     <MainDisplay v-model="display_text" class="his" COLS="14" ROWS="4"/>
 
-
     <HR />
 
-    <h2>
-      <a target="_parent" HREF="wwa/index.html" class="hover-to-disp" disp-num="1" name="img">
-        <strong>World Wide Adventure</strong>
-      </a>
-    </h2>
+    <section :key="contents_key" v-for="(site_content, contents_key) in site_contents">
 
-    <p>
-      <A target="_parent" HREF="wwa/caves01.html" class="hover-to-disp" title="ケーブダンジョン１" name="img">■</A>
-      <A target="_parent" HREF="wwa/caves02.html" class="hover-to-disp" title="ケーブダンジョン２" name="img">■</A>
-      <A target="_parent" HREF="wwa/caves001.html" class="hover-to-disp" title="ケーブビル１" name="img">■</A>
-      <A target="_parent" HREF="wwa/caves002.html" class="hover-to-disp" title="ケーブビル２" name="img">■</A>
-    </p>
+      <h2>
+        <a target="_parent" :href="site_content.href">
+          <strong>{{site_content.titleEn}}</strong>
+        </a>
+      </h2>
 
+      <ul>
+        <li :key="stage_key" v-for="(stage, stage_key) in site_content.stages">
+          <a target="_parent" :href="stage.url" :title="stage.title">■</a>
+        </li>
+      </ul>
 
-    <h2>
-    	<a target="_parent" HREF="mid/index.html" class="hover-to-disp" disp-num="2">
-      	<strong>MIDI Download Center</strong>
-      </a>
-    </h2>
-
+    </section>
 
     <HR />
 
@@ -42,7 +36,7 @@
     <HR />
 
     <p>
-      <A HREF="index.html" target="_parent" class="hover-to-disp" title="エリフィア王立ゲーム博物館トップに戻る">フレームを解除してトップへ</a>
+      <button type="button">フレームを解除</button>
     </p>
 
 	</nav>
@@ -50,6 +44,7 @@
 
 <script>
 import MainDisplay from './main-display.vue'
+import SiteContents from './../../data/site-contents.json'
 
 export default {
 	components: {
@@ -57,7 +52,8 @@ export default {
   },
   data () {
     return {
-      display_text: ""
+      display_text: "",
+      site_contents: SiteContents,
     }
   }
 }

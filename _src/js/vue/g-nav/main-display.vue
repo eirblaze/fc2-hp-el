@@ -12,7 +12,6 @@
 
 <script>
 import ChangeLog from './../../data/change-log.json'
-import SiteContents from './../../data/site-contents.json'
 
 export default {
   model: {
@@ -24,11 +23,6 @@ export default {
       type: String,
       default: '',
     },
-  },
-  data () {
-    return {
-      change_log: ChangeLog
-    }
   },
   computed: {
     listeners () {
