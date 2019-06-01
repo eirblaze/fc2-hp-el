@@ -129,8 +129,7 @@ body {
 
 /* line 2, _src/sass/_common.scss */
 * {
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* line 6, _src/sass/_common.scss */
@@ -151,8 +150,7 @@ body {
 /* line 35, _src/sass/_common.scss */
 a, button {
 	color: #0000FF;
-	-webkit-transition-duration: .45s;
-	        transition-duration: .45s;
+	transition-duration: .45s;
 }
 
 /* line 39, _src/sass/_common.scss */
@@ -202,19 +200,13 @@ small {
 	width: 95%;
 	margin-left: auto;
 	margin-right: auto;
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+	justify-content: space-between;
 }
 
 /* line 11, _src/sass/site/footer.scss */
 .footer-wrap > * {
-	-webkit-box-flex: 0;
-	    -ms-flex: 0 0 auto;
-	        flex: 0 0 auto;
+	flex: 0 0 auto;
 }
 
 /* line 3, _src/sass/parts.scss */
@@ -230,8 +222,7 @@ small {
 
 /* line 14, _src/sass/parts.scss */
 HR {
-	-webkit-box-sizing: content-box;
-	        box-sizing: content-box;
+	box-sizing: content-box;
 	height: 0;
 	width: 95%;
 	margin: 1.5em auto;
@@ -242,22 +233,17 @@ HR {
 
 /* line 33, _src/sass/parts.scss */
 .block-link-wrap {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 }
 
 /* line 29, _src/sass/parts.scss */
 .block-link-wrap > * {
-	-webkit-box-flex: 0;
-	    -ms-flex: 0 1 auto;
-	        flex: 0 1 auto;
+	flex: 0 1 auto;
 }
 
 /* line 37, _src/sass/parts.scss */
 .block-link {
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
@@ -317,33 +303,23 @@ HR {
 /* line 94, _src/sass/parts.scss */
 .back-to-top a {
 	border-radius: 3px;
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 	font-size: 15px;
 	height: 50px;
 	width: 80px;
 	display: flex;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	justify-content: center;
+	align-items: center;
 }
 
 /* line 29, _src/sass/parts.scss */
 .back-to-top a > * {
-	-webkit-box-flex: 0;
-	    -ms-flex: 0 1 auto;
-	        flex: 0 1 auto;
+	flex: 0 1 auto;
 }
 
 /* line 106, _src/sass/parts.scss */
 .back-to-top a > * {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1 1 auto;
-	        flex: 1 1 auto;
+	flex: 1 1 auto;
 }
 
 /* line 110, _src/sass/parts.scss */
@@ -353,20 +329,13 @@ HR {
 
 /* line 4, _src/sass/g-nav.scss */
 .site-separator {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: reverse;
-	    -ms-flex-direction: row-reverse;
-	        flex-direction: row-reverse;
+	flex-direction: row-reverse;
 }
 
 /* line 9, _src/sass/g-nav.scss */
 .site-separator > *:nth-child(1) {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1 1 100vw;
-	        flex: 1 1 100vw;
+	flex: 1 1 100vw;
 	/*
     overflow: hidden;
     &.sidebar-js-active {
@@ -378,17 +347,13 @@ HR {
 
 /* line 23, _src/sass/g-nav.scss */
 .site-separator > *:nth-child(2) {
-	-webkit-box-flex: 0;
-	    -ms-flex: 0 0 0px;
-	        flex: 0 0 0;
-	-webkit-transition-duration: .4s;
-	        transition-duration: .4s;
+	flex: 0 0 0;
+	transition-duration: .4s;
 }
 
 /* line 27, _src/sass/g-nav.scss */
 .site-separator > *:nth-child(2).sidebar-js-active {
-	-ms-flex-preferred-size: 178px;
-	    flex-basis: 178px;
+	flex-basis: 178px;
 }
 
 /* line 33, _src/sass/g-nav.scss */
@@ -398,8 +363,7 @@ HR {
 	position: fixed;
 	top: 0;
 	width: 0;
-	-webkit-transition-duration: .4s;
-	        transition-duration: .4s;
+	transition-duration: .4s;
 }
 
 /* line 42, _src/sass/g-nav.scss */
@@ -407,14 +371,21 @@ HR {
 	width: 178px;
 }
 
-/* line 51, _src/sass/g-nav.scss */
+/* line 49, _src/sass/g-nav.scss */
+.nav-body {
+	font-size: 15px;
+	box-sizing: border-box;
+	margin-left: 0.75em;
+}
+
+/* line 55, _src/sass/g-nav.scss */
 .nav-body::before {
 	content: "";
 	display: block;
 	height: 80px;
 }
 
-/* line 60, _src/sass/g-nav.scss */
+/* line 64, _src/sass/g-nav.scss */
 .nav-functions {
 	position: fixed;
 	top: 0;
@@ -422,7 +393,7 @@ HR {
 	pointer-events: none;
 }
 
-/* line 66, _src/sass/g-nav.scss */
+/* line 70, _src/sass/g-nav.scss */
 .nav-functions button {
 	pointer-events: visible;
 	border-radius: 3px;
@@ -432,27 +403,34 @@ HR {
 	margin-top: 25px;
 	margin-right: auto;
 	margin-left: 25px;
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-}
-
-/* line 82, _src/sass/g-nav.scss */
-.nav-functions button > * {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1 1 auto;
-	        flex: 1 1 auto;
+	justify-content: center;
+	align-items: center;
 }
 
 /* line 86, _src/sass/g-nav.scss */
+.nav-functions button > * {
+	flex: 1 1 auto;
+}
+
+/* line 90, _src/sass/g-nav.scss */
 .nav-functions button:hover, .nav-functions button:active {
 	background-color: transparent;
+}
+
+/* line 96, _src/sass/g-nav.scss */
+.nav-contents {
+	margin-bottom: 1.5em;
+}
+
+/* line 99, _src/sass/g-nav.scss */
+.nav-contents__title {
+	border-bottom: solid 1px #3300cc;
+}
+
+/* line 104, _src/sass/g-nav.scss */
+.nav-contents__stages > * {
+	display: inline-block;
 }
 
 /* line 5, _src/sass/site/top.scss */
@@ -525,4 +503,5 @@ HR {
 .contents-index-menu dd {
 	margin-bottom: 1.5em;
 }
-/*# sourceMappingURL=sv4.css.map */
+
+/*# sourceMappingURL=../../scss_map/sv4.css.map */
