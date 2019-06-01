@@ -25,7 +25,7 @@
       <ul  class="nav-contents__stages">
         <li :key="stage_key" v-for="(stage, stage_key) in site_content.stages">
           <a target="_parent" :href="stage.url" :title="stage.title"
-          @mouseover="display_text = stage.title">■</a>
+          @mouseover="display_text = stage.title + '\n|\n' + stage.description">■</a>
         </li>
       </ul>
 
