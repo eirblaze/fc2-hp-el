@@ -1,13 +1,9 @@
 # BEGIN SYSTEM HTTPS SETTING
-<IfModule mod_rewrite.c>
-  RewriteEngine on
-  RewriteOptions inherit
-  RewriteCond %{SERVER_ADDR} !^192\.168
-  RewriteCond %{SERVER_ADDR} !^127\.0\.0\.1
-  RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
-</IfModule>
+RewriteEngine on
+RewriteOptions inherit
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 # END SYSTEM HTTPS SETTING
 
 ErrorDocument 404 /error.html
