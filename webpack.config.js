@@ -179,7 +179,7 @@ return_modules = merge(return_modules,{
 });
 
   //console.log(return_modules);
-  console.log(return_modules.plugins);
+  //console.log(return_modules.plugins);
 
   return return_modules;
 };
