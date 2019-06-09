@@ -71,3 +71,16 @@ small {
 .middle-font {
 	font-size: 1.25em;
 }
+
+$auto-width: 20px;
+@mixin auto-width() {
+  width: auto;
+  margin-left: $auto-width;
+  margin-right: $auto-width;
+}
+.auto-width,
+.contents
+{
+  @include auto-width;
+}
+

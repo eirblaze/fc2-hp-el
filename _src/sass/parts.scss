@@ -15,8 +15,8 @@ HR {
 	box-sizing: content-box;
 	height: 0;
 
-	width: 95%;
 	margin: 1.5em auto;
+  @include auto-width;
 
 	border-style: solid;
 	border-color: #3300CC;
@@ -139,4 +139,19 @@ HR {
     }
   }
 
+}
+
+.pan-kuzu {
+  display: flex;
+  justify-content: flex-start;
+  @include auto-width;
+  & > * {
+    display: block;
+    flex: 0 1 auto;
+    margin-right: 1em;
+    :last-child() {
+      margin-right: 0px;
+    }
+
+  }
 }

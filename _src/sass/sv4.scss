@@ -5,6 +5,7 @@
 @import "functions";
 @import "common";
 
+@import "site/header";
 @import "site/footer";
 
 @import "parts";
@@ -14,3 +15,7 @@
 
 
 @import "site/top";
+@import "site/page-l1";
+
+@import "site/wwa";
+
