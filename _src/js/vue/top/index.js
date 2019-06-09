@@ -1,5 +1,5 @@
 import * as VueReady from "../vue_ready";
-import VueNavIndex from './nav.vue';
+import VueNavIndex from './top.vue';
 
 ( $ => {
 
@@ -8,7 +8,7 @@ import VueNavIndex from './nav.vue';
 
     // Vueを安全に起動
     VueReady.vue_ready({
-      el: '#app-g-nav',
+      el: '#app-contents-index-menu',
       template: '<VueNavIndex/>',
       components: { VueNavIndex }
     });
