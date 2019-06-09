@@ -19,10 +19,10 @@ import SiteData from './../data/site-data.json';
 
     // 画像オブジェクト設定
     const lampImgs = {
-      // hover: SiteData.baseUrl + '/img/bl2.gif',
-      // unhover: SiteData.baseUrl + '/img/bl1.gif'
-      hover: '../img/bl2.gif',
-      unhover: '../img/bl1.gif'
+      hover: SiteData.baseUrl + '/img/bl2.gif',
+      unhover: SiteData.baseUrl + '/img/bl1.gif'
+      // hover: '../img/bl2.gif',
+      // unhover: '../img/bl1.gif'
     };
 
     function toHoverImg($jQ){
