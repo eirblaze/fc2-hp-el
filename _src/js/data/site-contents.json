@@ -7,22 +7,22 @@
       "キャラバンサークルによるＲＰＧです。短編ＲＰＧも掲載予定です。",
     "stages": [
       {
-        "url": "/wwa/caves01.html",
+        "url": "/wwa/caves01/",
         "title":"ケーブダンジョン",
         "description": "ゲームの作成ツールに付属されるお手本マップのようなものです。"
       },
       {
-        "url": "/wwa/caves02.html",
+        "url": "/wwa/caves02/",
         "title":"ケーブダンジョン２",
         "description": "その名の通り、ケーブダンジョンの第２弾です。"
       },
       {
-        "url": "/wwa/caves001.html",
+        "url": "/wwa/buill01/",
         "title":"ケーブビル",
         "description": "ケーブダンジョンのリメイク版です。敵や扉の配置などは一切変更していません。一応著作権には引っかからないと思いますが、問題があるなら削除します。"
       },
       {
-        "url": "/wwa/caves002.html",
+        "url": "/wwa/buill02/",
         "title":"ケーブビル２",
         "description": "こんどはケーブダンジョン２のリメイクです。"
       }
