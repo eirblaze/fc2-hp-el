@@ -1,5 +1,12 @@
-.wwa-footer {
-  p {
-    @include auto-width;
+body.wwa {
+
+  .contents {
+    justify-content: center;
+  }
+
+  .wwa-footer {
+    p {
+      @include auto-width;
+    }
   }
 }
