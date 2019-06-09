@@ -7,11 +7,10 @@ import VueNavIndex from './top.vue';
   $(document).ready( () => {
 
     // Vueを安全に起動
-    VueReady.vue_ready({
-      el: '#app-contents-index-menu',
-      template: '<VueNavIndex/>',
-      components: { VueNavIndex }
-    });
+    VueReady.vue_ready(
+      '#app-contents-index-menu',
+      new VueNavIndex
+    );
 
   });
 
