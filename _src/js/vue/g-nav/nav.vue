@@ -63,7 +63,7 @@ export default {
       display_text: "",
       site_contents: SiteContents,
       site_data: SiteData,
-      title__back_to_top: SiteData.titleJp + ' トップに戻る',
+      title__back_to_top: 'トップに戻る\n|\n' + SiteData.titleJp,
     }
   }
 }

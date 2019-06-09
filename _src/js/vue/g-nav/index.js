@@ -1,5 +1,5 @@
 import * as VueReady from "../vue_ready";
-import VueNavIndex from './index.vue'
+import VueNavIndex from './nav.vue';
 
 ( $ => {
 
@@ -11,7 +11,14 @@ import VueNavIndex from './index.vue'
       el: '#app-g-nav',
       template: '<VueNavIndex/>',
       components: { VueNavIndex }
-    })
+    });
+
+    // Vueを安全に起動
+    VueReady.vue_ready({
+      el: '#app-g-nav',
+      template: '<VueNavIndex/>',
+      components: { VueNavIndex }
+    });
 
   });
 
