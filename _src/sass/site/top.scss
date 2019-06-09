@@ -1,39 +1,6 @@
 
 // トップページ
 
-// サイトタイトル
-header {
-  text-align: center;
-
-  .site-title {
-    margin-bottom: 1.2em;
-
-    &__main {
-      display: block;
-
-      font-size: 1.5em;
-      font-weight: normal;
-
-      &::before {
-        content: "-- ";
-      }
-      &::after {
-        content: " --";
-      }
-    }
-
-    &__sub {
-      display: block;
-      font-weight: normal;
-    }
-  }
-}
-
-// サイトコメント
-.site-description {
-	margin-bottom: 1.2em;
-}
-
 .site-attention {
 	margin-bottom: 1.2em;
 }
