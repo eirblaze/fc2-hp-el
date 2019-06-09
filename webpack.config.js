@@ -142,7 +142,8 @@ module.exports = (env, argv) => {
     resolve: {
       // aliasの設定をすることで `import Vue from 'vue/dist/vue';` を `import Vue from 'vue';` とかけるようになる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
       alias: {
-          'vue$': 'vue/dist/vue.esm.js'
+        //'vue$': 'vue/dist/vue.esm.js',
+        'vue$': 'vue', // CDN
       },
 
       // extentionsに「.vue」を追加することでimportの際に拡張子を省略して記述できるようにる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
