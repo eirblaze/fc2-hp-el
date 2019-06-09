@@ -1,7 +1,7 @@
 <template>
 <dl class="contents-index-menu">
 
-  <div :key="contents_key" v-for="(site_content, contents_key) in site_contents">
+  <div class="contents-block" :key="contents_key" v-for="(site_content, contents_key) in site_contents">
     <dt class="middle-font">
       <a class="block-link" :href="site_data.baseUrl + site_content.href" :title="site_content.titleJp">
         {{site_content.titleEn}} - {{site_content.titleJp}}
