@@ -14,7 +14,9 @@ module.exports = (env, argv) => {
   var is_dev = (argv.mode === 'development');
   //console.log(is_dev);
 
-  var return_modules = {}
+  var return_modules = {};
+
+  var arg__ProvidePlugin = {};
 
   // devtool
   if (is_dev) {
@@ -73,15 +75,6 @@ module.exports = (env, argv) => {
   return_modules = merge(return_modules,{
 
 
-    // 毎回インポートしなくてもいいように
-    plugins: [
-      new webpack.ProvidePlugin({
-        jQuery: "jquery",
-	           $: "jquery",
-	    }),
-    ],
-
-
     // 外部にホスティングされているjQueryなどのパッケージを読み込んで使用する方法 http://elsur.xyz/webpack-jquery-ways-to-work#jQueryundefined
     externals: [
       {
@@ -91,6 +84,12 @@ module.exports = (env, argv) => {
 
 
   });
+  // 毎回インポートしなくてもいいように
+  arg__ProvidePlugin = merge(arg__ProvidePlugin,{
+    jQuery: "jquery",
+         $: "jquery",
+  });
+
 
 
   // CSS
@@ -155,15 +154,6 @@ module.exports = (env, argv) => {
 
       new VueLoaderPlugin(),
 
-      // 毎回インポートしなくてもいいように
-      new webpack.ProvidePlugin({
-        Vue: [
-          'vue/dist/vue.esm.js', //ES Modulesを指定  @see https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
-          //'vue', // CDN
-          'default' // 読み込むプロパティ
-        ]
-	    }),
-
     ],
 
     /*
@@ -174,9 +164,24 @@ module.exports = (env, argv) => {
     */
 
   });
+  // 毎回インポートしなくてもいいように
+  arg__ProvidePlugin = merge(arg__ProvidePlugin,{
+    Vue: [
+      //'vue/dist/vue.esm.js', //ES Modulesを指定  @see https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
+      'vue', // CDN
+      'default' // 読み込むプロパティ
+    ]
+  });
 
+// 毎回インポートしなくてもいいようにするプラグインを最後に組み立てる
+return_modules = merge(return_modules,{
+  plugins: [
+    new webpack.ProvidePlugin(arg__ProvidePlugin)
+  ]
+});
 
   //console.log(return_modules);
+  console.log(return_modules.plugins);
 
   return return_modules;
 };
