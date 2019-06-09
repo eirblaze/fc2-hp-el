@@ -142,7 +142,7 @@ module.exports = (env, argv) => {
     resolve: {
       // aliasの設定をすることで `import Vue from 'vue/dist/vue';` を `import Vue from 'vue';` とかけるようになる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
       alias: {
-        'vue$': 'vue/dist/vue.esm.js',
+        'vue$': 'vue/dist/vue.esm.js', // ES Module (バンドラ用)
         //'vue$': 'vue', // CDN
       },
 
@@ -168,7 +168,7 @@ module.exports = (env, argv) => {
   // 毎回インポートしなくてもいいように
   arg__ProvidePlugin = merge(arg__ProvidePlugin,{
     Vue: [
-      'vue/dist/vue.esm.js', //ES Modulesを指定  @see https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
+      'vue/dist/vue.esm.js', // ES Module (バンドラ用)  @see https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
       //'vue', // CDN
       'default' // 読み込むプロパティ
     ]
