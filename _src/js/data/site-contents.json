@@ -31,7 +31,7 @@
   "mso": {
     "href": "/MSO/",
     "titleEn": "M.S.O.",
-    "titleJp": "M.S.O.",
+    "titleJp": "スーパーまさお",
     "description":
       "福田直人氏による、どこかで見たようなアクションゲーム、スーパー正男のカスタムマップです。特殊部隊「M.S.O.」の一員となって、各地を転戦します。"
   },
@@ -52,14 +52,14 @@
   "midi": {
     "href": "/mid/",
     "titleEn": "MIDI Download Center",
-    "titleJp": "MIDI ダウンロード",
+    "titleJp": "音楽ダウンロード",
     "description":
       "ゲーム音楽の耳コピー集です。Windwos10で再生するには特殊な方法が必要です。"
   },
   "link": {
     "href": "/link.html",
-    "titleEn": "Air Port",
-    "titleJp": "Air Port",
+    "titleEn": "Link Port",
+    "titleJp": "リンク空港",
     "description":
     "展示されているフリーゲームのエンジン開発元や、個人的にリスペクトしているサイトへのリンク集です。相互リンク大歓迎です。"
   }
