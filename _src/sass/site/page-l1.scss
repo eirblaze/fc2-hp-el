@@ -1,12 +1,23 @@
-.hover-lamp {
-  margin-bottom: 2em;
+.contents {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
 
-  &__plate {
-    margin-bottom: 1.2em;
-  }
+  .hover-lamp {
+    margin-bottom: 2em;
+    flex: 1 0 300px;
+    margin-right: 2em;
+    &:last-child {
+      margin-right: 0;
+    }
 
-  .content-description {
-    margin-bottom: 1.2em;
+    &__plate {
+      margin-bottom: 1.2em;
+    }
+
+    .content-description {
+      margin-bottom: 1.2em;
+    }
   }
 }
-
