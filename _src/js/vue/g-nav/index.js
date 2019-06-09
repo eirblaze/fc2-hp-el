@@ -7,10 +7,11 @@ import VueNavIndex from './nav.vue';
   $(document).ready( () => {
 
     // Vueを安全に起動
-    VueReady.vue_ready(
-      '#app-g-nav',
-      new VueNavIndex
-    );
+    VueReady.vue_ready({
+      el: '#app-g-nav',
+      template: '<VueNavIndex/>',
+      components: { VueNavIndex }
+    });
 
   });
 
