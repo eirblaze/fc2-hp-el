@@ -20,7 +20,7 @@
     "sass-w": "yarn build-css-d && yarn build-css-d -- -w",
     "sass-n": "yarn nodemon-autoprefixer",
     "build-css":   "cross-conf-env node-sass --include-path scss npm_package_config_scss_src npm_package_config_scss_out",
-    "build-css-d": "cross-conf-env yarn build-css -- --output-style expanded --source-map scss_map --indent-type tab --indent-width 1 --source-comments",
+    "build-css-d": "cross-conf-env yarn build-css -- --output-style expanded --source-map npm_package_config_scss_map --indent-type tab --indent-width 1 --source-comments",
     "build-css-r": "yarn build-css -- --output-style compressed",
     "autoprefixer": "cross-conf-env postcss --use autoprefixer --map -o npm_package_config_scss_out npm_package_config_scss_out",
     "autoprefixer-r": "cross-conf-env postcss --use autoprefixer --no-map -o npm_package_config_scss_out npm_package_config_scss_out",
