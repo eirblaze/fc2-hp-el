@@ -105,6 +105,7 @@ module.exports = (env, argv) => {
 
       // サーバー設定
       contentBase       : path.join(__dirname, dev_sv_base_path), // リソース・コンテンツ(htmlファイルなど)と自動読み込み
+      host              : '0.0.0.0',
       port              : 8080,
 
       // ページ設定
