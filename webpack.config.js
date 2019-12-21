@@ -4,12 +4,12 @@ const dist_js = 'js/script.min.js'
 const dist_css = 'css/style.min.css'
 
 // Path
-const entry_path = './public_html/_src/js/'
-const dist_path = './public_html/assets/'
-const dev_sv_base_path = './public_html/'
+const entry_path = './_src/js/'
+const dist_path = './docs/'
+const dev_sv_base_path = './docs/'
 
 // URL
-const dev_sv_js_url    = '/assets/' // devServerルートに対するバンドルのパス。outputに定義する。
+const dev_sv_js_url    = '/' // devServerルートに対するバンドルのパス。outputに定義する。
 
 
 // Pulgins
