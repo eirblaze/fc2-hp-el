@@ -1,5 +1,5 @@
 // filename
-const entry_js = 'index.mjs'
+const entry_js = 'index.js'
 const dist_js = 'js/script.min.js'
 const dist_css = 'css/style.min.css'
 
@@ -17,6 +17,7 @@ const path    = require('path')
 const webpack = require('webpack')
 const merge   = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = (env, argv) => {
 
@@ -237,7 +238,6 @@ module.exports = (env, argv) => {
   })
 
   // Vue.js
-  const { VueLoaderPlugin } = require('vue-loader')
   return_modules = merge(return_modules,{
     module: {
       rules: [
@@ -289,6 +289,9 @@ module.exports = (env, argv) => {
         //chunkFilename: '[id].css',
         //ignoreOrder: false, // Enable to remove warnings about conflicting order
       }),
+
+      // Vue.js
+      new VueLoaderPlugin(),
     ]
   })
 
