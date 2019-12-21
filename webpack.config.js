@@ -107,12 +107,16 @@ module.exports = (env, argv) => {
       // サーバー設定
       contentBase       : path.join(__dirname, dev_sv_base_path), // リソース・コンテンツ(htmlファイルなど)と自動読み込み
       host              : '0.0.0.0',
+      public            : 'localhost:8080',
       port              : 8080,
 
       // ページ設定
       openPage          : 'index.html',
-      //open: 'Chrome',
 
+      // サーバーの起動後にブラウザーを開くようにdev-serverに指示します。
+      open              : true,
+
+      // 提供されているすべてのgzip圧縮を有効にします。
       compress          : true,
 
       // HMR (ホットリロード) 全般設定
