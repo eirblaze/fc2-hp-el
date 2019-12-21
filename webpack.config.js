@@ -95,7 +95,7 @@ module.exports = (env, argv) => {
   // @see https://qiita.com/riversun/items/d27f6d3ab7aaa119deab
   return_modules = merge(return_modules,{
     output: {
-      publicPath: dev_sv_js_url, // バンドルファイルまでのlocalhost上のURLを、ここでも定義しておく。 @see http://mk.hatenablog.com/entry/2017/08/18/020918
+      publicPath: `${dev_sv_js_url}elifia-game-museum`, // バンドルファイルまでのlocalhost上のURLを、ここでも定義しておく。 @see http://mk.hatenablog.com/entry/2017/08/18/020918
     },
     devServer: {
 
@@ -121,7 +121,7 @@ module.exports = (env, argv) => {
       inline            : true, // オートリフレッシュ(自動再読込)をiframeモードで実行する
 
       // HMR (ホットリロード) 出力先設定
-      publicPath        : dev_sv_js_url, // バンドルにアクセスするためのpublicPathの指定(localhost上のURL)
+      publicPath        : `${dev_sv_js_url}elifia-game-museum`, // バンドルにアクセスするためのpublicPathの指定(localhost上のURL)
       filename          : dist_js,
 
     },
