@@ -235,6 +235,44 @@ module.exports = (env, argv) => {
     }
   })
 
+  // Vue.js
+  const { VueLoaderPlugin } = require('vue-loader')
+  return_modules = merge(return_modules,{
+    module: {
+      rules: [
+        {
+          test: /\.vue$/,
+          loader: 'vue-loader',
+          options: {
+            loaders: {
+              scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+              sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+            }
+          }
+        },
+      ]
+    },
+    resolve: {
+      // aliasの設定をすることで `import Vue from 'vue/dist/vue';` を `import Vue from 'vue';` とかけるようになる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
+      alias: {
+        'vue$': 'vue/dist/vue.esm.js', // ES Module (バンドラ用)
+        //'vue$': 'vue', // CDN
+      },
+
+      // extentionsに「.vue」を追加することでimportの際に拡張子を省略して記述できるようにる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
+      // in webpack 2.2 default resolve .js .json - https://github.com/vuejs/vue-loader/issues/685
+      extensions: ['*', '.js', '.vue', '.json']
+    },
+  })
+  // 毎回インポートしなくてもいいように
+  arg__ProvidePlugin = merge(arg__ProvidePlugin,{
+    Vue: [
+      'vue/dist/vue.esm.js', // ES Module (バンドラ用)  @see https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
+      //'vue', // CDN
+      'default' // 読み込むプロパティ
+    ]
+  })
+
   // プラグイン
   return_modules = merge(return_modules,{
     plugins: [
