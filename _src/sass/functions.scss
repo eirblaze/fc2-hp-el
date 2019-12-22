@@ -14,9 +14,3 @@ $w-side: 782px;
   }
 }
 
-body {
-  font-size: 20px;
-  @include max-w-side {
-    font-size: 12px;
-  }
-}
