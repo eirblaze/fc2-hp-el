@@ -159,32 +159,32 @@ module.exports = (env, argv) => {
   let css_loaders = []
 
   // CSS を バンドルに埋める
-  //css_loaders = [
-  //  ...css_loaders,
-  //  {
-  //    loader: "style-loader",
-  //  },
-  //];
-
-  // CSS を 外部に出力する
   css_loaders = [
     ...css_loaders,
-
-    // use配列で指定したLoaderが後ろから順番に適用されます。 @see https://ics.media/entry/17376/
-    // 別ファイルで出すとき
-    // @see https://github.com/webpack-contrib/mini-css-extract-plugin
-    // @see https://www.expexp.jp/webpack/
     {
-      loader: MiniCssExtractPlugin.loader,
-      options: {
-        // you can specify a publicPath here
-        // by default it uses publicPath in webpackOptions.output
-        publicPath: dev_sv_js_url,
-        filename: dist_css,
-        hmr: is_dev, // ホットモジュールリロード (HMR)
-      },
+      loader: "style-loader",
     },
   ]
+
+  // CSS を 外部に出力する
+  // css_loaders = [
+  //   ...css_loaders,
+
+  //   // use配列で指定したLoaderが後ろから順番に適用されます。 @see https://ics.media/entry/17376/
+  //   // 別ファイルで出すとき
+  //   // @see https://github.com/webpack-contrib/mini-css-extract-plugin
+  //   // @see https://www.expexp.jp/webpack/
+  //   {
+  //     loader: MiniCssExtractPlugin.loader,
+  //     options: {
+  //       // you can specify a publicPath here
+  //       // by default it uses publicPath in webpackOptions.output
+  //       publicPath: dev_sv_js_url,
+  //       filename: dist_css,
+  //       hmr: is_dev, // ホットモジュールリロード (HMR)
+  //     },
+  //   },
+  // ]
 
   css_loaders = [
     ...css_loaders,
