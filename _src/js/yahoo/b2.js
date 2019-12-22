@@ -8,19 +8,19 @@
 
 
 
-img1 = new Image()
+img1 = new Image();
 
-img1.src = '../img/bl2.gif'
+img1.src = '../img/bl2.gif';
 
-img2 = new Image()
+img2 = new Image();
 
-img2.src = '../img/bl1.gif'
+img2.src = '../img/bl1.gif';
 
 
 
 function mmsa(n){
 
-document.gmma.src = (`../img/bl${n}.gif`)
+document.gmma.src = ("../img/bl"+n+".gif")
 
 }
 
@@ -28,7 +28,7 @@ document.gmma.src = (`../img/bl${n}.gif`)
 
 function mmsb(n){
 
-document.gmmb.src = (`../img/bl${n}.gif`)
+document.gmmb.src = ("../img/bl"+n+".gif")
 
 }
 
@@ -36,7 +36,7 @@ document.gmmb.src = (`../img/bl${n}.gif`)
 
 function mmsc(n){
 
-document.gmmc.src = (`../img/bl${n}.gif`)
+document.gmmc.src = ("../img/bl"+n+".gif")
 
 }
 
@@ -44,7 +44,7 @@ document.gmmc.src = (`../img/bl${n}.gif`)
 
 function mmsc(n){
 
-document.gmmc.src = (`../img/bl${n}.gif`)
+document.gmmc.src = ("../img/bl"+n+".gif")
 
 }
 
@@ -52,7 +52,7 @@ document.gmmc.src = (`../img/bl${n}.gif`)
 
 function mmsd(n){
 
-document.gmmd.src = (`../img/bl${n}.gif`)
+document.gmmd.src = ("../img/bl"+n+".gif")
 
 }
 
@@ -60,7 +60,7 @@ document.gmmd.src = (`../img/bl${n}.gif`)
 
 function mmse(n){
 
-document.gmme.src = (`../img/bl${n}.gif`)
+document.gmme.src = ("../img/bl"+n+".gif")
 
 }
 
@@ -68,7 +68,7 @@ document.gmme.src = (`../img/bl${n}.gif`)
 
 function mmsf(n){
 
-document.gmmf.src = (`../img/bl${n}.gif`)
+document.gmmf.src = ("../img/bl"+n+".gif")
 
 }
 
@@ -76,7 +76,7 @@ document.gmmf.src = (`../img/bl${n}.gif`)
 
 function mmsg(n){
 
-document.gmmg.src = (`../img/bl${n}.gif`)
+document.gmmg.src = ("../img/bl"+n+".gif")
 
 }
 
@@ -84,7 +84,7 @@ document.gmmg.src = (`../img/bl${n}.gif`)
 
 function mmsy(n){
 
-document.gmmy.src = (`../img/bl${n}.gif`)
+document.gmmy.src = ("../img/bl"+n+".gif")
 
 }
 
@@ -92,7 +92,7 @@ document.gmmy.src = (`../img/bl${n}.gif`)
 
 function mmsz(n){
 
-document.gmmz.src = (`../img/bl${n}.gif`)
+document.gmmz.src = ("../img/bl"+n+".gif")
 
 }
 

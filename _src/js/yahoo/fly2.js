@@ -42,25 +42,25 @@
 
 
 
-string = document.URL
+string = document.URL;
 
-p = string.slice(-7)
+p = string.slice(-7);
 
-q = p.match(/[0-9][0-9]/)
+q = p.match(/[0-9][0-9]/);
 
 
 
 if (q != null) {
 
-	r = parseFloat(q)
+	r = parseFloat(q);
 
 
 
-	document.open()
+	document.open();
 
-	document.write(daihitu(2,r))
+	document.write(daihitu(2,r));
 
-	document.close()
+	document.close();
 
 	}
 
@@ -70,11 +70,11 @@ function legend(sel,ms2)
 
 {
 
-	n = sel.options[sel.selectedIndex].value
+	n = sel.options[sel.selectedIndex].value;
 
-	r = parseFloat(n)
+	r = parseFloat(n);
 
-document.go.ms2.value = (daihitu(1,r))	/*go:フォーム名 ms2:フォームフィールド名*/
+document.go.ms2.value = (daihitu(1,r));	/*go:フォーム名 ms2:フォームフィールド名*/
 
 }
 
@@ -84,17 +84,17 @@ function daihitu(id,stage) {
 
 	if (id == 1)
 
-		kai = "\n"
+		kai = "\n";
 
 	else
 
-		kai = "<BR>\n"
+		kai = "<BR>\n";
 
 
 
 	switch (stage) {
 
-	case 99 : writer=('ステージを選ぶと、ここにストーリーが表示されます。'); break
+	case 99 : writer=('ステージを選ぶと、ここにストーリーが表示されます。'); break;
 
 	/* 以下、拡張領域
 
@@ -138,11 +138,11 @@ function daihitu(id,stage) {
 
 	*/
 
-	default : writer=(`？？？${kai}` )
+	default : writer=('？？？' + kai );
 
 	}
 
-	return writer
+	return writer;
 
 }
 

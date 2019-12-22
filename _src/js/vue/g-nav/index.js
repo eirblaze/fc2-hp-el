@@ -1,6 +1,7 @@
-import * as VueReady from "../vue_ready"
-import VueNavIndex from './nav.vue'
-;( ($) => {
+import * as VueReady from "../vue_ready";
+import VueNavIndex from './nav.vue';
+
+( $ => {
 
   // DOM読み込み後
   $(document).ready( () => {
@@ -10,9 +11,9 @@ import VueNavIndex from './nav.vue'
       el: '#app-g-nav',
       template: '<VueNavIndex/>',
       components: { VueNavIndex }
-    })
+    });
 
-  })
+  });
 
-})(jQuery)
+})(jQuery);
 

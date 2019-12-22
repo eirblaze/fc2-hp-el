@@ -1,10 +1,12 @@
-﻿import SideDisplay from '../vue/side-display'
-;( ($) => {
+﻿import SideDisplay from '../vue/side-display';
+
+
+( $ => {
 
   $(document).ready( () => {
 
     //console.log( document.getElementById("app-g-nav") );
-    if ( document.getElementById("app-g-nav") == null ) return // https://qiita.com/mitsuhiro_K/items/7d5cef1f4316c2080fa7
+    if ( document.getElementById("app-g-nav") == null ) return; // https://qiita.com/mitsuhiro_K/items/7d5cef1f4316c2080fa7
 
 
     //Vue.config.productionTip = false;
@@ -34,16 +36,17 @@
       el: '#app-g-nav',
       template: '<side-display/>',
       components: { SideDisplay }
-    })
+    });
 
 
-    const $display = $(".his")
+    var $display = $(".his");
 
     $display.on("click", () => {
-      $(this).value = change_log
-    })
-function change_h_display(i_text) {
-      $display.value = i_text
+      $(this).value = change_log;
+    });
+
+    function change_h_display(i_text) {
+      $display.value = i_text;
     }
 
 
@@ -63,7 +66,7 @@ function change_h_display(i_text) {
       '2004/03/30\n CaveBillリリース\n\n'+
       '2004/01/03\n 営業開始\n\n'+
       '2003/09/07\n 着工'
-    )
+    );
 
 
     function k(n){
@@ -72,63 +75,63 @@ function change_h_display(i_text) {
 
         case 0 : retu =
 
-          ('')
+          ('');
 
-          break
+          break;
 
         case 1 : retu =
 
           ('　ＪＡＶＡを用いて作られた、キャラバンサークルのＲＰＧです。\n'+
 
-          '　迷路や短編ＲＰＧが設置されています。\n')
+          '　迷路や短編ＲＰＧが設置されています。\n');
 
-          break
+          break;
 
         case 2 : retu =
 
-          ('　興味本位で作ったゲーム音楽が集められています\n')
+          ('　興味本位で作ったゲーム音楽が集められています\n');
 
-          break
+          break;
 
         case 3 : retu =
 
-          ('　マリオのパクリです。\n')
+          ('　マリオのパクリです。\n');
 
-          break
+          break;
 
         case 4 : retu =
 
           ('　迷走郵便局製の、シンプルなアクションゲームです。\n'+
 
-          '　ダウンロードしてお楽しみください。')
+          '　ダウンロードしてお楽しみください。');
 
-          break
+          break;
 
         case 5 : retu =
 
-          ('　現在調整中です。またの機会にどうぞ。')
+          ('　現在調整中です。またの機会にどうぞ。');
 
-          break
+          break;
 
         case 6 : retu =
 
-          ('　リンク集です。相互リンク大歓迎です。\n')
+          ('　リンク集です。相互リンク大歓迎です。\n');
 
-          break
+          break;
 
         case 7 : retu =
 
           ('　M.S.O.外伝　～ペットモンスター～\n'+
 
-          '　早い話がポケモンのパクりです。')
+          '　早い話がポケモンのパクりです。');
 
-          break
+          break;
 
-        default : retu = ('error!?')
+        default : retu = ('error!?');
 
         }
 
-        change_h_display(retu)
+        change_h_display(retu);
         /*
         for (var ele_count = 0; ele_count < d_display.length; ele_count++ ) {
           d_display[ele_count].value = retu;
@@ -137,8 +140,8 @@ function change_h_display(i_text) {
 
       }
 
-  })
+  });
 
 
-})(jQuery)
+})(jQuery);
 
