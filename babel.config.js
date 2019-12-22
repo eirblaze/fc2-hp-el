@@ -18,7 +18,8 @@ module.exports = function(api) {
 
           // 必要なpolyfillだけをimportするようにします
           // 設定の仕方が変わってた。 http://babababand.hatenablog.com/entry/2019/04/24/125922
-          useBuiltIns: "entry",
+          useBuiltIns: "entry", // preset-env と useBuiltIns:entry で全polyfillを読み込む @see https://aloerina01.github.io/blog/2019-06-21-1
+          corejs: 3, // or 2
 
         }
       ]
