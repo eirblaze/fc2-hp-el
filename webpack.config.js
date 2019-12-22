@@ -111,7 +111,7 @@ module.exports = (env, argv) => {
       port              : 8080,
 
       // ページ設定
-      openPage          : 'index.html',
+      openPage          : '/wwa',
 
       // サーバーの起動後にブラウザーを開くようにdev-serverに指示します。
       open              : "firefox",
