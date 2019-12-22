@@ -1,4 +1,5 @@
 //console.log('hello webpack');
+import '../sass/sv4.scss'
 
 require('./common');
 
