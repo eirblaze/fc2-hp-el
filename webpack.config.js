@@ -114,7 +114,7 @@ module.exports = (env, argv) => {
       openPage          : 'index.html',
 
       // サーバーの起動後にブラウザーを開くようにdev-serverに指示します。
-      open              : true,
+      open              : "firefox",
 
       // 提供されているすべてのgzip圧縮を有効にします。
       compress          : true,
