@@ -105,7 +105,8 @@ export_module = merge(export_module, {
   // グローバル変数登録
   globals: {
     "jQuery": false,
-    "$"     : false
+    "$"     : false,
+    "Vue"   : false,
   },
 
 });
