@@ -1,24 +1,24 @@
 ﻿/* タイトル表示システム */
 
-string = document.URL;
+string = document.URL
 
-p = string.slice(-7);
+p = string.slice(-7)
 
-q = p.match(/[0-9][0-9]/);
+q = p.match(/[0-9][0-9]/)
 
-r = string.slice(-12,-7);
+r = string.slice(-12,-7)
 
 
 
-document.open();
+document.open()
 
 
 
 if (q!=null) {
 
-	s = parseFloat(q);
+	s = parseFloat(q)
 
-	document.write('M.S.O. stage'+s+' ～'+sname(s)+'～');
+	document.write(`M.S.O. stage${s} ～${sname(s)}～`)
 
 //} else {
 
@@ -30,5 +30,5 @@ if (q!=null) {
 
 
 
-document.close();
+document.close()
 

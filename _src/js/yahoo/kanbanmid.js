@@ -1,22 +1,21 @@
 ﻿//ID読み込み
 
-var q = "";
+let q = ""
 
-var nam = "";
+let nam = ""
 
-nagasa = document.embeds.length;
+nagasa = document.embeds.length
 
 
 
-for (i = 1; i <= nagasa ; i++) {
+for (i = 1; i <= nagasa; i++) {
 
-	nam = ("kbnn"+i);
-
-	q = document.embeds[nam].src;
+	nam = (`kbnn${i}`)
+q = document.embeds[nam].src
 
 }
 
-id = parseFloat(q);
+id = parseFloat(q)
 
 
 
@@ -24,11 +23,11 @@ id = parseFloat(q);
 
 //書き込み
 
-document.open();
+document.open()
 
-document.write(ka(id));
+document.write(ka(id))
 
-document.close();
+document.close()
 
 
 
@@ -38,25 +37,24 @@ function ka(id) {
 
 kan = (
 
-	'<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="210" HEIGHT="31">\n'+
+	`${'<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="210" HEIGHT="31">\n'+
 
 	'<TR>\n'+
 
-	'<TD WIDTH="12" HEIGHT="31"><IMG SRC="../img/bl1.gif" WIDTH="12" HEIGHT="31" name="gmm'+
+	'<TD WIDTH="12" HEIGHT="31"><IMG SRC="../img/bl1.gif" WIDTH="12" HEIGHT="31" name="gmm'}${
 
-	gmid(id)+'"></TD>\n'+
+	gmid(id)}"></TD>\n`+
 
-	'<TD VALIGN="MIDDLE" WIDTH="200" HEIGHT="31" BACKGROUND="../img/b.gif"\n'+
+	`<TD VALIGN="MIDDLE" WIDTH="200" HEIGHT="31" BACKGROUND="../img/b.gif"\n`+
 
-	'NOWRAP>　　'+title(id)+'</A></TD>\n'+
+	`NOWRAP>　　${title(id)}</A></TD>\n`+
 
-	'<TD WIDTH="7" HEIGHT="31"><IMG SRC="../img/br.gif" WIDTH="7" HEIGHT="31"></TD>\n'+
+	`<TD WIDTH="7" HEIGHT="31"><IMG SRC="../img/br.gif" WIDTH="7" HEIGHT="31"></TD>\n`+
 
-	'</TR>\n'+
+	`</TR>\n`+
 
-	'</table>\n');
-
-	return kan;
+	`</table>\n`)
+return kan
 
 }
 
@@ -68,17 +66,17 @@ function title(id) {
 
 	switch(id) {
 
-	case 1 : t = ('ゼルダの伝説');break;
+	case 1 : t = ('ゼルダの伝説'); break
 
-	case 2 : t = ('ファイアーエムブレム');break;
+	case 2 : t = ('ファイアーエムブレム'); break
 
-	case 3 : t = ('変な音楽');break;
+	case 3 : t = ('変な音楽'); break
 
-	default : t = ('???');
+	default : t = ('???')
 
 	}
 
-	return t;
+	return t
 
 }
 
@@ -92,17 +90,17 @@ function gmid(id)
 
 	switch(id) {
 
-	case 1 : doc = ("a");break;
+	case 1 : doc = ("a"); break
 
-	case 2 : doc = ("b");break;
+	case 2 : doc = ("b"); break
 
-	case 3 : doc = ("c");break;
+	case 3 : doc = ("c"); break
 
-	default : doc = ("z");
+	default : doc = ("z")
 
 	}
 
-	return doc;
+	return doc
 
 }
 

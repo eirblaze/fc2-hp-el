@@ -1,7 +1,7 @@
-( $ => {
+( ($) => {
 
   // 時間帯によって色が変わる
-  var time_zone = {
+  const time_zone = {
     morning: {
       min: 5,
       max: 10,
@@ -78,34 +78,34 @@
         { color : "#DCFEFF", next_delay : 120 },
       ]
     },   // 19 20 21 22 23  0  1  2  3  4
-  };
+  }
 
   // 暫定値
-  var colors = time_zone.morning.bg_fade_colors;
+  let colors = time_zone.morning.bg_fade_colors
 
   // 時間帯検出
-  var date = new Date();
-  var hours = date.getHours();
+  const date = new Date()
+  const hours = date.getHours()
 
   // JSのObjectをforEachで処理する方法 @link https://qiita.com/nantekkotai/items/6c603b40ac2264e9f6f6
-  Object.keys(time_zone).forEach( key => {
+  Object.keys(time_zone).forEach( (key) => {
 
     if (time_zone[key].min < time_zone[key].max) {
       if ( time_zone[key].min <= hours && hours <= time_zone[key].max ) {
-        colors = time_zone[key].bg_fade_colors;
+        colors = time_zone[key].bg_fade_colors
       }
     } else {
       if ( 0 <= hours && hours <= time_zone[key].max &&
          time_zone[key].min <= hours && hours <= 23) {
-        colors = time_zone[key].bg_fade_colors;
+        colors = time_zone[key].bg_fade_colors
       }
     }
 
-  });
+  })
 
 
   // タイマー処理 @link https://techacademy.jp/magazine/5541
-  var count = 0;
+  let count = 0
   var f_bg_fade_in__count = () => {
 
     //console.log(count);
@@ -113,21 +113,21 @@
 
     $('body').css({
       'backgroundColor' : colors[count].color
-    });
+    })
 
     // タイマーが満了した後に実行 @link https://developer.mozilla.org/ja/docs/Web/API/WindowTimers/setTimeout
-    var timer_id = setTimeout( f_bg_fade_in__count, colors[count].next_delay * 1 );
+    const timer_id = setTimeout( f_bg_fade_in__count, colors[count].next_delay * 1 )
 
     // 限界まで来たらタイマー停止
-    count++;
-    if(count >= colors.length){
-      clearTimeout(timer_id); // timer_idをclearTimeoutで指定している
+    count++
+if(count >= colors.length){
+      clearTimeout(timer_id) // timer_idをclearTimeoutで指定している
     }
   }
 
-  $(document).ready(f_bg_fade_in__count);
+  $(document).ready(f_bg_fade_in__count)
   //$('button').on("click", f_bg_fade_in__count);
 
 
 
-})(jQuery);
+})(jQuery)
