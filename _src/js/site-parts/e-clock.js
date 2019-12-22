@@ -10,7 +10,7 @@ function amaring(m,d) {
 }
 
 function waring(m,d) {
-	re = 0
+	let re = 0
 	while (m >= d) {
 		m = m - d
 		re = re + 1
@@ -19,23 +19,24 @@ function waring(m,d) {
 }
 
 let sen = 0
-var clock = () => {
-	wh = new Date()
-	ye = wh.getYear()
-	mo = wh.getMonth() + 1
-	da = wh.getDate()
-//	yo = wh.getDay();
-	ho = wh.getHours()
-	mi = wh.getMinutes()
-	se = wh.getSeconds()
+const clock = () => {
+	const wh = new Date()
+	let ye = wh.getYear()
+	let mo = wh.getMonth() + 1
+	let da = wh.getDate()
+//let yo = wh.getDay();
+  let ho = wh.getHours()
+  let mi = wh.getMinutes()
+  let se = wh.getSeconds()
 	if (ye < 2000) { ye += 1900 }
 
-	md = new Array(13)
+	const md = new Array(13)
 	md[0]  = 0/* 予備*/
 	md[1]  = 31/* 睦月 */
 	md[2]  = 28/* 如月 */
-	if (amaring(ye,4) == 0)
-		md[2]  = md[2] + 1/* うるう年修正 */
+	if (amaring(ye,4) == 0) {
+    md[2]  = md[2] + 1/* うるう年修正 */
+  }
 	md[3]  = 31/* 弥生 */
 	md[4]  = 30/* 卯月 */
 	md[5]  = 31/* 皐月 */
@@ -57,11 +58,12 @@ var clock = () => {
 	ho = ho + (24 * da)
 
 	da = waring(ho,25) + 1/* ２５時間／日 */
-	yo = amaring(da,8)/* 曜日の素 */
+	const yo = amaring(da,8)/* 曜日の素 */
 	ho = amaring(ho,25)
 	mo = waring(da,16) + 1/* 16月まである */
 	da = amaring(da,16)
 
+  let youbi = ""
 	switch (yo) {
 	case 1  : youbi = "光"; break
 	case 2  : youbi = "月"; break
@@ -84,16 +86,17 @@ var clock = () => {
 
 	if (mo < 10)
 		mo = (` ${mo}`)
-if (ho < 10)
+  if (ho < 10)
 		ho = (` ${ho}`)
-if (mi < 10)
+  if (mi < 10)
 		mi = (`0${mi}`)
-if (se < 10)
+  if (se < 10)
 		se = (`0${se}`)
-if (sen == 0) {
-		st = (' ')
-		sen = 1
-	} else {
+
+  let st = (' ')
+  if (sen == 0) {
+    sen = 1
+  } else {
 		st = ('.')
 		sen = 0
 	}

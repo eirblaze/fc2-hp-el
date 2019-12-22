@@ -106,7 +106,7 @@
 
   // タイマー処理 @link https://techacademy.jp/magazine/5541
   let count = 0
-  var f_bg_fade_in__count = () => {
+  const f_bg_fade_in__count = () => {
 
     //console.log(count);
     //console.log(colors[count].color);
@@ -120,7 +120,7 @@
 
     // 限界まで来たらタイマー停止
     count++
-if(count >= colors.length){
+    if(count >= colors.length){
       clearTimeout(timer_id) // timer_idをclearTimeoutで指定している
     }
   }
