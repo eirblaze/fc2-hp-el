@@ -1,4 +1,4 @@
-import * as Common from "../common";
+import * as Common from "../common"
 
 /**
  * Vue準備
@@ -12,7 +12,7 @@ import * as Common from "../common";
 export function vue_ready(i__vue_args) {
 
   // jQueryコンフリクト回避
-  ( $ => {
+  ( ($) => {
 
     // Vue対象を取得
     // 存在しなければ終了、空オブジェクトを返す
@@ -25,6 +25,6 @@ export function vue_ready(i__vue_args) {
     // ローカル関数 --------------------------------------------------------------------------------------------
 
 
-  })(jQuery);
+  })(jQuery)
 }
 

@@ -33,7 +33,7 @@
     "start": "webpack-dev-server",
     "test": "jest",
     "coverage": "jest --coverage",
-    "lint": "eslint ./**/*.ts ./**/*.js ./**/*.mjs"
+    "lint": "eslint ./**/*.js ./**/*.ts ./**/*.mjs"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
