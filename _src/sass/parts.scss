@@ -147,6 +147,11 @@ HR {
 
 }
 
+.link .hover-lamp .hover-lamp__plate > *:nth-child(2) {
+  background-image: url('./img/b.gif');
+}
+
+
 .pan-kuzu {
   display: flex;
   justify-content: flex-start;
