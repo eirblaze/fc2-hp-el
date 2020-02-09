@@ -1,4 +1,5 @@
-//console.log('hello webpack');
+import savestage from "./wwa_savestage/index"
+
 import '../sass/sv4.scss'
 
 require('./common')
@@ -12,3 +13,5 @@ require('./vue/g-nav/index.js')
 require('./vue/top/index.js')
 
 require('./scroll')
+
+savestage()
