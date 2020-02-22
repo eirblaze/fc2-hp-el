@@ -107,8 +107,8 @@ module.exports = (env, argv) => {
       // サーバー設定
       contentBase       : path.join(__dirname, dev_sv_base_path), // リソース・コンテンツ(htmlファイルなど)と自動読み込み
       host              : '0.0.0.0',
-      public            : 'localhost:8080',
-      port              : 8080,
+      public            : 'localhost:8090',
+      port              : 8090,
 
       // ページ設定
       openPage          : '/wwa',
@@ -127,6 +127,16 @@ module.exports = (env, argv) => {
       // HMR (ホットリロード) 出力先設定
       publicPath        : dev_sv_js_url, // バンドルにアクセスするためのpublicPathの指定(localhost上のURL)
       filename          : dist_js,
+
+      // proxy
+      index: '', // specify to enable root proxying
+      proxy: {
+        context: ['/elifia-game-museum'],
+        target: 'http://localhost:8090',
+        pathRewrite: {
+          '^/elifia-game-museum' : '',
+        },
+      }
 
     },
     plugins: [
