@@ -42,13 +42,6 @@
     "description":
       "福田直人氏による、どこか懐かしさを感じるペットモンスターたちとともに戦うアクションゲームです。核兵器開発の陰謀と闘うひとりの少女と、ペットモンスターたちの物語です。"
   },
-  "max": {
-    "href": "/max/",
-    "titleEn": "Max Action",
-    "titleJp": "マックスアクション",
-    "description":
-    "迷走郵便局の、シンプルなアクションゲームです。Windows環境にて、ダウンロードしてお楽しみいただけます。"
-  },
   "midi": {
     "href": "/mid/",
     "titleEn": "MIDI Download Center",
