@@ -6,6 +6,7 @@
   "author": "eirblaze <eirblaze@live.jp>",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "config": {
     "scss_dir": "_src/sass",
     "scss_src": "_src/sass/sv4.scss",
