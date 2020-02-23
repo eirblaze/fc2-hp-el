@@ -111,7 +111,7 @@ module.exports = (env, argv) => {
       port              : 8090,
 
       // ページ設定
-      openPage          : '/wwa',
+      openPage          : '/elifia-game-museum',
 
       // サーバーの起動後にブラウザーを開くようにdev-serverに指示します。
       open              : "firefox",
