@@ -36,10 +36,6 @@ footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
-nav ul {
-    list-style:none;
-}
-
 blockquote, q {
     quotes:none;
 }
@@ -99,4 +95,8 @@ hr {
 
 input, select {
     vertical-align:middle;
+}
+
+ul {
+  list-style:none;
 }
