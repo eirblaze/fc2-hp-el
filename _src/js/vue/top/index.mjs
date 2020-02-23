@@ -1,5 +1,5 @@
 import vue_ready from "../vue_ready"
-import VueNavIndex from './top.vue'
+import VueTopIndex from './top.vue'
 
 export default () => {
   // コンフリクト回避
@@ -14,8 +14,8 @@ function jQmain($) {
     // Vueを安全に起動
     vue_ready({
       el: '#app-contents-index-menu',
-      template: '<VueNavIndex/>',
-      components: { VueNavIndex }
+      render: (createElement) => createElement(VueTopIndex),
+      components: { VueTopIndex }
     })
 
   })

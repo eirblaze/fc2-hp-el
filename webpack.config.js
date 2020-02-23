@@ -248,6 +248,8 @@ module.exports = (env, argv) => {
   })
 
   // Vue.js
+  const vue_import = 'vue'
+  // const vue_import = 'vue/dist/vue.esm.js' // ES Module (バンドラ用) // vue-loader や vueify を利用する場合、 *.vue ファイルに中のテンプレートはビルド時に JavaScript に事前コンパイルされます。最終成果物の中にコンパイラは本当に必要なく、したがってランタイム限定ビルドを利用することが出来ます。ランタイム限定ビルドは完全ビルドに比べおよそ 30% 軽量なため、利用できるときにはこれを利用したほうが良いでしょう。それでもなお完全ビルドを利用したい場合は、バンドラでエイリアスを設定する必要があります。
   return_modules = merge(return_modules,{
     module: {
       rules: [
@@ -266,7 +268,7 @@ module.exports = (env, argv) => {
     resolve: {
       // aliasの設定をすることで `import Vue from 'vue/dist/vue';` を `import Vue from 'vue';` とかけるようになる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
       alias: {
-        'vue$': 'vue/dist/vue.esm.js', // ES Module (バンドラ用)
+        'vue$': vue_import
         //'vue$': 'vue', // CDN
       },
 
@@ -274,13 +276,18 @@ module.exports = (env, argv) => {
       // in webpack 2.2 default resolve .js .json - https://github.com/vuejs/vue-loader/issues/685
       extensions: ['.vue']
     },
+    // externals: [
+    //   {
+    //     'vue/dist/vue.esm.js': 'Vue'
+    //   }
+    // ],
   })
   // 毎回インポートしなくてもいいように
   arg__ProvidePlugin = merge(arg__ProvidePlugin,{
     Vue: [
-      'vue/dist/vue.esm.js', // ES Module (バンドラ用)  @see https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
+      vue_import,
       //'vue', // CDN
-      'default' // 読み込むプロパティ
+      'default' // 読み込むプロパティ @see https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
     ]
   })
   // console.log(return_modules.resolve.extensions)

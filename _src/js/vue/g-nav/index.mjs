@@ -13,7 +13,7 @@ function jQmain($) {
     // Vueを安全に起動
     vue_ready({
       el: '#app-g-nav',
-      template: '<VueNavIndex/>',
+      render: (createElement) => createElement(VueNavIndex),
       components: { VueNavIndex }
     })
 
