@@ -1,6 +1,5 @@
-
 // Pulgins
-import Path from 'path'
+import { resolve as _resolve } from 'path'
 import { HotModuleReplacementPlugin, ProvidePlugin } from 'webpack'
 import merge from 'webpack-merge'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
@@ -47,13 +46,13 @@ export default (env, argv) => {
 
     // メインとなるJavaScriptファイル（エントリーポイント）
     entry: {
-      main: Path.resolve(__dirname, entry_path, entry_js),
+      main: _resolve(__dirname, entry_path, entry_js),
     },
 
     // ファイルの出力設定
     output: {
       // 出力ファイル名
-      path: Path.resolve(__dirname, dist_path),
+      path: _resolve(__dirname, dist_path),
       filename: dist_js,
     },
 
@@ -100,7 +99,7 @@ export default (env, argv) => {
       },
 
       // サーバー設定
-      contentBase       : Path.resolve(__dirname, dev_sv_base_path), // リソース・コンテンツ(htmlファイルなど)と自動読み込み
+      contentBase       : _resolve(__dirname, dev_sv_base_path), // リソース・コンテンツ(htmlファイルなど)と自動読み込み
       host              : '0.0.0.0',
       public            : 'localhost:8090',
       port              : 8090,
