@@ -31,7 +31,7 @@ export default {
         // Pass all component listeners directly to input
         ...this.$listeners,
         // Override input listener to work with v-model
-        click: event => this.$emit('click', () => display_changeLog()),
+        click: event => this.$emit('click', display_changeLog()),
       }
     }
   }
