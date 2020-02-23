@@ -1,12 +1,17 @@
-import * as VueReady from "../vue_ready"
+import vue_ready from "../vue_ready"
 import VueNavIndex from './nav.vue'
-;( ($) => {
 
+export default () => {
+  // コンフリクト回避
+  jQmain(jQuery)
+}
+
+function jQmain($) {
   // DOM読み込み後
   $(document).ready( () => {
 
     // Vueを安全に起動
-    VueReady.vue_ready({
+    vue_ready({
       el: '#app-g-nav',
       template: '<VueNavIndex/>',
       components: { VueNavIndex }
@@ -14,5 +19,5 @@ import VueNavIndex from './nav.vue'
 
   })
 
-})(jQuery)
+}
 

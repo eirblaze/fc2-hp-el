@@ -1,5 +1,11 @@
-import * as Common from "../common"
-;( ($) => {
+import Common from "../common"
+
+export default () => {
+  // コンフリクト回避
+  jQmain(jQuery)
+}
+
+function jQmain($) {
 
   $(document).ready( () => {
 
@@ -35,4 +41,4 @@ import * as Common from "../common"
 
   })
 
-})(jQuery)
+}

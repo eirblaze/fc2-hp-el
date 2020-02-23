@@ -10,17 +10,19 @@
  *
  * @param {jQueryオブジェクト} $__dom
  */
-export function jq_alive($__dom) {
-  //console.log($(i__vue_args.el));
+export default {
+  jq_alive : ($__dom) => {
+    //console.log($(i__vue_args.el));
 
-  // 存在しないとき(デフォルト)
-  let ret__jq_alive = false
+    // 存在しないとき(デフォルト)
+    let ret__jq_alive = false
 
-  // 存在するときは、デフォルトを書き換える。
-  if ( $__dom.length > 0 ) {
-    ret__jq_alive = true
-  }
+    // 存在するときは、デフォルトを書き換える。
+    if ( $__dom.length > 0 ) {
+      ret__jq_alive = true
+    }
 
-  // 結果を返す
-  return ret__jq_alive
+    // 結果を返す
+    return ret__jq_alive
+  },
 }

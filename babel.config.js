@@ -1,5 +1,6 @@
+const merge = require('webpack-merge')
+
 module.exports = (api) => {
-  const merge = require('webpack-merge')
 
   // console.log(api.env())
 

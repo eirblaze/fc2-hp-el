@@ -1,5 +1,5 @@
 // filename
-const entry_js = 'index.js'
+const entry_js = 'index.mjs'
 const dist_js = 'js/script.min.js'
 const dist_css = 'css/style.min.css'
 
@@ -290,6 +290,7 @@ module.exports = (env, argv) => {
   })
 
   // プラグイン
+  console.log(arg__ProvidePlugin)
   return_modules = merge(return_modules,{
     plugins: [
 
@@ -310,6 +311,6 @@ module.exports = (env, argv) => {
     ]
   })
 
-  //console.log(return_modules);
+  // console.log(return_modules)
   return return_modules
 }

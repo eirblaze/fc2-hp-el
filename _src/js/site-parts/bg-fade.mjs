@@ -1,4 +1,10 @@
-( ($) => {
+export default () => {
+  // コンフリクト回避
+  jQmain(jQuery)
+}
+
+function jQmain($) {
+  $(document).ready( () => {
 
   // 時間帯によって色が変わる
   const time_zone = {
@@ -130,4 +136,5 @@
 
 
 
-})(jQuery)
+  })
+}

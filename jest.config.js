@@ -1,3 +1,4 @@
+/* eslint-disable node/no-extraneous-require */
 // Jest
 // @see [公式](https://jestjs.io/docs/ja/configuration)
 // @see [この頃流行りのJestを導入して軽快にJSをテストしよう](https://qiita.com/hogesuke_1/items/8da7b63ff1d420b4253f)
