@@ -1,6 +1,5 @@
-import merge from 'webpack-merge'
-
-export default (api) => {
+module.exports = (api) => {
+  const merge = require('webpack-merge')
 
   // console.log(api.env())
 
@@ -51,7 +50,7 @@ export default (api) => {
 
 
   // 最終的な出力
-  console.log(return_module)
+  // console.log(return_module)
   return return_module
 
 }

@@ -3,12 +3,12 @@ import '../sass/sv4.scss'
 
 require('./common')
 
-require('./site-parts/bg-fade.js')
-require('./site-parts/e-clock.js')
-require('./site-parts/hover-lamp.js')
-require('./site-parts/menu-switch.js')
+require('./site-parts/bg-fade')
+require('./site-parts/e-clock')
+require('./site-parts/hover-lamp')
+require('./site-parts/menu-switch')
 
-require('./vue/g-nav/index.js')
-require('./vue/top/index.js')
+require('./vue/g-nav/index')
+require('./vue/top/index')
 
 require('./scroll')

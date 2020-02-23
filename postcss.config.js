@@ -1,6 +1,5 @@
-import merge from 'webpack-merge'
-
-export default (env) => {
+module.exports = (env) => {
+  const merge = require('webpack-merge')
 
   // is_dev
   const is_dev = (env.webpack.mode != 'production')

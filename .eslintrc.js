@@ -55,7 +55,7 @@ export default () => {
 
       "node/no-unpublished-import": "off",   //`import`構文で公開後に読めなくなるモジュールを読もうとすると警告します。
       "node/no-unpublished-require": "off",  //`require()`で公開後に読めなくなるモジュールを読もうとすると警告します。
-      "node/no-extraneous-import" : "off", // ???
+      // "node/no-extraneous-import" : "off", // ???
 
       // exportsが混ざってないかどうか検出。混ざってるとどっちか消えるため。
       "node/exports-style": ["error", "module.exports"],
