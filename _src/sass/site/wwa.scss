@@ -9,4 +9,13 @@ body.wwa {
       @include auto-width;
     }
   }
+
+  .media-link {
+    @include auto-width;
+  }
+
+  .media-list {
+    margin-left: 1em;
+  }
+
 }

@@ -7,6 +7,7 @@ module.exports = (env) => {
   let r_module = {}
 
   r_module = merge(r_module,{
+    sourceMap: is_dev, // PostCSS側もソースマップを設定
     plugins: {
       'autoprefixer': {
         overrideBrowserslist: [

@@ -18,6 +18,7 @@ const webpack = require('webpack')
 const merge   = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = (env, argv) => {
 
@@ -168,6 +169,7 @@ module.exports = (env, argv) => {
     ...css_loaders,
     {
       loader: "style-loader",
+      // ローダーは、前のローダーがソースマップを発行すると、ソースマップを自動的に挿入します。したがって、ソースマップを生成するには、前のローダーのsourceMapオプションをtrueに設定します。
     },
   ]
 
@@ -207,12 +209,10 @@ module.exports = (env, argv) => {
     ...css_loaders,
     {
       loader: "postcss-loader",
-      options: {
-        sourceMap: is_dev, // PostCSS側もソースマップを設定
-      }
     }
   ]
 
+  // console.log(css_loaders)
   return_modules = merge(return_modules,{
     module: {
       rules: [
@@ -291,6 +291,26 @@ module.exports = (env, argv) => {
     ]
   })
   // console.log(return_modules.resolve.extensions)
+
+
+  // TerserPlugin
+  return_modules = merge(return_modules,{
+    optimization: {
+      minimizer: [
+        new TerserPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: false, // Must be set to true if using source-maps in production
+          terserOptions: {
+            // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
+            compress: {
+              drop_console: true,
+            }
+          }
+        }),
+      ],
+    }
+  })
 
   // プラグイン
   // console.log(arg__ProvidePlugin)
