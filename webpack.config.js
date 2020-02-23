@@ -64,7 +64,7 @@ module.exports = (env, argv) => {
     resolve: {
       // importの際に拡張子を省略して記述できるようにる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
       // in webpack 2.2 default resolve .js .json - https://github.com/vuejs/vue-loader/issues/685
-      extensions: ['*', '.js', '.json', '.mjs', '.ts']
+      extensions: ['*', '.js', '.json', '.mjs', '.cjs', '.ts']
     },
   })
 
@@ -79,11 +79,6 @@ module.exports = (env, argv) => {
           test: /\.m?[jt]s$/,
           exclude: /node_modules/, // babelを通さないディレクトリ
           loader: "babel-loader",
-          options: {
-            // 構成のロード中に使用されている現在のアクティブ環境。この値は"env"設定を解決するときのキーとして使われ、また設定機能、プラグイン、そしてプリセットの中でapi.env()関数を通して利用可能です 。 @see https://babeljs.io/docs/en/options
-            envName: argv.mode,
-            comments: is_dev,
-          },
         }
       ]
     }
@@ -277,7 +272,7 @@ module.exports = (env, argv) => {
 
       // extentionsに「.vue」を追加することでimportの際に拡張子を省略して記述できるようにる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
       // in webpack 2.2 default resolve .js .json - https://github.com/vuejs/vue-loader/issues/685
-      extensions: ['*', '.js', '.vue', '.json']
+      extensions: ['.vue']
     },
   })
   // 毎回インポートしなくてもいいように
@@ -288,9 +283,10 @@ module.exports = (env, argv) => {
       'default' // 読み込むプロパティ
     ]
   })
+  // console.log(return_modules.resolve.extensions)
 
   // プラグイン
-  console.log(arg__ProvidePlugin)
+  // console.log(arg__ProvidePlugin)
   return_modules = merge(return_modules,{
     plugins: [
 
