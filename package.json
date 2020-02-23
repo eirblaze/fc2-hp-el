@@ -33,6 +33,7 @@
     "type-check:watch": "yarn type-check --watch",
     "start": "webpack-dev-server",
     "test": "jest",
+    "test-w": "jest --watch",
     "coverage": "jest --coverage",
     "lint": "eslint ./**/*.js"
   },
