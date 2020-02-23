@@ -1,10 +1,3 @@
-// Pulgins
-import { resolve as _resolve } from 'path'
-import { HotModuleReplacementPlugin, ProvidePlugin } from 'webpack'
-import merge from 'webpack-merge'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { VueLoaderPlugin } from 'vue-loader'
-
 // filename
 const entry_js = 'index.js'
 const dist_js = 'js/script.min.js'
@@ -18,7 +11,15 @@ const dev_sv_base_path = './docs/'
 // URL
 const dev_sv_js_url    = '/' // devServerルートに対するバンドルのパス。outputに定義する。
 
-export default (env, argv) => {
+
+// Pulgins
+const path    = require('path')
+const webpack = require('webpack')
+const merge   = require('webpack-merge')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
+
+module.exports = (env, argv) => {
 
   // var init
   let return_modules = {}
@@ -46,13 +47,13 @@ export default (env, argv) => {
 
     // メインとなるJavaScriptファイル（エントリーポイント）
     entry: {
-      main: _resolve(__dirname, entry_path, entry_js),
+      main: path.resolve(__dirname, entry_path, entry_js),
     },
 
     // ファイルの出力設定
     output: {
       // 出力ファイル名
-      path: _resolve(__dirname, dist_path),
+      path: path.resolve(__dirname, dist_path),
       filename: dist_js,
     },
 
@@ -78,6 +79,11 @@ export default (env, argv) => {
           test: /\.m?[jt]s$/,
           exclude: /node_modules/, // babelを通さないディレクトリ
           loader: "babel-loader",
+          options: {
+            // 構成のロード中に使用されている現在のアクティブ環境。この値は"env"設定を解決するときのキーとして使われ、また設定機能、プラグイン、そしてプリセットの中でapi.env()関数を通して利用可能です 。 @see https://babeljs.io/docs/en/options
+            envName: argv.mode,
+            comments: is_dev,
+          },
         }
       ]
     }
@@ -99,7 +105,7 @@ export default (env, argv) => {
       },
 
       // サーバー設定
-      contentBase       : _resolve(__dirname, dev_sv_base_path), // リソース・コンテンツ(htmlファイルなど)と自動読み込み
+      contentBase       : path.join(__dirname, dev_sv_base_path), // リソース・コンテンツ(htmlファイルなど)と自動読み込み
       host              : '0.0.0.0',
       public            : 'localhost:8090',
       port              : 8090,
@@ -134,7 +140,7 @@ export default (env, argv) => {
 
     },
     plugins: [
-      new HotModuleReplacementPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
     ],
   })
 
@@ -288,7 +294,7 @@ export default (env, argv) => {
     plugins: [
 
       // 毎回インポートしなくてもいいようにするプラグイン。最後に組み立てる。
-      new ProvidePlugin(arg__ProvidePlugin),
+      new webpack.ProvidePlugin(arg__ProvidePlugin),
 
       // CSS 別ファイルで出力
       new MiniCssExtractPlugin({
