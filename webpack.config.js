@@ -206,17 +206,18 @@ module.exports = (env, argv) => {
       }
     }
   ]
-  if (!is_dev) {
-    css_loaders = [
-      ...css_loaders,
-      {
-        loader: "postcss-loader",
-        options: {
-          sourceMap: is_dev, // PostCSS側もソースマップを設定
-        }
+
+  // post css
+  css_loaders = [
+    ...css_loaders,
+    {
+      loader: "postcss-loader",
+      options: {
+        sourceMap: is_dev, // PostCSS側もソースマップを設定
       }
-    ]
-  }
+    }
+  ]
+
   return_modules = merge(return_modules,{
     module: {
       rules: [

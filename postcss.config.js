@@ -1,7 +1,13 @@
+const merge   = require('webpack-merge')
+
 module.exports = (env) => {
-  console.log("post-css-log")
-  console.log(env)
-  return {
+
+  // is_dev
+  const is_dev = (env.webpack.mode != 'production')
+
+  let r_module = {}
+
+  r_module = merge(r_module,{
     plugins: {
       'autoprefixer': {
         overrideBrowserslist: [
@@ -12,7 +18,16 @@ module.exports = (env) => {
         grid: "autoplace",
       },
       'postcss-normalize-charset': {},
-      'cssnano': {autoprefixer: false},
     }
+  })
+
+  if ( !is_dev ) {
+    r_module = merge(r_module,{
+      plugins: {
+        'cssnano': {autoprefixer: false},
+      }
+    })
   }
+
+  return r_module
 }
