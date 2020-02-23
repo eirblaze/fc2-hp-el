@@ -169,6 +169,7 @@ module.exports = (env, argv) => {
     ...css_loaders,
     {
       loader: "style-loader",
+      // ローダーは、前のローダーがソースマップを発行すると、ソースマップを自動的に挿入します。したがって、ソースマップを生成するには、前のローダーのsourceMapオプションをtrueに設定します。
     },
   ]
 
@@ -208,12 +209,10 @@ module.exports = (env, argv) => {
     ...css_loaders,
     {
       loader: "postcss-loader",
-      options: {
-        sourceMap: is_dev, // PostCSS側もソースマップを設定
-      }
     }
   ]
 
+  // console.log(css_loaders)
   return_modules = merge(return_modules,{
     module: {
       rules: [
