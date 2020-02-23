@@ -1,5 +1,5 @@
 import Common from "../common"
-import Vue from "vue"
+// import Vue from "vue"
 
 /**
  * Vue準備
