@@ -6,6 +6,7 @@
   "author": "eirblaze <eirblaze@live.jp>",
   "license": "MIT",
   "private": true,
+  "type": "script",
   "config": {
     "scss_dir": "_src/sass",
     "scss_src": "_src/sass/sv4.scss",
@@ -32,6 +33,7 @@
     "type-check:watch": "yarn type-check --watch",
     "start": "webpack-dev-server",
     "test": "jest",
+    "test-w": "jest --watch",
     "coverage": "jest --coverage",
     "lint": "eslint ./**/*.js"
   },
@@ -81,6 +83,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "core-js": "3",
     "lodash": "^4.17.15",
     "mixin-deep": "^2.0.1",

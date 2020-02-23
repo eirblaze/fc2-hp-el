@@ -1,6 +1,13 @@
-﻿import * as Common from "../common"
+﻿import Common from "../common"
 import SiteData from './../data/site-data.json'
-;( ($) => {
+
+
+export default () => {
+  // コンフリクト回避
+  jQmain(jQuery)
+}
+
+function jQmain($) {
   // コンフリクト回避
 
   // 読み込み終了後に実行を予約
@@ -49,4 +56,4 @@ import SiteData from './../data/site-data.json'
 
 
   })
-})(jQuery)
+}
