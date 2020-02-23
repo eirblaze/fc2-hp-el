@@ -1,5 +1,5 @@
 // filename
-const entry_js = 'index.js'
+const entry_js = 'index.mjs'
 const dist_js = 'js/script.min.js'
 const dist_css = 'css/style.min.css'
 
@@ -65,7 +65,7 @@ module.exports = (env, argv) => {
     resolve: {
       // importの際に拡張子を省略して記述できるようにる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
       // in webpack 2.2 default resolve .js .json - https://github.com/vuejs/vue-loader/issues/685
-      extensions: ['*', '.js', '.json', '.mjs', '.ts']
+      extensions: ['*', '.js', '.json', '.mjs', '.cjs', '.ts']
     },
   })
 
@@ -80,11 +80,6 @@ module.exports = (env, argv) => {
           test: /\.m?[jt]s$/,
           exclude: /node_modules/, // babelを通さないディレクトリ
           loader: "babel-loader",
-          options: {
-            // 構成のロード中に使用されている現在のアクティブ環境。この値は"env"設定を解決するときのキーとして使われ、また設定機能、プラグイン、そしてプリセットの中でapi.env()関数を通して利用可能です 。 @see https://babeljs.io/docs/en/options
-            envName: argv.mode,
-            comments: is_dev,
-          },
         }
       ]
     }
@@ -112,7 +107,7 @@ module.exports = (env, argv) => {
       port              : 8090,
 
       // ページ設定
-      openPage          : '/wwa',
+      openPage          : 'elifia-game-museum/',
 
       // サーバーの起動後にブラウザーを開くようにdev-serverに指示します。
       open              : "firefox",
@@ -207,17 +202,18 @@ module.exports = (env, argv) => {
       }
     }
   ]
-  if (!is_dev) {
-    css_loaders = [
-      ...css_loaders,
-      {
-        loader: "postcss-loader",
-        options: {
-          sourceMap: is_dev, // PostCSS側もソースマップを設定
-        }
+
+  // post css
+  css_loaders = [
+    ...css_loaders,
+    {
+      loader: "postcss-loader",
+      options: {
+        sourceMap: is_dev, // PostCSS側もソースマップを設定
       }
-    ]
-  }
+    }
+  ]
+
   return_modules = merge(return_modules,{
     module: {
       rules: [
@@ -253,6 +249,8 @@ module.exports = (env, argv) => {
   })
 
   // Vue.js
+  const vue_import = 'vue'
+  // const vue_import = 'vue/dist/vue.esm.js' // ES Module (バンドラ用) // vue-loader や vueify を利用する場合、 *.vue ファイルに中のテンプレートはビルド時に JavaScript に事前コンパイルされます。最終成果物の中にコンパイラは本当に必要なく、したがってランタイム限定ビルドを利用することが出来ます。ランタイム限定ビルドは完全ビルドに比べおよそ 30% 軽量なため、利用できるときにはこれを利用したほうが良いでしょう。それでもなお完全ビルドを利用したい場合は、バンドラでエイリアスを設定する必要があります。
   return_modules = merge(return_modules,{
     module: {
       rules: [
@@ -271,23 +269,29 @@ module.exports = (env, argv) => {
     resolve: {
       // aliasの設定をすることで `import Vue from 'vue/dist/vue';` を `import Vue from 'vue';` とかけるようになる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
       alias: {
-        'vue$': 'vue/dist/vue.esm.js', // ES Module (バンドラ用)
+        'vue$': vue_import
         //'vue$': 'vue', // CDN
       },
 
       // extentionsに「.vue」を追加することでimportの際に拡張子を省略して記述できるようにる。 https://qiita.com/es-row/items/12213f097d0762fa33bf
       // in webpack 2.2 default resolve .js .json - https://github.com/vuejs/vue-loader/issues/685
-      extensions: ['*', '.js', '.vue', '.json']
+      extensions: ['.vue']
     },
+    // externals: [
+    //   {
+    //     'vue/dist/vue.esm.js': 'Vue'
+    //   }
+    // ],
   })
   // 毎回インポートしなくてもいいように
   arg__ProvidePlugin = merge(arg__ProvidePlugin,{
     Vue: [
-      'vue/dist/vue.esm.js', // ES Module (バンドラ用)  @see https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
+      vue_import,
       //'vue', // CDN
-      'default' // 読み込むプロパティ
+      'default' // 読み込むプロパティ @see https://qiita.com/re-fort/items/972d9a6cdc5c00864a6e
     ]
   })
+  // console.log(return_modules.resolve.extensions)
 
 
   // TerserPlugin
@@ -310,6 +314,7 @@ module.exports = (env, argv) => {
   })
 
   // プラグイン
+  // console.log(arg__ProvidePlugin)
   return_modules = merge(return_modules,{
     plugins: [
 
@@ -330,6 +335,6 @@ module.exports = (env, argv) => {
     ]
   })
 
-  //console.log(return_modules);
+  // console.log(return_modules)
   return return_modules
 }

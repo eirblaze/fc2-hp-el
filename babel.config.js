@@ -1,10 +1,13 @@
-const merge   = require('webpack-merge')
+const merge = require('webpack-merge')
 
-module.exports = function(api) {
+module.exports = (api) => {
+
+  // console.log(api.env())
 
   // 基本設定
   let return_module = {
-    sourceType: "module",
+    sourceType: "module", // ECMAScript モジュールの文法を使用してファイルを解析します。ファイルは自動的に厳しく、import/export ステートメントは許可されます。
+    comments: !api.env('production'),
   }
 
   // IE11
@@ -12,15 +15,8 @@ module.exports = function(api) {
     presets: [
       [
         "@babel/preset-env", {
-          targets: {
-            "ie": 11
-          },
-
-          // 必要なpolyfillだけをimportするようにします
-          // 設定の仕方が変わってた。 http://babababand.hatenablog.com/entry/2019/04/24/125922
-          useBuiltIns: "entry", // preset-env と useBuiltIns:entry で全polyfillを読み込む @see https://aloerina01.github.io/blog/2019-06-21-1
-          corejs: 3, // or 2
-
+          corejs: 3,
+          useBuiltIns: "entry",
         }
       ]
     ],
@@ -30,6 +26,7 @@ module.exports = function(api) {
   // TypeScript
   return_module = merge(return_module, {
     presets: [
+      // TypeScriptのコードから、型アノテーションの部分などを取り除く変換を行う。 @see https://qiita.com/nacam403/items/edf3e2c8ff364aff910f
       "@babel/preset-typescript",
     ],
     plugins: [
@@ -41,10 +38,12 @@ module.exports = function(api) {
       "@babel/proposal-object-rest-spread"
     ]
   })
-  // <-- NODE_ENV=testの場合のみpluginが有効になる
-  if ( api.env("test") ) {
+
+  // Jest
+  if ( api.env('test') ) {
     return_module = merge(return_module, {
       plugins: [
+        // import 構文を使う場合。Node.js は ES Modules (ESM) がまだちゃんと使えないと思うので、CommonJS形式に変換する方向で作業させると無難。もしくはそうしないと動いてくれない。 @see https://qiita.com/shohei_ot/items/2a21a833364f4ad40a57
         "transform-es2015-modules-commonjs",
       ]
     })
@@ -52,7 +51,7 @@ module.exports = function(api) {
 
 
   // 最終的な出力
-  //console.log(return_module);
+  // console.log(return_module)
   return return_module
 
 }

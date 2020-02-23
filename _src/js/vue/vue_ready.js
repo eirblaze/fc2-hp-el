@@ -1,4 +1,5 @@
-import * as Common from "../common"
+import Common from "../common"
+// import Vue from "vue"
 
 /**
  * Vue準備
@@ -9,22 +10,23 @@ import * as Common from "../common"
  * @param {Vue arg} i__vue_args
  * @return Vueのハンドル。失敗時は何もせず、空オブジェクトを返す
  */
-export function vue_ready(i__vue_args) {
+export default (i__vue_args) => {
+  // コンフリクト回避
+  jQmain(jQuery,i__vue_args)
+}
 
-  // jQueryコンフリクト回避
-  ( ($) => {
+function jQmain($,i__vue_args) {
+  $(document).ready( () => {
 
     // Vue対象を取得
     // 存在しなければ終了、空オブジェクトを返す
     if ( ! Common.jq_alive( $(i__vue_args.el) ) ) return {}
 
-    // eslint-disable no-new -- ESLint は JavaScript のための静的検証ツールです。 https://qiita.com/mysticatea/items/f523dab04a25f617c87d
     return new Vue(i__vue_args)
-
 
     // ローカル関数 --------------------------------------------------------------------------------------------
 
 
-  })(jQuery)
+  })
 }
 

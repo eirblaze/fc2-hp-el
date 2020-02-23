@@ -1,14 +1,15 @@
-const merge   = require('webpack-merge');
+const merge = require('webpack-merge')
+
 
 // 共通設定
 let export_module = {
   //root: true,
-  extends: [
-    "eslint:recommended", // おすすめ設定をまとめた公式プリセット
-    //"plugin:node/recommended" // "type":"module"フィールドがpackage.jsonに存在する場合は、ファイルをESモジュールと見なします。そうでなければ、ファイルをCommonJSと見なします。さらに、*.mjsファイルをESモジュールと見なし、*.cjsファイルをCommonJS と見なします。
-  ],
   plugins: [
     "node",
+  ],
+  extends: [
+    "eslint:recommended", // おすすめ設定をまとめた公式プリセット
+    // "plugin:node/recommended" // "type":"module"フィールドがpackage.jsonに存在する場合は、ファイルをESモジュールと見なします。そうでなければ、ファイルをCommonJSと見なします。さらに、*.mjsファイルをESモジュールと見なし、*.cjsファイルをCommonJS と見なします。
   ],
   parserOptions: {
     // ecmaVersion: 6を記載しても、ES2015(ES6) の新しいグローバル変数は定義されません (構文解析器のオプションなので)。他方でenv: {es6: true}を記載すると、構文解析器は ES2015(ES6) の構文を解析するようになり、かつES2015(ES6) の新しいグローバル変数が定義されます。envは複合的な設定セットなのです。
@@ -50,6 +51,10 @@ let export_module = {
       "version": ">=12.0.0",
       "ignores": []
     }],
+
+    "node/no-unpublished-import": "off",   //`import`構文で公開後に読めなくなるモジュールを読もうとすると警告します。
+    "node/no-unpublished-require": "off",  //`require()`で公開後に読めなくなるモジュールを読もうとすると警告します。
+    // "node/no-extraneous-import" : "off", // ???
 
     // exportsが混ざってないかどうか検出。混ざってるとどっちか消えるため。
     "node/exports-style": ["error", "module.exports"],
@@ -104,23 +109,28 @@ export_module = merge(export_module, {
 
   // グローバル変数登録
   globals: {
-    "jQuery": false,
-    "$"     : false,
-    "Vue"   : false,
+    "__dirname" : false,
+    "jQuery"    : false,
+    "$"         : false,
+    "Vue"       : false,
   },
 
 });
 
 
 // Jest
+// Jest ESLint によるテストコードのエラーの表示をなんとかしたい場合 @see https://qiita.com/shohei_ot/items/2a21a833364f4ad40a57
 export_module = merge(export_module, {
   plugins: [
     "jest",
   ],
+  extends: [
+    "plugin:jest/recommended",
+  ],
   env: {
     "jest/globals": true
   }
-});
+})
 
 
 // TypeScript
@@ -129,8 +139,8 @@ export_module = merge(export_module, {
     "@typescript-eslint"
   ],
   parser: "@typescript-eslint/parser", // 英英辞書 最初のステップでは、検索スペースに索引が含まれている場合、パーサーは検索照会を評価し、検索照会内の単語と属性、および索引の有効範囲に基づいてデータ構造を作成します。
-});
+})
 
 // 出力
-//console.log(export_module);
-module.exports = export_module;
+console.log(export_module)
+module.exports = export_module

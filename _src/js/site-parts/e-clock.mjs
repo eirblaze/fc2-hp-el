@@ -1,4 +1,10 @@
-﻿( ($) => {
+﻿export default () => {
+  // コンフリクト回避
+  jQmain(jQuery)
+}
+
+function jQmain($) {
+  $(document).ready( () => {
 
 let $et_clock = {}
 
@@ -118,4 +124,5 @@ $(document).ready( () => {
 })
 
 
-})(jQuery)
+})
+}
