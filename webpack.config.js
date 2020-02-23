@@ -18,6 +18,7 @@ const webpack = require('webpack')
 const merge   = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = (env, argv) => {
 
@@ -286,6 +287,26 @@ module.exports = (env, argv) => {
       //'vue', // CDN
       'default' // 読み込むプロパティ
     ]
+  })
+
+
+  // TerserPlugin
+  return_modules = merge(return_modules,{
+    optimization: {
+      minimizer: [
+        new TerserPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: false, // Must be set to true if using source-maps in production
+          terserOptions: {
+            // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
+            compress: {
+              drop_console: true,
+            }
+          }
+        }),
+      ],
+    }
   })
 
   // プラグイン
