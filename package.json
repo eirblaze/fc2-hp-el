@@ -85,7 +85,7 @@
   "dependencies": {
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "core-js": "3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mixin-deep": "^2.0.1",
     "popper.js": "^1.16.0",
     "postcss-cli": "^6.1.3",
